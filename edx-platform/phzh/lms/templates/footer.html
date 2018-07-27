@@ -30,7 +30,7 @@
           </nav>
 
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">© EPFL Courseware. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
+          <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
 
           <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
             <ul class="navbar-nav">
@@ -104,7 +104,7 @@
         </div>
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">© EPFL Courseware. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
+        <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
 
         <nav class="nav-legal" aria-label="${_('Legal')}">
           <ul>
@@ -125,19 +125,26 @@
       % if not hide_openedx_link:
       <div class="footer-about-openedx">
         <section class="social-feed">
-        <a href="/" target="_blank">
-          <span class="icon fa fa-linkedin" aria-hidden="true"></span>
-        </a>
-        <a href="/" target="_blank">
-          <span class="icon fa fa-twitter" aria-hidden="true"></span>
-        </a>
-        <a href="/" target="_blank">
-          <span class="icon fa fa-facebook" aria-hidden="true"></span>
-        </a>
-        <a href="/" target="_blank">
-          <span class="icon fa fa-youtube" aria-hidden="true"></span>
-        </a>
-      </section>
+          <a href="/" target="_blank">
+            <span class="icon fa fa-linkedin" aria-hidden="true"></span>
+          </a>
+          <a href="/" target="_blank">
+            <span class="icon fa fa-twitter" aria-hidden="true"></span>
+          </a>
+          <a href="/" target="_blank">
+            <span class="icon fa fa-facebook" aria-hidden="true"></span>
+          </a>
+          <a href="/" target="_blank">
+            <span class="icon fa fa-youtube" aria-hidden="true"></span>
+          </a>
+       </section>
+            <div class="footer-logo-edx">
+              <p>
+                <a href="${footer['openedx_link']['url']}">
+                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+                </a>
+              </p>
+            </div>
       </div>
       % endif
     </footer>

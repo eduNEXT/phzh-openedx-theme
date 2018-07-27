@@ -56,11 +56,12 @@ html body .window-wrap {
 }
 
 /***** Course content *****/
-.window-wrap{
-
-	body.view-in-course .container{
+html body.view-in-course .container{
 		padding: 0;
 	}
+
+.window-wrap{
+
 	.course-content .page-header{
 	display: none;
 	}
@@ -159,26 +160,26 @@ html body .window-wrap {
 		margin: 0;
 		padding: 0;
 	}
-
-
 }
 
+/***Footer ***/
+.wrapper-footer .social-feed{
+	display: inline-block;;
+}
 
 /****** Responsive - general****/
 @media only screen and (max-width: 576px) {
 
 	.window-wrap {
-		.header-global,
-		.header-global.slim {
-		height: 120px;
-		}
+		
 
 		div.info-wrapper section.handouts {
 			padding: 0;
 		}
 
-		.course-header {
-			width: 65%;
+		.course-header,
+		.header-global.slim .course-header {
+			width: 40%;
 		}
 
 		.dashboard .my-courses .course .details{
@@ -268,6 +269,47 @@ html body .window-wrap {
 		 		padding: 10px 0;
 		 	}
 		 }
+
+		 /*** Discusion ***/
+	    .discussion-body .home-helpgrid .helpgrid-row {
+	        display: flex;
+	        flex-flow: column;
+
+	      .row-item {
+	        width: 100%;
+	        padding: 10px;
+	      }
+	    }
+
+	    /**** Content search ***/
+	    .page-header-search{
+	    	width: 100%;
+
+	    	.search-form{
+	    		width: 100%;
+
+	    		.search-input{
+	    			width: 65%;
+	    		}
+
+	    		.search-button{
+	    			width: 25%;
+	    		}
+	    	}
+	    }
+
+	    .content-wrapper .page-header.has-secondary .page-header-secondary .form-actions{
+	    	margin: 0;
+	    	width: 100%;
+
+	    	.action-resume-course{
+	    		width: 95%;
+			    text-align: center;
+			    margin-top: 15px;
+	    	}
+	    }
+
+
 	}	
 }
 
