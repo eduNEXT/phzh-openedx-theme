@@ -57,6 +57,10 @@ html body .window-wrap {
 
 /***** Course content *****/
 .window-wrap{
+
+	body.view-in-course .container{
+		padding: 0;
+	}
 	.course-content .page-header{
 	display: none;
 	}
@@ -148,7 +152,15 @@ html body .window-wrap {
 				border-bottom: 3px solid #0075b4;
 			}
 		}
-	} 
+	}
+
+	.course-wrapper .course-content .vert-mod .vert>.xblock-student_view{
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+
 }
 
 

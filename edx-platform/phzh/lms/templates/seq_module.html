@@ -73,21 +73,48 @@
 
 <!-- script to clone bookmark in sequence-bottom -->
 <script type="text/javascript">
-  $(document).ready(function(){
-    var bookmark_top = '.bookmark-button-wrapper .bookmark-button';
-    var bookmark_bottom = '.sequence-bottom .bookmark-button';
-      $('.bookmark-button').clone().prependTo('.sequence-bottom');
-      $(bookmark_bottom).click(function(){
-        $(bookmark_top).trigger('click');
-      })
+  "use strict";
+  var bookmark_top = '.bookmark-button-wrapper .bookmark-button';
+  var bookmark_bottom = '.sequence-bottom .bookmark-button';
+  var target, config, callback, observer;
+
+  function classBookmark(){
       $(bookmark_top).on('click', function(){
         if( $(bookmark_top).hasClass('bookmarked')){
           $(bookmark_bottom).removeClass('bookmarked');
-          }else{
-            
+          }else{            
             $(bookmark_bottom).addClass('bookmarked');
           }
+      });
+  }
+
+  function cloneBookmark(){
+    $('.bookmark-button').clone().prependTo('.sequence-bottom');
+      $(bookmark_bottom).click(function(){
+        $(bookmark_top).trigger('click');
       })
-      
+  }
+
+  function studioButton(){
+    $('.studio-view').prependTo('.vert-mod');
+  }
+
+  $(document).ready(function(){    
+      cloneBookmark();
+      classBookmark();
+      studioButton();        
   })
+
+  target = $('#seq_content');
+  config = { childList: true };
+  observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if(mutation.addedNodes.length != 0){
+          classBookmark();
+          studioButton();  
+        }
+    });
+  });
+  observer.observe(target[0], config);
+
 </script>
