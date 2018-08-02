@@ -1,0 +1,1204 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+
+<!DOCTYPE html>
+<html>
+<head dir="ltr">
+	<meta charset="utf-8">
+	<title>Eir Components</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="${static.url('css/lms-main-v1.css')}">
+	<link rel="stylesheet" type="text/css" href="${static.url('css/lms-course.css')}">
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/phzh/css/lms-course.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/css/discussion/inline-discussion.css"> -->
+
+	<!-- for highlight -->
+	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css"/>
+	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
+	<style>
+	.eir-header-element{
+		margin-top: 15px;
+	}
+	.eir-source-code{
+		display: none;
+	}
+	.eir-container-component{
+		display: none;
+	}
+	.eir-instructions-element{
+		padding: 20px;
+		display: none;
+	}
+
+	.eir-source-code.active{
+		display: block;
+	}
+
+	.eir-container-component.active{
+		display: block;
+	}
+
+	.eir-instructions-element.active{
+		display: block;
+	}
+
+	.code .container .line{
+		white-space: pre-wrap !important; 
+		display: block;
+	}
+
+	.eir-header-element .tabs{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.eir-header-element .tabs button{
+		flex-basis: 0;
+		flex-grow: 1;
+		padding: 15px;
+		color: #fff;
+		background: #2dace3;
+		border: 1px solid #4273bf;
+	}
+
+	.eir-header-element .tabs button:active,
+	.eir-header-element .tabs button:focus{
+		background: #4273bf;
+		box-shadow: none;
+	}
+
+	.eir-instructions-element h3{
+		font-size: 1.5rem;
+	}
+
+	.eir-copy-button{
+		float: right;
+		margin: 15px;
+		background: #4273bf;
+		color: #fff;
+	}
+
+	.eir-source-code .eir-copy-button:hover,
+	.eir-source-code .eir-copy-button:focus,
+	.eir-source-code .eir-copy-button:active{
+		background-color: #2b508a;
+		background-image: none;
+		box-shadow: none;
+	}
+
+	
+
+
+</style>
+
+</head>
+<body class="ltr view-in-course view-courseware courseware">
+	<div class="window-wrap">
+		<div class="content-wrapper  main-container">
+			<div class="container">
+				<div class="course-wrapper">
+					<section class="course-content">
+						<main id="main">
+							<div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule xblock-initialized">
+								<div class="sequence">
+									<div id="seq_content">
+										<div class="xblock xblock-student_view xblock-student_view-vertical xblock-initialized">
+											<div class="vert-mod">
+												<div>
+													<h2>Components</h2>
+												</div>
+												<div class="vert">
+													<div class="eir-header-element">
+														<h2>E1 Header Topic and Unit</h2>
+														<div class="tabs ">
+															<button class="tab1 eir-header-button">View Live</button>
+															<button class="tab2 eir-header-button">Code</button>
+															<button class="tab3 eir-header-button">Instructions</button>
+														</div>
+													</div>			
+
+													<div class="eir-container-component active">
+													<div class="eir-container-element eir-back-image">
+
+																<!-- background image -->
+																<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+
+																<div class="eir-text-container eir-center eir-text-center">
+
+																	<!-- icon image -->
+																	<img class="eir-icon" src="${static.url('images/icon_t2.png')}">
+
+																	<!-- vertical spacer -->
+																	<div class="eir-vertical-spacer"></div>
+
+																	<!-- first title styles -->
+																	<div style="
+																	color: #a175ff;
+																	font-family: 'Poppins';
+																	">
+
+																	<!-- caption first title -->
+																	Topic 2
+																	</div>
+																	<div class="eir-vertical-spacer"></div>
+
+																	<!-- second title styles -->
+																	<div style="
+																	color: #fff;
+																	font-family: 'IBM Plex Sans';
+																	font-weight: bold;
+																	font-size: 30px;
+																	">
+
+																	<!-- caption second title -->
+																	That's important to me, you and us!
+																	</div>
+																</div>
+															</div>
+														</div>
+
+													<div class="eir-source-code">
+														<button class="eir-copy-button">Copy code</button>
+														<pre class="brush: html">
+															<div class="eir-container-element eir-back-image">
+
+																<!-- background image -->
+																<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+
+																<div class="eir-text-container eir-center eir-text-center">
+
+																	<!-- icon image -->
+																	<img class="eir-icon" src="${static.url('images/icon_t2.png')}">
+
+																	<!-- vertical spacer -->
+																	<div class="eir-vertical-spacer"></div>
+
+																	<!-- first title styles -->
+																	<div style="
+																	color: #a175ff;
+																	font-family: 'Poppins';
+																	">
+
+																	<!-- caption first title -->
+																	Topic 2
+																	</div>
+																	<div class="eir-vertical-spacer"></div>
+
+																	<!-- second title styles -->
+																	<div style="
+																	color: #fff;
+																	font-family: 'IBM Plex Sans';
+																	font-weight: bold;
+																	font-size: 30px;
+																	">
+
+																	<!-- caption second title -->
+																	That's important to me, you and us!
+																	</div>
+																</div>
+															</div>
+												</pre>
+											</div>
+
+											<div class="eir-instructions-element">
+												<h3>Images</h3>
+												<p>This component has two images, one for the background and other for the icon. The src attribute specifies the URL of the image.</p>
+												<pre class="brush: html">
+														<img src="/static/images/t2_header.png"> 			
+													</pre>
+												<h3>Vertical Spacer</h3>
+												<p>This element represent a vertical space of 15px</p>
+												<pre class="brush: html">
+														<div class="eir-vertical-spacer"></div>
+													</pre>
+												<h3>Text</h3>
+												<p>The text styles are defined inside the attribute "style" of the element:</p>
+												<pre class="brush: html">
+														<div style=" "></div>
+													</pre>
+												<p>The properties that can be changed are:</p>
+												<h4>Font family</h4>
+													<p>The following rule specify the font. These are the google fonts selected</p>
+													<pre class="brush: css">
+														font-family: 'Poppins';
+														font-family: 'IBM Plex Sans';
+														font-family: 'IBM Plex Sans Condensed';
+														font-family: 'Roboto';
+														font-family: 'Roboto Slab';
+														font-family: 'Roboto Condensed';
+														font-family: 'Source Sans Pro';
+													</pre>
+
+													<h4>Color</h4>
+													<p>The following rule specify the text color</p>
+													<pre class="brush: css">
+														color: #f5f5f5; 			/* Hexadecimal color */
+														color: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font style</h4>
+													<p>The following rule specify the italic font</p>
+													<pre class="brush: css">
+														font-style: italic; 		
+													</pre>
+
+													<h4>Font bold</h4>
+													<p>The following rule specify the bold font</p>
+													<pre class="brush: css">
+														font-weight: bold; 		
+													</pre>
+
+													<h4>Font size</h4>
+													<p>The following rule specify the size font</p>
+													<pre class="brush: css">
+														font-size: 25px; 		
+													</pre>
+
+											</div>
+										</div>
+
+										<div class="vert">
+											<div class="eir-header-element">
+												<h2>E2 Simple Text</h2>
+												<div class="tabs">
+													<button class="tab1 eir-header-button">View Live</button>
+													<button class="tab2 eir-header-button">Code</button>
+													<button class="tab3 eir-header-button">Instructions</button>
+												</div>
+											</div>	
+											<div class="eir-container-component active">
+											<!-- paragraph styles -->
+												<div class="eir-container-element eir-paragraph" style="
+												font-family: 'Roboto';
+												color: #fff;
+												background: #202020; 
+												">
+
+												<!-- paragraph text -->
+												In the unit «Fair for all of us» you will learn about specific and universal rules. In «Step 1» you will consider a set of rules and decide which ones are fair or unfair, and if they make sense at all.  In «Step 2» you will take part in a thought experiment, create you own rules, discuss the results in class, and share the results in a discussion group. Afterwards you will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. The unit ends with a «Self-evaluation».		
+												</div>
+											</div>
+										<div class="eir-source-code">
+											<button class="eir-copy-button">Copy code</button>
+											<pre class="brush: html">
+
+												<!-- paragraph styles -->
+												<div class="eir-container-element eir-paragraph" style="
+												font-family: 'Roboto';
+												color: #fff;
+												background: #202020; 
+												">
+
+												<!-- paragraph text -->
+												In the unit «Fair for all of us» you will learn about specific and universal rules. In «Step 1» you will consider a set of rules and decide which ones are fair or unfair, and if they make sense at all.  In «Step 2» you will take part in a thought experiment, create you own rules, discuss the results in class, and share the results in a discussion group. Afterwards you will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. The unit ends with a «Self-evaluation».		
+												</div>
+												
+										</pre>
+									</div>	
+									<div class="eir-instructions-element">
+										<h3>Text</h3>
+												<p>The text styles are defined inside the attribute "style" of the element:</p>
+												<pre class="brush: html">
+														<div style=" "></div>
+													</pre>
+												<p>The properties that can be changed are:</p>
+												<h4>Font family</h4>
+													<p>The following rule specify the font. These are the google fonts selected</p>
+													<pre class="brush: css">
+														font-family: 'Poppins';
+														font-family: 'IBM Plex Sans';
+														font-family: 'IBM Plex Sans Condensed';
+														font-family: 'Roboto';
+														font-family: 'Roboto Slab';
+														font-family: 'Roboto Condensed';
+														font-family: 'Source Sans Pro';
+													</pre>
+
+													<h4>Color</h4>
+													<p>The following rule specify the text color</p>
+													<pre class="brush: css">
+														color: #f5f5f5; 			/* Hexadecimal color */
+														color: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font style</h4>
+													<p>The following rule specify the italic font</p>
+													<pre class="brush: css">
+														font-style: italic; 		
+													</pre>
+
+													<h4>Font bold</h4>
+													<p>The following rule specify the bold font</p>
+													<pre class="brush: css">
+														font-weight: bold; 		
+													</pre>
+
+													<h4>Background</h4>
+													<p>The following rule specify the element background</p>
+													<pre class="brush: css">
+														background: #f5f5f5; 			/* Hexadecimal color */
+														background: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font size</h4>
+													<p>The following rule specify the size font</p>
+													<pre class="brush: css">
+														font-size: 25px; 		
+													</pre>
+
+													<h4>Text-align</h4>
+													<p>The following rule specify the text alignment. This has four options:</p>
+													<pre class="brush: css">
+														text-align: center;
+														text-align: left;
+														text-align: right;
+														text-align: justify;		
+													</pre>
+									</div>											
+								</div>
+
+								<div class="vert">	
+									<div class="eir-header-element">
+										<h2>E3 Instructional Text</h2>
+										<div class="tabs">
+											<button class="tab1 eir-header-button">View Live</button>
+											<button class="tab2 eir-header-button">Code</button>
+											<button class="tab3 eir-header-button">Instructions</button>
+										</div>
+									</div>												
+
+									<div class="eir-container-component active">
+									<!-- container styles -->
+									<div class="eir-container-element" style="	
+									background: #e6e6e6;												
+									">
+										<div class="eir-text-container">
+
+											<!-- icon image -->
+											<img class="eir-icon eir-center " src="${static.url('images/icon_t2_u3.png')}">
+
+											<!-- title styles -->
+											<div class="eir-title" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- caption title -->
+											Unit objectives: after studying this unit...
+											</div>
+											<div class="eir-list">
+
+												<!-- list styles -->
+												<ul style="
+												font-family: 'Poppins';
+												">
+
+													<!-- first item list-->
+													<li>
+														<!-- bullet image -->
+														<img src="${static.url('images/bullet.png')}">
+
+														<!-- caption item list -->
+														 I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules
+													</li>
+
+													<!-- second item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														I can take part in a discussion by stating my point of view and giving reasons.
+													</li>
+
+													<!-- third item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														I am able to change my perspective and view a problem from another point of view
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- paragraph styles -->
+										<div class="eir-paragraph" style="
+											font-family: 'Roboto';
+											">
+
+											<!-- paragraph text -->
+											In this unit you will learn and understand specific and universal rules. In «Step 1» you read a set of rules and decide which ones are fair or unfair and if they make sense at all. In «Step 2» you will take part in a thought experiment, create you own rules and discuss the results in class. You will then share the results in a discussion group. You will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. This unit ends with a «Self-evaluation».				
+										</div>
+									</div>
+								</div>
+							<div class="eir-source-code">
+								<button class="eir-copy-button">Copy code</button>
+								<pre class="brush: html">
+
+									<!-- container styles -->
+									<div class="eir-container-element" style="	
+									background: #e6e6e6;												
+									">
+										<div class="eir-text-container">
+
+											<!-- icon image -->
+											<img class="eir-icon eir-center " src="${static.url('images/icon_t2_u3.png')}">
+
+											<!-- title styles -->
+											<div class="eir-title" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- caption title -->
+											Unit objectives: after studying this unit...
+											</div>
+											<div class="eir-list">
+
+												<!-- list styles -->
+												<ul style="
+												font-family: 'Poppins';
+												">
+
+													<!-- first item list-->
+													<li>
+														<!-- bullet image -->
+														<img src="${static.url('images/bullet.png')}">
+
+														<!-- caption item list -->
+														 I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules
+													</li>
+
+													<!-- second item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														I can take part in a discussion by stating my point of view and giving reasons.
+													</li>
+
+													<!-- third item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														I am able to change my perspective and view a problem from another point of view
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- paragraph styles -->
+										<div class="eir-paragraph" style="
+											font-family: 'Roboto';
+											">
+
+											<!-- paragraph text -->
+											In this unit you will learn and understand specific and universal rules. In «Step 1» you read a set of rules and decide which ones are fair or unfair and if they make sense at all. In «Step 2» you will take part in a thought experiment, create you own rules and discuss the results in class. You will then share the results in a discussion group. You will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. This unit ends with a «Self-evaluation».				
+										</div>
+									</div>
+						</pre>
+					</div>	
+
+					<div class="eir-instructions-element">
+						<h3>Image</h3>
+						<p>This component has four images, one for the icon and others are the same for the bullet. The src attribute specifies the URL of the image. For ocurrancy, the bullet image doesn't have margin.</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png"> 			
+						</pre>
+
+						<h3>Text</h3>
+						<p>The text styles are defined inside the attribute "style" of the element:</p>
+						<pre class="brush: html">
+							<div style=" "></div>
+						</pre>
+						<p>The properties that can be changed are:</p>
+						<h4>Font family</h4>
+						<p>The following rule specify the font. These are the google fonts selected</p>
+						<pre class="brush: css">
+							font-family: 'Poppins';
+							font-family: 'IBM Plex Sans';
+							font-family: 'IBM Plex Sans Condensed';
+							font-family: 'Roboto';
+							font-family: 'Roboto Slab';
+							font-family: 'Roboto Condensed';
+							font-family: 'Source Sans Pro';
+						</pre>
+
+						<h4>Color</h4>
+						<p>The following rule specify the text color</p>
+						<pre class="brush: css">
+							color: #f5f5f5; 			/* Hexadecimal color */
+							color: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+
+						<h4>Font style</h4>
+						<p>The following rule specify the italic font</p>
+						<pre class="brush: css">
+							font-style: italic; 		
+						</pre>
+
+						<h4>Font bold</h4>
+						<p>The following rule specify the bold font</p>
+						<pre class="brush: css">
+							font-weight: bold; 		
+						</pre>
+
+						<h4>Font size</h4>
+						<p>The following rule specify the size font</p>
+						<pre class="brush: css">
+							font-size: 25px; 		
+						</pre>
+
+						<h4>Text-align</h4>
+						<p>The following rule specify the text alignment. This has four options:</p>
+						<pre class="brush: css">
+							text-align: center;
+							text-align: left;
+							text-align: right;
+							text-align: justify;		
+						</pre>
+
+						<h4>Background</h4>
+						<p>The following rule specify the element background</p>
+						<pre class="brush: css">
+							background: #f5f5f5; 			/* Hexadecimal color */
+							background: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+					</div>																	
+				</div>
+
+					<div class="vert">	
+						<div class="eir-header-element">
+							<h2>E4 Header Step</h2>
+							<div class="tabs">
+								<button class="tab1 eir-header-button">View Live</button>
+								<button class="tab2 eir-header-button">Code</button>
+								<button class="tab3 eir-header-button">Instructions</button>
+							</div>
+						</div>										
+
+						<div class="eir-container-component active">
+						<div class="eir-container-element eir-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_header.png')}" class="back-image">
+
+									<div class="eir-text-container eir-center eir-text-center">
+
+										<!-- first icon image -->
+										<img class="eir-icon" src="${static.url('images/icon_t2_u3.png')}">
+
+										<div class="eir-vertical-spacer"></div>
+
+										<!-- first title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption first title -->
+										Fair for all of us
+										</div>
+										<div class="eir-vertical-spacer"></div>
+
+										<!-- second title styles -->
+										<div class="eir-title" style="
+										color: #fff;
+										font-size: 35px;
+										font-family: 'IBM Plex Sans';
+										">
+										
+										<!-- caption second title -->
+										Step 2
+										</div>
+
+										<!-- second image title -->
+										<img class="eir-icon" src="${static.url('images/icon_time.png')}" style="
+										width: 50px;
+										padding-bottom: 0;
+										">
+
+										<!-- subtitle second icon styles -->
+										<div style="
+										color: #fff;
+										font-size: 16px;
+										">
+
+										<!-- caption subtitle second icon -->
+										~ 120 min
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="eir-source-code">
+							<button class="eir-copy-button">Copy code</button>
+							<pre class="brush: html">
+								<div class="eir-container-element eir-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_header.png')}" class="back-image">
+
+									<div class="eir-text-container eir-center eir-text-center">
+
+										<!-- first icon image -->
+										<img class="eir-icon" src="${static.url('images/icon_t2_u3.png')}">
+
+										<div class="eir-vertical-spacer"></div>
+
+										<!-- first title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption first title -->
+										Fair for all of us
+										</div>
+										<div class="eir-vertical-spacer"></div>
+
+										<!-- second title styles -->
+										<div class="eir-title" style="
+										color: #fff;
+										font-size: 35px;
+										font-family: 'IBM Plex Sans';
+										">
+										
+										<!-- caption second title -->
+										Step 2
+										</div>
+
+										<!-- second image title -->
+										<img class="eir-icon" src="${static.url('images/icon_time.png')}" style="
+										width: 50px;
+										padding-bottom: 0;
+										">
+
+										<!-- subtitle second icon styles -->
+										<div style="
+										color: #fff;
+										font-size: 16px;
+										">
+
+										<!-- caption subtitle second icon -->
+										~ 120 min
+									</div>
+								</div>
+							</div>
+						</pre>
+					</div>
+					<div class="eir-instructions-element">
+						<h3>Image</h3>
+						<p>This component has three images, one for the background and others for the two icons. The src attribute specifies the URL of the image. The width of the image can be defined in the element with the attribute style. To delete the space between the icon and text, you can change the property padding, depend on the position of the text it could be padding-bottom or padding-top</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png" style="width: 50px; padding-bottom: 0;"> 			
+						</pre>
+
+						<h3>Vertical Spacer</h3>
+												<p>This element represent a vertical space of 15px</p>
+												<pre class="brush: html">
+														<div class="eir-vertical-spacer"></div>
+													</pre>
+												<h3>Text</h3>
+												<p>The text styles are defined inside the attribute "style" of the element:</p>
+												<pre class="brush: html">
+														<div style=" "></div>
+													</pre>
+												<p>The properties that can be changed are:</p>
+												<h4>Font family</h4>
+													<p>The following rule specify the font. These are the google fonts selected</p>
+													<pre class="brush: css">
+														font-family: 'Poppins';
+														font-family: 'IBM Plex Sans';
+														font-family: 'IBM Plex Sans Condensed';
+														font-family: 'Roboto';
+														font-family: 'Roboto Slab';
+														font-family: 'Roboto Condensed';
+														font-family: 'Source Sans Pro';
+													</pre>
+
+													<h4>Color</h4>
+													<p>The following rule specify the text color</p>
+													<pre class="brush: css">
+														color: #f5f5f5; 			/* Hexadecimal color */
+														color: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font style</h4>
+													<p>The following rule specify the italic font</p>
+													<pre class="brush: css">
+														font-style: italic; 		
+													</pre>
+
+													<h4>Font bold</h4>
+													<p>The following rule specify the bold font</p>
+													<pre class="brush: css">
+														font-weight: bold; 		
+													</pre>
+
+													<h4>Font size</h4>
+													<p>The following rule specify the size font</p>
+													<pre class="brush: css">
+														font-size: 25px; 		
+													</pre>
+
+					</div>
+
+				</div>
+
+					<div class="vert">
+						<div class="eir-header-element">
+							<h2>E5 Text over Image</h2>
+							<div class="tabs">
+								<button class="tab1 eir-header-button">View Live</button>
+								<button class="tab2 eir-header-button">Code</button>
+								<button class="tab3 eir-header-button">Instructions</button>
+							</div>
+						</div>												
+
+						<div class="eir-container-component active">
+						<div class="eir-container-element eir-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_pic1.png')}" class="back-image"> 
+									<div class="eir-text-container eir-left eir-title-top">
+
+										<!-- title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption title -->
+										Make an exciting experiment!
+										</div>													
+									</div>
+								</div>
+							</div>
+
+
+						<div class="eir-source-code">
+							<button class="eir-copy-button">Copy code</button>
+							<pre class="brush: html">
+								<div class="eir-container-element eir-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_pic1.png')}" class="back-image"> 
+									<div class="eir-text-container eir-left eir-title-top">
+
+										<!-- title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption title -->
+										Make an exciting experiment!
+										</div>													
+									</div>
+								</div>
+							</pre>
+						</div>
+
+						<div class="eir-instructions-element">
+							<h3>Image</h3>
+							<p>This component has one image for the background. The src attribute specifies the URL of the image.</p>
+							<pre class="brush: html">
+								<img src="/static/images/t2_header.png"> 			
+							</pre>
+
+							<h3>Text</h3>
+							<p>The text styles are defined inside the attribute "style" of the element:</p>
+							<pre class="brush: html">
+								<div style=" "></div>
+							</pre>
+							<p>The properties that can be changed are:</p>
+							<h4>Font family</h4>
+							<p>The following rule specify the font. These are the google fonts selected</p>
+							<pre class="brush: css">
+								font-family: 'Poppins';
+								font-family: 'IBM Plex Sans';
+								font-family: 'IBM Plex Sans Condensed';
+								font-family: 'Roboto';
+								font-family: 'Roboto Slab';
+								font-family: 'Roboto Condensed';
+								font-family: 'Source Sans Pro';
+							</pre>
+
+							<h4>Color</h4>
+							<p>The following rule specify the text color</p>
+							<pre class="brush: css">
+								color: #f5f5f5; 			/* Hexadecimal color */
+								color: rgb(245, 245, 245); 			 /* RGB color */ 
+							</pre>
+
+							<h4>Font style</h4>
+							<p>The following rule specify the italic font</p>
+							<pre class="brush: css">
+								font-style: italic; 		
+							</pre>
+
+							<h4>Font bold</h4>
+							<p>The following rule specify the bold font</p>
+							<pre class="brush: css">
+								font-weight: bold; 		
+							</pre>
+
+							<h4>Font size</h4>
+							<p>The following rule specify the size font</p>
+							<pre class="brush: css">
+								font-size: 25px; 		
+							</pre>
+
+							<h3>Position Text</h3>
+							<p>To change the position text you can edit the div with the class eir-text-container. Text in the top and aling left</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-left eir-title-top">
+							</pre>
+							<p>Text in the top and align center</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-center eir-title-top">
+							</pre>
+							<p>Text in the top an align right</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-right eir-title-top">
+							</pre>
+							<p>Text in the center an align left</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-left eir-title-center">
+							</pre>
+							<p>Text in the center an align center</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-center eir-title-center">
+							</pre>
+							<p>Text in the center an align right</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-right eir-title-center">
+							</pre>
+							<p>Text in the bottom an align left</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-left eir-title-bottom">
+							</pre>
+							<p>Text in the bottom an align center</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-center eir-title-bottom">
+							</pre>
+							<p>Text in the bottom an align right</p>
+							<pre class="brush: html">
+								<div class="eir-text-container eir-right eir-title-bottom">
+							</pre>
+
+						</div>
+
+					</div>
+
+					<div class="vert">
+						<div class="eir-header-element">
+							<h2>E6 Task</h2>
+							<div class="tabs">
+								<button class="tab1 eir-header-button">View Live</button>
+								<button class="tab2 eir-header-button">Code</button>
+								<button class="tab3 eir-header-button">Instructions</button>
+							</div>
+						</div>										
+
+						<div class="eir-container-component active">
+						<!-- container styles -->
+					<div class="eir-container-element" style="
+					background: #e9e9d6;												
+					">
+						<div class="eir-text-container">
+
+							<!-- icon image -->
+							<img class="eir-icon eir-center " src="${static.url('images/icon_alone.png')}">
+
+							<!-- title styles -->
+							<div class="eir-center" style="
+							font-size: 25px;
+							font-family: 'Poppins';
+							font-style: italic;
+							">
+
+							<!-- caption title -->
+							Task 1
+							</div>
+							<div class="eir-vertical-spacer"></div>
+
+							<!-- subtitle styles -->
+							<div class="eir-title" style="
+							font-family: 'Poppins';
+							">
+
+							<!-- caption subtitle -->
+							Read the following thought experiment:
+							</div>
+						</div>
+
+						<!--first paragraph styles -->
+						<div class="eir-paragraph" style="
+						font-family: 'Roboto';
+						">
+						<!-- caption first paragraph -->
+						Imagine you and your colleagues in this class had the possibility to determine the basic rules for the society you will live in. These rules will apply for everyone. While you and your colleagues discuss the rules and agree on the best ones, you are behind the veil of ignorance. Veil of ignorance means that you do not know, what you will be in this future society. When you have agreed on the rules and the veil of ignorance gets lifted, you might be rich or poor. You might be healthy, sick or have a disability. You might be a man, a woman, a child or an old person. You do not know the colour of your skin. You might be born and live in Brazil, Iceland, Afghanistan, Switzerland or any country around the world. You do not know which interests or skills you will have, nor what religion you belong to. You might be a Jew, Muslim, Christian, Bahai, or it might be that you do not believe in God at all.		
+						</div>
+
+						<!-- second paragraph style -->
+						<div class="eir-paragraph" style="
+						font-family: 'Roboto';
+						font-weight: bold;
+						text-align: center;
+						">
+
+						<!-- caption second paragraph -->
+						While you can make the rules for society, you cannot change human nature. Some people will be nice, others selfish, some will be cruel, others nobel and generous. 
+						(Idea by: Rawls, John (1971). A Theory of Justice)		
+						</div>
+					</div>	
+				</div>
+
+			<div class="eir-source-code">
+				<button class="eir-copy-button">Copy code</button>
+				<pre class="brush: html">
+
+					<!-- container styles -->
+					<div class="eir-container-element" style="
+					background: #e9e9d6;												
+					">
+						<div class="eir-text-container">
+
+							<!-- icon image -->
+							<img class="eir-icon eir-center " src="${static.url('images/icon_alone.png')}">
+
+							<!-- title styles -->
+							<div class="eir-center" style="
+							font-size: 25px;
+							font-family: 'Poppins';
+							font-style: italic;
+							">
+
+							<!-- caption title -->
+							Task 1
+							</div>
+							<div class="eir-vertical-spacer"></div>
+
+							<!-- subtitle styles -->
+							<div class="eir-title" style="
+							font-family: 'Poppins';
+							">
+
+							<!-- caption subtitle -->
+							Read the following thought experiment:
+							</div>
+						</div>
+
+						<!--first paragraph styles -->
+						<div class="eir-paragraph" style="
+						font-family: 'Roboto';
+						">
+						<!-- caption first paragraph -->
+						Imagine you and your colleagues in this class had the possibility to determine the basic rules for the society you will live in. These rules will apply for everyone. While you and your colleagues discuss the rules and agree on the best ones, you are behind the veil of ignorance. Veil of ignorance means that you do not know, what you will be in this future society. When you have agreed on the rules and the veil of ignorance gets lifted, you might be rich or poor. You might be healthy, sick or have a disability. You might be a man, a woman, a child or an old person. You do not know the colour of your skin. You might be born and live in Brazil, Iceland, Afghanistan, Switzerland or any country around the world. You do not know which interests or skills you will have, nor what religion you belong to. You might be a Jew, Muslim, Christian, Bahai, or it might be that you do not believe in God at all.		
+						</div>
+
+						<!-- second paragraph style -->
+						<div class="eir-paragraph" style="
+						font-family: 'Roboto';
+						font-weight: bold;
+						text-align: center;
+						">
+
+						<!-- caption second paragraph -->
+						While you can make the rules for society, you cannot change human nature. Some people will be nice, others selfish, some will be cruel, others nobel and generous. 
+						(Idea by: Rawls, John (1971). A Theory of Justice)		
+						</div>
+					</div>	
+	</pre>
+</div>
+
+<div class="eir-instructions-element">
+						<h3>Image</h3>
+						<p>This component has one image for the icon. The src attribute specifies the URL of the image.</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png"> 			
+						</pre>
+
+						<h3>Text</h3>
+						<p>The text styles are defined inside the attribute "style" of the element:</p>
+						<pre class="brush: html">
+							<div style=" "></div>
+						</pre>
+						<p>The properties that can be changed are:</p>
+						<h4>Font family</h4>
+						<p>The following rule specify the font. These are the google fonts selected</p>
+						<pre class="brush: css">
+							font-family: 'Poppins';
+							font-family: 'IBM Plex Sans';
+							font-family: 'IBM Plex Sans Condensed';
+							font-family: 'Roboto';
+							font-family: 'Roboto Slab';
+							font-family: 'Roboto Condensed';
+							font-family: 'Source Sans Pro';
+						</pre>
+
+						<h4>Color</h4>
+						<p>The following rule specify the text color</p>
+						<pre class="brush: css">
+							color: #f5f5f5; 			/* Hexadecimal color */
+							color: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+
+						<h4>Font style</h4>
+						<p>The following rule specify the italic font</p>
+						<pre class="brush: css">
+							font-style: italic; 		
+						</pre>
+
+						<h4>Font bold</h4>
+						<p>The following rule specify the bold font</p>
+						<pre class="brush: css">
+							font-weight: bold; 		
+						</pre>
+
+						<h4>Font size</h4>
+						<p>The following rule specify the size font</p>
+						<pre class="brush: css">
+							font-size: 25px; 		
+						</pre>
+
+						<h4>Text-align</h4>
+						<p>The following rule specify the text alignment. This has four options:</p>
+						<pre class="brush: css">
+							text-align: center;
+							text-align: left;
+							text-align: right;
+							text-align: justify;		
+						</pre>
+
+						<h4>Background</h4>
+						<p>The following rule specify the element background</p>
+						<pre class="brush: css">
+							background: #f5f5f5; 			/* Hexadecimal color */
+							background: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+					</div>		
+
+</div>
+
+<div class="vert">	
+	<div class="eir-header-element">
+		<h2>E7 Header Step</h2>
+		<div class="tabs">
+			<button class="tab1 eir-header-button">View Live</button>
+			<button class="tab2 eir-header-button">Code</button>
+			<button class="tab3 eir-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="eir-container-component active">
+	<div class="eir-container-element eir-image-border" style="
+			padding: 50px;
+			">
+
+				<!-- url image -->
+				<img src="${static.url('images/t2_u3_s2_pic2.png')}"> 
+			</div>
+		</div>
+
+	<div class="eir-source-code">
+		<button class="eir-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="eir-container-element eir-image-border" style="
+			padding: 50px;
+			">
+
+				<!-- url image -->
+				<img src="${static.url('images/t2_u3_s2_pic2.png')}"> 
+			</div>
+		</pre>
+	</div>	
+
+	<div class="eir-instructions-element">
+		<h3>Image</h3>
+		<p>This component has one image. The src attribute specifies the URL of the image. The border can be defined in the element with the attribute style.</p>
+		<pre class="brush: html">
+			<img src="/static/images/t2_header.png" style="
+			padding: 50px;
+			"> 			
+		</pre>
+		<p>Using "padding" will define the same border for all sides of the image. But it's posible define each side: </p>
+		<pre class="brush: html">
+			<img src="/static/images/t2_header.png" style="
+			padding-top: 20px;
+			padding-right: 50px;
+			padding-bottom: 30px;
+			padding-left: 50px;
+			"> 			
+		</pre>
+	</div>
+
+</div>
+
+<div>
+	
+</div>
+</div>
+</div>
+</div>
+</div>								
+</div>							
+</main>
+</section>
+</div>				
+</div>			
+</div>
+</div>
+
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shCore.js"></script>
+<script type="text/javascript" src="http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushCss.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['tab-size'] = 2;
+	SyntaxHighlighter.all();
+	$(window).load(function(){
+		$(".eir-header-button").click(function(){
+			var t = $(this),
+			code = $(this).closest(".vert").find('.eir-source-code'),
+			live = $(this).closest(".vert").find('.eir-container-component'),
+			instruction = $(this).closest(".vert").find('.eir-instructions-element')
+			if(t.hasClass('tab1')){
+				live.addClass('active');
+				live.siblings().removeClass('active');
+			}
+			if(t.hasClass('tab2')){
+				code.addClass('active');
+				code.siblings().removeClass('active');
+			}
+			if(t.hasClass('tab3')){
+				instruction.addClass('active');
+				instruction.siblings().removeClass('active');
+			}
+		});
+
+		$(".eir-copy-button").click(function(){
+			var code = $(this).closest(".vert").find('.eir-container-component');
+			var el = document.createElement('textarea');
+			el.value = code.html().replace(/^\s+/mg, "");
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand("copy");
+			document.body.removeChild(el);
+		});
+
+	})
+
+
+</script>
+</body>
+</html>

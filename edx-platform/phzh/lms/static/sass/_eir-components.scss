@@ -40,20 +40,20 @@
 }
 
 .eir-center{
-	text-align: center
+	text-align: center;
+
 }
 
 .eir-right{
 	text-align: right;
+
 }
 
 .eir-left{
 	text-align: left;
 
-	&.eir-title-top{
-		left: 5%;
-	}
 }
+
 
 img.eir-center{
 	margin: 0 auto;
@@ -75,10 +75,19 @@ img.eir-center{
 .eir-title-top.eir-text-container{
 	width: 90%;
 	top: 5%;
+	left: 5%;
 }
 
 .eir-title-bottom.eir-text-container{
 	top: 85%;
+	width: 90%;
+	left: 5%;
+}
+
+.eir-title-center.eir-text-container{
+	width: 90%;
+	top: 45%;
+	left: 5%;
 }
 
 .eir-image-border{
