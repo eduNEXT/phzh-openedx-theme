@@ -1,70 +1,70 @@
 
-.eir-back-image {
+.frigg-back-image {
 	position: relative;
 
 	.back-image{
 		min-height: 400px;
 	}
 
-	.eir-text-container{
+	.frigg-text-container{
 		font-size: 20px;	
 		top: 10%;
 		position: absolute;
 	}
 
-	.eir-text-center{
+	.frigg-text-center{
 		width: 40%;
 		left: 30%;
 		right: 30%;
 	}
 }
 
-.eir-text-container{
+.frigg-text-container{
 	position: relative;
 	left: 15%;
 	width: 70%;
 
 }
 
-.eir-vertical-spacer{
+.frigg-vertical-spacer{
 	height: 15px;
 }
 
-.eir-paragraph{
+.frigg-paragraph{
 	padding: 20px 15%;
 }
 
-.eir-title{
+.frigg-title{
 	font-weight: 800;
 	font-size: 20px;
 }
 
-.eir-center{
+.frigg-center{
 	text-align: center;
 
 }
 
-.eir-right{
+.frigg-right{
 	text-align: right;
 
 }
 
-.eir-left{
+.frigg-left{
 	text-align: left;
 
 }
 
 
-img.eir-center{
+img.frigg-center{
 	margin: 0 auto;
 	display: block;
 }
 
-.eir-icon{
+.frigg-icon{
 	padding: 20px 0;
 }
 
-.course-wrapper .course-content .vert-mod .eir-list ul{
+.course-wrapper .course-content .vert-mod .frigg-list ul{
 	list-style-type: none;
 }
 
@@ -72,50 +72,53 @@ img.eir-center{
 	object-fit: cover;
 }
 
-.eir-title-top.eir-text-container{
+.frigg-title-top.frigg-text-container{
 	width: 90%;
 	top: 5%;
 	left: 5%;
 }
 
-.eir-title-bottom.eir-text-container{
+.frigg-title-bottom.frigg-text-container{
 	top: 85%;
 	width: 90%;
 	left: 5%;
 }
 
-.eir-title-center.eir-text-container{
+.frigg-title-center.frigg-text-container{
 	width: 90%;
 	top: 45%;
 	left: 5%;
 }
 
-.eir-image-border{
+.frigg-image-border{
 	padding: 30px;
 }
 
 @media only screen and (max-width: 768px) {
-	.eir-back-image .eir-text-container{
+	.frigg-back-image .frigg-text-container{
 		right: 5%;
 		left: 5%;
 		top: 10%;
 		width: 90%;
 	}
 
-	.eir-paragraph{
+	.frigg-paragraph{
 		padding: 20px 5%;
 	}
 
-	.eir-text-container{
+	.frigg-text-container{
 		left: 5%;
 		width: 90%;
 	}
 
-	.eir-title-top.eir-text-container{
+	.frigg-title-top.frigg-text-container{
 		width: 50%;
 	}
 
-	.eir-back-image .eir-title-top.eir-text-container{
+	.frigg-back-image .frigg-title-top.frigg-text-container{
 		top: 5%;
 	}
 }
+
+/***** Problem elements ***/
+
