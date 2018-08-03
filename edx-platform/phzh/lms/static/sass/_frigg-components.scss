@@ -122,3 +122,77 @@ img.frigg-center{
 
 /***** Problem elements ***/
 
+.frigg-container-problem {
+	padding: 20px;
+
+	.frigg-problem-multiplechoice {
+		.frigg-problem-label {
+			text-align: center;
+			padding: 10px;
+		}
+
+		.choicegroup fieldset{
+			width: 70%;
+			padding: 10px;
+			margin: 0 auto;
+
+			label{
+				border: none;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/**** General aspect for problems ***/
+
+.frigg-problem{
+	.problem-header{
+		display: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule .problem-progress{
+		display: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit{
+		float: none;
+	}
+
+	//Show answer and hint buttons
+	.action{
+
+		.submit-attempt-container{
+			text-align: center;
+		}
+		.problem-action-buttons-wrapper{
+			display: none;
+		}
+	} 
+
+	//options
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label,
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label:hover{
+		border: none;
+	}
+
+}
+
+/***  Feedback  ***/ 
+.frigg-problem{
+	
+	//Feedback message
+	.message{
+		text-align: center;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .frigg-no-notifications .choicegroup label.choicegroup_correct,
+	.xmodule_display.xmodule_CapaModule div.problem .frigg-no-notifications .choicegroup label.choicegroup_incorrect{
+		border: none;
+	}
+
+	.problem .frigg-no-notification .field .status,
+	.problem .frigg-feedback .field label input{
+		display: none;
+	}
+}

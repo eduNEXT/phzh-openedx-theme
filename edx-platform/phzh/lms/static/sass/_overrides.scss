@@ -4,6 +4,7 @@ $color-blue:#23a2ff;
 html body.view-in-course .window-wrap,
 html body .window-wrap {
 	min-width: 0;
+	background: #333333;
 }
 
 /***** Header ***/
@@ -42,11 +43,19 @@ html body .window-wrap {
 	z-index: 2;
 	margin-bottom: -50px;
 	position: relative;
+
+	.course-material{
+		padding: 0;
+
+	}
 }
 
+.course-material{
+	background: #fff;
+}
 .collapse-open{
 	background: #fff;
-    border-radius: 4px;
+	border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
     border: 1px solid #c8c8c8;
 }
@@ -169,8 +178,9 @@ html body.view-in-course .container{
 
 /***Footer ***/
 .wrapper-footer .social-feed{
-	display: inline-block;;
+	display: inline-block;
 }
+
 
 /****** Responsive - general****/
 @media only screen and (max-width: 576px) {

@@ -164,3 +164,9 @@
 % if settings.FEATURES.get('ENABLE_COOKIE_CONSENT', False):
   <%include file="widgets/cookie-consent.html" />
 % endif
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.frigg-container-problem').closest(".vert").addClass('frigg-problem');
+  })
+</script>
