@@ -166,7 +166,170 @@
 % endif
 
 <script type="text/javascript">
-  $(document).ready(function(){
-      $('.frigg-container-problem').closest(".vert").addClass('frigg-problem');
+
+ "use strict";
+  var bookmark_top = '.bookmark-button-wrapper .bookmark-button';
+  var bookmark_bottom = '.sequence-bottom .bookmark-button';
+  var target, config, callback, observer, target2, config2, callback2, observer2;
+
+  function classBookmark(){
+      $(bookmark_top).on('click', function(){
+        if( $(bookmark_top).hasClass('bookmarked')){
+          $(bookmark_bottom).removeClass('bookmarked');
+          }else{            
+            $(bookmark_bottom).addClass('bookmarked');
+          }
+      });
+  }
+
+  function cloneBookmark(){
+    $('.bookmark-button').clone().prependTo('.sequence-bottom');
+      $(bookmark_bottom).click(function(){
+        $(bookmark_top).trigger('click');
+      })
+  }
+
+  function studioButton(){
+    $('.studio-view').prependTo('.vert-mod');
+  }
+
+  function multipleChoiceProblem(){
+    var frigg_container = $('.frigg-feedback');
+
+      $('.frigg-problem-multiplechoice').closest(".vert").addClass('frigg-problem-1');
+      $('.frigg-multiplechoice-images').closest(".vert").addClass('frigg-problem-2');
+
+      frigg_container.each(function(){
+        if( $(this).hasClass('frigg-multiple-dark')){
+          $(this).closest('.vert').addClass('frigg-dark');
+        }else{
+          if( $(this).hasClass('frigg-multiple-light')){
+            $(this).closest('.vert').addClass('frigg-light');
+          }
+        }
+      })
+
+      $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
+  }
+
+  function positionLegendProblem(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+    containerProblems.each(function(){
+      $(this).find('.question-description').appendTo($(this).find('.problem legend'));
+      $(this).find('.problem-progress').appendTo($(this).find('.problem legend'));
+      $(this).find('.frigg-problem-header').prependTo($(this).find('.problem legend'));
+      $(this).find('.frigg-description').prependTo($(this).find('fieldset'));
+    })
+   
+  }
+
+  function checkedInput(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+    containerProblems.each(function(){
+      $(this).find('input:checked').closest('label').addClass('frigg-checked');
+      $(this).find('input').change(function(event){
+        $(event.target).closest('label').addClass('frigg-checked');
+      })
+    })
+
+  }
+
+  function checkedOptions(){
+    $('.frigg-problem-1 button.submit').click(function( event ){
+      event.preventDefault();
+      // event.stopPropagation();
+      $('.frigg-problem-1 .problem .field input').parent().css( {"background-color": "#cbcbcb", "color": "#000"});
+      $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
+    });  
+  }
+
+  function messageFeedback(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+    containerProblems.each(function(){
+      $(this).find('.message').appendTo($(this).find('.submit-attempt-container'));
+      $(this).find('.notification-show-answer').appendTo($(this).find('.submit-attempt-container'));
+    })
+  }
+
+  function iconsAction(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+    var buttonReset = $('.frigg-problem-2 .problem-action-buttons-wrapper button.reset'),
+    buttonSave = $('.frigg-problem-2 .problem-action-buttons-wrapper button.save'),
+    buttonHint = $('.frigg-problem-2 .problem-action-buttons-wrapper button.hint-button'),
+    buttonShow = $('.frigg-problem-2 .problem-action-buttons-wrapper button.show');
+
+    
+    buttonReset.html('<span class="icon fa fa-refresh" aria-hidden="true"></span>');    
+    buttonSave.html('<span class="icon fa fa-floppy-o" aria-hidden="true"></span>');
+    buttonHint.html('<span class="icon fa fa-question" aria-hidden="true"></span>');
+    buttonShow.html('<span class="icon fa fa-info-circle" aria-hidden="true"></span>');
+
+    containerProblems.each(function(){
+      $(this).find('button.reset').prependTo($(this).find('.problem-action-buttons-wrapper'));
+      $(this).find('button.save').prependTo($(this).find('.problem-action-buttons-wrapper'));
+    })
+  }
+
+  function activeIcon(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+    containerProblems.each(function(){
+      $(this).find('button.show').click(function(){
+        $(this).addClass('frigg-button-active');
+      })
+    })
+  }
+
+  $(document).ready(function(){    
+      cloneBookmark();
+      classBookmark();
+      studioButton(); 
+      multipleChoiceProblem();   
+      positionLegendProblem();  
+      checkedInput();
+      checkedOptions();
+      messageFeedback();
+      iconsAction();
+      activeIcon();
+      observer2();
   })
+
+  target = $('#seq_content');
+  config = { childList: true };
+  observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if(mutation.addedNodes.length != 0){
+          classBookmark();
+          studioButton(); 
+          multipleChoiceProblem(); 
+          positionLegendProblem();
+          checkedOptions();
+          messageFeedback();
+          iconsAction();
+          checkedInput();
+        }
+    });
+  });
+  observer.observe(target[0], config);
+
+  function observer2(){
+    var containerProblem1 = $('.frigg-problem-1 .problems-wrapper')
+    config2 = {childList: true};
+
+    containerProblem1.each(function () {
+      var target2 = this;
+      var observer2 = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          checkedOptions();
+        });
+      });
+
+      observer2.observe(target2, config2);
+    });
+  }
+
+  
+
 </script>

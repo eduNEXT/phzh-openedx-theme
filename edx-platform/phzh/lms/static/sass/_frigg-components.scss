@@ -122,31 +122,31 @@ img.frigg-center{
 
 /***** Problem elements ***/
 
-.frigg-container-problem {
+.frigg-container-problem.frigg-problem-multiplechoice {
 	padding: 20px;
 
-	.frigg-problem-multiplechoice {
-		.frigg-problem-label {
+	
+	.frigg-problem-label {
+		text-align: center;
+		padding: 10px;
+	}
+
+	.choicegroup fieldset{
+		width: 50%;
+		padding: 10px;
+		margin: 0 auto;
+
+		label{
+			border: none;
 			text-align: center;
-			padding: 10px;
-		}
-
-		.choicegroup fieldset{
-			width: 70%;
-			padding: 10px;
-			margin: 0 auto;
-
-			label{
-				border: none;
-				text-align: center;
-			}
 		}
 	}
+	
 }
 
 /**** General aspect for problems ***/
 
-.frigg-problem{
+.frigg-problem-1{
 	.problem-header{
 		display: none;
 	}
@@ -158,6 +158,11 @@ img.frigg-center{
 	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit{
 		float: none;
 	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label{
+		border-radius: 15px;
+	}
+
 
 	//Show answer and hint buttons
 	.action{
@@ -176,10 +181,22 @@ img.frigg-center{
 		border: none;
 	}
 
+	.xmodule_display.xmodule_CapaModule div.problem .submit-attempt-container .submit{
+		height: 70px;
+		border-radius: 50px;
+		border: none;
+
+		&:hover{
+			background-color: #cbcbcb;
+			border: none;
+		}
+
+	}
+
 }
 
 /***  Feedback  ***/ 
-.frigg-problem{
+.frigg-problem-1{
 	
 	//Feedback message
 	.message{
@@ -191,8 +208,263 @@ img.frigg-center{
 		border: none;
 	}
 
-	.problem .frigg-no-notification .field .status,
+	.problem .frigg-no-notifications .field .status,
 	.problem .frigg-feedback .field label input{
 		display: none;
 	}
+
+	.frigg-no-notifications .explanation-title,
+	.xmodule_display.xmodule_CapaModule .frigg-no-notifications .hint-label{
+		display: none;
+	}
+
+
+}
+
+// color Dark
+.frigg-dark{
+	background: #2a0067;
+	color: #fff;
+
+	.frigg-problem-label label{
+		color: #fff;
+	}
+
+	.field label{
+		background: #cbcbcb;
+	}
+
+	.submit-attempt-container .submit{
+		background: #fff;
+		color: #000;
+
+	}
+} 
+
+// color light
+
+.frigg-light{
+	background: #fff;
+
+	.field label{
+		background: #363636;
+		color: #fff;
+	}
+
+	.submit-attempt-container .submit{
+		background: #eaeaea;
+		color: #000;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.frigg-container-problem.frigg-problem-multiplechoice {
+
+		.choicegroup fieldset{
+			width: 60%;
+		}
+
+		.frigg-problem-label{
+			padding: 20px;
+		}
+	}
+}
+
+/**** Multiple choice with images ****/
+
+.frigg-problem-2{
+
+	.problem-header{
+		display: none;
+	}
+
+	.frigg-multiplechoice-images fieldset{		
+		width: 100%;
+
+		legend{
+			background: #323355;
+			width: 100%;
+			color: #fff;
+			box-sizing: border-box;
+			padding: 20px 30px;
+			font-weight: 600;
+			font-size: 1.1rem;
+
+			.problem-header{
+				color: #fff;
+			}
+
+			.problem-progress{
+				color: #3da9f7;
+				font-size: 0.7em;
+			}
+
+			.frigg-problem-header{
+				color: #fff;
+			}
+		}	
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .question-description{
+		color: #fff;
+		margin: 10px 0;
+		font-size: 0.9rem;
+		font-weight: normal;
+	}
+
+	.frigg-description{
+		padding: 0px 30px;
+		font-size: 0.9rem;
+	}
+
+	.field{
+		img{
+			width: 200px;
+			max-height: 140px;
+			margin-right: 30px
+		}
+
+		label:before{
+			content: "";
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+
+		label.frigg-checked:before{
+			content: url(../images/inputbullet.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label,
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label:hover{
+		border: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup input{
+		display: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit{
+		float: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .submission-feedback{
+		color: #3c3c3c;
+	}
+
+	.problem{
+
+		.submit-attempt-container{
+			text-align: center;
+			width: 100%;
+
+			.submit.btn-brand{
+				border-radius: 50%;
+				height: 80px;
+				width: 85px;
+				padding: 0;
+				background: #007cb8;
+			}
+
+			.submission-feedback{
+				width: 100%;
+			}
+		}
+
+		.capa_alert{
+			display: none;
+		}
+
+		.message{
+			padding: 20px 66px;
+			background: #999;
+			color: #fff;
+			margin-top: 10px;
+
+			.explanation-title{
+				display: none;
+			}
+		}
+
+		.problem-action-buttons-wrapper{
+			width: 100%;
+			text-align: center;
+
+			.hint-button .fa-question:before{
+				content: url("../images/hintInactiv.png");
+			}
+
+			.save .fa-save:before,
+			.save .fa-floppy-o:before{
+				content: url("../images/save.png");
+			}
+
+			.reset{
+				margin: 0 20% 0 25%;
+				.fa-refresh:before{
+					content: url("../images/reset.png");
+				}
+			} 
+
+			.show .fa-info-circle:before{
+				content: url("../images/showAnswerInactiv.png");
+			}
+			.show.frigg-button-active .fa-info-circle:before{
+				content: url("../images/showAnswerActiv.png");
+			}
+
+		} 
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn.reset{
+		margin-right: 20%;
+	} 
+
+	.xmodule_display.xmodule_CapaModule div.problem .notification.general.notification-show-answer{
+		border-top: none;
+		background: #999999;
+		color: #fff;
+
+		span.fa{
+			display: none;
+		}
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup{
+
+		label.choicegroup_correct{
+			border: none;
+
+			.status.correct{
+				display: none;
+			}
+		}
+
+		label.choicegroup_correct:before{
+			content: url(../images/inputAnswer.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #7ac842;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+	} 
+
 }

@@ -24,6 +24,7 @@
 	<!-- for highlight -->
 	<link href="${static.url('libs/shCore.css')}" rel="stylesheet" type="text/css"/>
 	<link href="${static.url('libs/shThemeDefault.css')}" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 	<!-- <link href="https://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css"/> -->
 	<!-- <link href="https://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css"/> -->
@@ -128,153 +129,153 @@
 															<button class="tab1 frigg-header-button">View Live</button>
 															<button class="tab2 frigg-header-button">Code</button>
 															<button class="tab3 frigg-header-button">Instructions</button>
-														</div>
-													</div>			
-
+														</div>	
+													</div>	
 													<div class="frigg-container-component active">
+														<div class="frigg-container-element frigg-back-image">
+
+															<!-- background image -->
+															<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+
+															<div class="frigg-text-container frigg-center frigg-text-center">
+
+																<!-- icon image -->
+																<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
+
+																<!-- vertical spacer -->
+																<div class="frigg-vertical-spacer"></div>
+
+																<!-- first title styles -->
+																<div style="
+																color: #a175ff;
+																font-family: 'Poppins';
+																">
+
+																<!-- caption first title -->
+																Topic 2
+															</div>
+															<div class="frigg-vertical-spacer"></div>
+
+															<!-- second title styles -->
+															<div style="
+															color: #fff;
+															font-family: 'IBM Plex Sans';
+															font-weight: bold;
+															font-size: 30px;
+															">
+
+															<!-- caption second title -->
+															That's important to me, you and us!
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="frigg-source-code">
+												<button class="frigg-copy-button">Copy code</button>
+												<pre class="brush: html">
 													<div class="frigg-container-element frigg-back-image">
 
-																<!-- background image -->
-																<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+														<!-- background image -->
+														<img src="${static.url('images/t2_header.png')}" class="back-image"> 
 
-																<div class="frigg-text-container frigg-center frigg-text-center">
+														<div class="frigg-text-container frigg-center frigg-text-center">
 
-																	<!-- icon image -->
-																	<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
+															<!-- icon image -->
+															<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
 
-																	<!-- vertical spacer -->
-																	<div class="frigg-vertical-spacer"></div>
+															<!-- vertical spacer -->
+															<div class="frigg-vertical-spacer"></div>
 
-																	<!-- first title styles -->
-																	<div style="
-																	color: #a175ff;
-																	font-family: 'Poppins';
-																	">
+															<!-- first title styles -->
+															<div style="
+															color: #a175ff;
+															font-family: 'Poppins';
+															">
 
-																	<!-- caption first title -->
-																	Topic 2
-																	</div>
-																	<div class="frigg-vertical-spacer"></div>
-
-																	<!-- second title styles -->
-																	<div style="
-																	color: #fff;
-																	font-family: 'IBM Plex Sans';
-																	font-weight: bold;
-																	font-size: 30px;
-																	">
-
-																	<!-- caption second title -->
-																	That's important to me, you and us!
-																	</div>
-																</div>
-															</div>
+															<!-- caption first title -->
+															Topic 2
 														</div>
-
-													<div class="frigg-source-code">
-														<button class="frigg-copy-button">Copy code</button>
-														<pre class="brush: html">
-															<div class="frigg-container-element frigg-back-image">
-
-																<!-- background image -->
-																<img src="${static.url('images/t2_header.png')}" class="back-image"> 
-
-																<div class="frigg-text-container frigg-center frigg-text-center">
-
-																	<!-- icon image -->
-																	<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
-
-																	<!-- vertical spacer -->
-																	<div class="frigg-vertical-spacer"></div>
-
-																	<!-- first title styles -->
-																	<div style="
-																	color: #a175ff;
-																	font-family: 'Poppins';
-																	">
-
-																	<!-- caption first title -->
-																	Topic 2
-																	</div>
-																	<div class="frigg-vertical-spacer"></div>
-
-																	<!-- second title styles -->
-																	<div style="
-																	color: #fff;
-																	font-family: 'IBM Plex Sans';
-																	font-weight: bold;
-																	font-size: 30px;
-																	">
-
-																	<!-- caption second title -->
-																	That's important to me, you and us!
-																	</div>
-																</div>
-															</div>
-												</pre>
-											</div>
-
-											<div class="frigg-instructions-element">
-												<h3>Images</h3>
-												<p>This component has two images, one for the background and other for the icon. The src attribute specifies the URL of the image.</p>
-												<pre class="brush: html">
-														<img src="/static/images/t2_header.png"> 			
-													</pre>
-												<h3>Vertical Spacer</h3>
-												<p>This element represent a vertical space of 15px</p>
-												<pre class="brush: html">
 														<div class="frigg-vertical-spacer"></div>
-													</pre>
-												<h3>Text</h3>
-												<p>The text styles are defined inside the attribute "style" of the element:</p>
-												<pre class="brush: html">
-														<div style=" "></div>
-													</pre>
-												<p>The properties that can be changed are:</p>
-												<h4>Font family</h4>
-													<p>The following rule specify the font. These are the google fonts selected</p>
-													<pre class="brush: css">
-														font-family: 'Poppins';
+
+														<!-- second title styles -->
+														<div style="
+														color: #fff;
 														font-family: 'IBM Plex Sans';
-														font-family: 'IBM Plex Sans Condensed';
-														font-family: 'Roboto';
-														font-family: 'Roboto Slab';
-														font-family: 'Roboto Condensed';
-														font-family: 'Source Sans Pro';
-													</pre>
+														font-weight: bold;
+														font-size: 30px;
+														">
 
-													<h4>Color</h4>
-													<p>The following rule specify the text color</p>
-													<pre class="brush: css">
-														color: #f5f5f5; 			/* Hexadecimal color */
-														color: rgb(245, 245, 245); 			 /* RGB color */ 
-													</pre>
-
-													<h4>Font style</h4>
-													<p>The following rule specify the italic font</p>
-													<pre class="brush: css">
-														font-style: italic; 		
-													</pre>
-
-													<h4>Font bold</h4>
-													<p>The following rule specify the bold font</p>
-													<pre class="brush: css">
-														font-weight: bold; 		
-													</pre>
-
-													<h4>Font size</h4>
-													<p>The following rule specify the size font</p>
-													<pre class="brush: css">
-														font-size: 25px; 		
-													</pre>
-
+														<!-- caption second title -->
+														That's important to me, you and us!
+													</div>
+												</div>
 											</div>
-										</div>
+										</pre>
+									</div>
 
-										<div class="vert">
-											<div class="frigg-header-element">
-												<h2>E2 Simple Text</h2>
-												<div class="tabs">
+									<div class="frigg-instructions-element">
+										<h3>Images</h3>
+										<p>This component consists of two images, one to modify the background and another to modify the icon. The src attribute specifies the URL of the image.</p>
+										<pre class="brush: html">
+											<img src="/static/images/t2_header.png"> 			
+										</pre>
+										<h3>Vertical Spacer</h3>
+										<p>This element applies a vertical space of 15px</p>
+										<pre class="brush: html">
+											<div class="frigg-vertical-spacer"></div>
+										</pre>
+										<h3>Text</h3>
+										<p>The text styles are defined by the "style" attriute of the element:</p>
+										<pre class="brush: html">
+											<div style=" "></div>
+										</pre>
+										<p>The following properties can be changed:</p>
+										<h4>Font family</h4>
+										<p>This rule specifies the font for this section. The selected google fonts are:</p>
+										<pre class="brush: css">
+											font-family: 'Poppins';
+											font-family: 'IBM Plex Sans';
+											font-family: 'IBM Plex Sans Condensed';
+											font-family: 'Roboto';
+											font-family: 'Roboto Slab';
+											font-family: 'Roboto Condensed';
+											font-family: 'Source Sans Pro';
+										</pre>
+
+										<h4>Color</h4>
+										<p>The following rule specifies the text color</p>
+										<pre class="brush: css">
+											color: #f5f5f5; 			/* Hexadecimal color */
+											color: rgb(245, 245, 245); 			 /* RGB color */ 
+										</pre>
+
+										<h4>Font style</h4>
+										<p>The following rule specifies the italic font</p>
+										<pre class="brush: css">
+											font-style: italic; 		
+										</pre>
+
+										<h4>Font bold</h4>
+										<p>The following rule defines the bold font</p>
+										<pre class="brush: css">
+											font-weight: bold; 		
+										</pre>
+
+										<h4>Font size</h4>
+										<p>The following rule specifies the font size</p>
+										<pre class="brush: css">
+											font-size: 25px; 		
+										</pre>
+
+									</div>
+
+								</div>
+
+								<div class="vert">
+									<div class="frigg-header-element">
+										<h2>E2 Simple Text</h2>
+										<div class="tabs">
 													<button class="tab1 frigg-header-button">View Live</button>
 													<button class="tab2 frigg-header-button">Code</button>
 													<button class="tab3 frigg-header-button">Instructions</button>
@@ -311,13 +312,13 @@
 									</div>	
 									<div class="frigg-instructions-element">
 										<h3>Text</h3>
-												<p>The text styles are defined inside the attribute "style" of the element:</p>
+												<p>The text styles are defined by the "style" attribute of the element:</p>
 												<pre class="brush: html">
 														<div style=" "></div>
 													</pre>
-												<p>The properties that can be changed are:</p>
+												<p>The following properties can be changed:</p>
 												<h4>Font family</h4>
-													<p>The following rule specify the font. These are the google fonts selected</p>
+													<p>The following rule specifies the font. The selected google fonts are:</p>
 													<pre class="brush: css">
 														font-family: 'Poppins';
 														font-family: 'IBM Plex Sans';
@@ -329,45 +330,46 @@
 													</pre>
 
 													<h4>Color</h4>
-													<p>The following rule specify the text color</p>
+													<p>The following rule specifies the text color</p>
 													<pre class="brush: css">
 														color: #f5f5f5; 			/* Hexadecimal color */
 														color: rgb(245, 245, 245); 			 /* RGB color */ 
 													</pre>
 
 													<h4>Font style</h4>
-													<p>The following rule specify the italic font</p>
+													<p>The following rule defines the italic font</p>
 													<pre class="brush: css">
 														font-style: italic; 		
 													</pre>
 
 													<h4>Font bold</h4>
-													<p>The following rule specify the bold font</p>
+													<p>The following rule defines the bold font</p>
 													<pre class="brush: css">
 														font-weight: bold; 		
 													</pre>
 
-													<h4>Background</h4>
-													<p>The following rule specify the element background</p>
-													<pre class="brush: css">
-														background: #f5f5f5; 			/* Hexadecimal color */
-														background: rgb(245, 245, 245); 			 /* RGB color */ 
-													</pre>
-
 													<h4>Font size</h4>
-													<p>The following rule specify the size font</p>
+													<p>The following rule specifies the size font</p>
 													<pre class="brush: css">
 														font-size: 25px; 		
 													</pre>
 
 													<h4>Text-align</h4>
-													<p>The following rule specify the text alignment. This has four options:</p>
+													<p>The following rule specifies the text alignment. This has four options:</p>
 													<pre class="brush: css">
 														text-align: center;
 														text-align: left;
 														text-align: right;
 														text-align: justify;		
 													</pre>
+
+													<h4>Background</h4>
+													<p>The following rule defines the background for the E2 simple text element.</p>
+													<pre class="brush: css">
+														background: #f5f5f5; 			/* Hexadecimal color */
+														background: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
 									</div>											
 								</div>
 
@@ -506,19 +508,19 @@
 
 					<div class="frigg-instructions-element">
 						<h3>Image</h3>
-						<p>This component has four images, one for the icon and others are the same for the bullet. The src attribute specifies the URL of the image. For ocurrancy, the bullet image doesn't have margin.</p>
+						<p>This component consists of four images, the main image for the icon and the others three for the bullet points. The src attribute specifies the URL of the image. The bullet point image does not have a margin.</p>
 						<pre class="brush: html">
 							<img src="/static/images/t2_header.png"> 			
 						</pre>
 
 						<h3>Text</h3>
-						<p>The text styles are defined inside the attribute "style" of the element:</p>
+						<p>The text styles are defined by the "style" attribute of the element:</p>
 						<pre class="brush: html">
 							<div style=" "></div>
 						</pre>
-						<p>The properties that can be changed are:</p>
+						<p>The following properties can be changed:</p>
 						<h4>Font family</h4>
-						<p>The following rule specify the font. These are the google fonts selected</p>
+						<p>The following rule specifies the font. The selected google fonts are:</p>
 						<pre class="brush: css">
 							font-family: 'Poppins';
 							font-family: 'IBM Plex Sans';
@@ -530,32 +532,32 @@
 						</pre>
 
 						<h4>Color</h4>
-						<p>The following rule specify the text color</p>
+						<p>The following rule specifies the text color</p>
 						<pre class="brush: css">
 							color: #f5f5f5; 			/* Hexadecimal color */
 							color: rgb(245, 245, 245); 			 /* RGB color */ 
 						</pre>
 
 						<h4>Font style</h4>
-						<p>The following rule specify the italic font</p>
+						<p>The following rule defines the italic font</p>
 						<pre class="brush: css">
 							font-style: italic; 		
 						</pre>
 
 						<h4>Font bold</h4>
-						<p>The following rule specify the bold font</p>
+						<p>The following rule defines the bold font</p>
 						<pre class="brush: css">
 							font-weight: bold; 		
 						</pre>
 
 						<h4>Font size</h4>
-						<p>The following rule specify the size font</p>
+						<p>The following rule specifies the font size</p>
 						<pre class="brush: css">
 							font-size: 25px; 		
 						</pre>
 
 						<h4>Text-align</h4>
-						<p>The following rule specify the text alignment. This has four options:</p>
+						<p>The following rule specifies the text alignment. There are four options:</p>
 						<pre class="brush: css">
 							text-align: center;
 							text-align: left;
@@ -564,7 +566,7 @@
 						</pre>
 
 						<h4>Background</h4>
-						<p>The following rule specify the element background</p>
+						<p>The following rule defines the background for the E3 Instructional Text element.</p>
 						<pre class="brush: css">
 							background: #f5f5f5; 			/* Hexadecimal color */
 							background: rgb(245, 245, 245); 			 /* RGB color */ 
@@ -696,13 +698,13 @@
 					</div>
 					<div class="frigg-instructions-element">
 						<h3>Image</h3>
-						<p>This component has three images, one for the background and others for the two icons. The src attribute specifies the URL of the image. The width of the image can be defined in the element with the attribute style. To delete the space between the icon and text, you can change the property padding, depend on the position of the text it could be padding-bottom or padding-top</p>
+						<p>This component consists of three images, one image to define the background and the other two images to define the icons. The src attribute specifies the URL of the image. You can define the width of the image using the element with the style attribute(style="width: 50px;). To delete the space between the icon and text, you can change the padding property. Depending on the position of the text, it could be either padding-bottom or padding-top.</p>
 						<pre class="brush: html">
 							<img src="/static/images/t2_header.png" style="width: 50px; padding-bottom: 0;"> 			
 						</pre>
 
 						<h3>Vertical Spacer</h3>
-												<p>This element represent a vertical space of 15px</p>
+												<p>This element applies a vertical space of 15px.</p>
 												<pre class="brush: html">
 														<div class="frigg-vertical-spacer"></div>
 													</pre>
@@ -713,7 +715,7 @@
 													</pre>
 												<p>The properties that can be changed are:</p>
 												<h4>Font family</h4>
-													<p>The following rule specify the font. These are the google fonts selected</p>
+													<p>The following rule specifies the font. The selected google fonts are:</p>
 													<pre class="brush: css">
 														font-family: 'Poppins';
 														font-family: 'IBM Plex Sans';
@@ -725,26 +727,26 @@
 													</pre>
 
 													<h4>Color</h4>
-													<p>The following rule specify the text color</p>
+													<p>The following rule specifies the text color</p>
 													<pre class="brush: css">
 														color: #f5f5f5; 			/* Hexadecimal color */
 														color: rgb(245, 245, 245); 			 /* RGB color */ 
 													</pre>
 
 													<h4>Font style</h4>
-													<p>The following rule specify the italic font</p>
+													<p>The following rule defines the italic font</p>
 													<pre class="brush: css">
 														font-style: italic; 		
 													</pre>
 
 													<h4>Font bold</h4>
-													<p>The following rule specify the bold font</p>
+													<p>The following rule defines the bold font</p>
 													<pre class="brush: css">
 														font-weight: bold; 		
 													</pre>
 
 													<h4>Font size</h4>
-													<p>The following rule specify the size font</p>
+													<p>The following rule specifies the font size</p>
 													<pre class="brush: css">
 														font-size: 25px; 		
 													</pre>
@@ -811,19 +813,19 @@
 
 						<div class="frigg-instructions-element">
 							<h3>Image</h3>
-							<p>This component has one image for the background. The src attribute specifies the URL of the image.</p>
+							<p>This component has one image to define the background. The src attribute specifies the URL of the image.</p>
 							<pre class="brush: html">
 								<img src="/static/images/t2_header.png"> 			
 							</pre>
 
 							<h3>Text</h3>
-							<p>The text styles are defined inside the attribute "style" of the element:</p>
+							<p>The text styles are defined by the "style" attriute of the element:</p>
 							<pre class="brush: html">
 								<div style=" "></div>
 							</pre>
-							<p>The properties that can be changed are:</p>
+							<p>The following properties can be changed:</p>
 							<h4>Font family</h4>
-							<p>The following rule specify the font. These are the google fonts selected</p>
+							<p>The following rule specifies the font. The selected google fonts are:</p>
 							<pre class="brush: css">
 								font-family: 'Poppins';
 								font-family: 'IBM Plex Sans';
@@ -835,64 +837,64 @@
 							</pre>
 
 							<h4>Color</h4>
-							<p>The following rule specify the text color</p>
+							<p>The following rule specifies the text color</p>
 							<pre class="brush: css">
 								color: #f5f5f5; 			/* Hexadecimal color */
 								color: rgb(245, 245, 245); 			 /* RGB color */ 
 							</pre>
 
 							<h4>Font style</h4>
-							<p>The following rule specify the italic font</p>
+							<p>The following rule defines the italic font</p>
 							<pre class="brush: css">
 								font-style: italic; 		
 							</pre>
 
 							<h4>Font bold</h4>
-							<p>The following rule specify the bold font</p>
+							<p>The following rule defines the bold font</p>
 							<pre class="brush: css">
 								font-weight: bold; 		
 							</pre>
 
 							<h4>Font size</h4>
-							<p>The following rule specify the size font</p>
+							<p>The following rule specifies the font size</p>
 							<pre class="brush: css">
 								font-size: 25px; 		
 							</pre>
 
 							<h3>Position Text</h3>
-							<p>To change the position text you can edit the div with the class frigg-text-container. Text in the top and aling left</p>
+							<p>To change the text position, you can edit the div tag using the Frigg-text-container class. You can place the text at the top and align it along the left.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-left frigg-title-top">
 							</pre>
-							<p>Text in the top and align center</p>
+							<p>To place the text at the top and align it along the center.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-center frigg-title-top">
 							</pre>
-							<p>Text in the top an align right</p>
+							<p>To place the text at the top and align it along the right.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-right frigg-title-top">
 							</pre>
-							<p>Text in the center an align left</p>
+							<p>To place the text in the center and align it along the left.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-left frigg-title-center">
 							</pre>
-							<p>Text in the center an align center</p>
+							<p>To place the text in the center and align it along the center.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-center frigg-title-center">
 							</pre>
-							<p>Text in the center an align right</p>
+							<p>To place the text in the center and align it along the right.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-right frigg-title-center">
 							</pre>
-							<p>Text in the bottom an align left</p>
+							<p>To place the text at the bottom and align it along the left.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-left frigg-title-bottom">
 							</pre>
-							<p>Text in the bottom an align center</p>
+							<p>To place the text at the bottom and align it along the center.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-center frigg-title-bottom">
 							</pre>
-							<p>Text in the bottom an align right</p>
+							<p>To place the text at the bottom and align it to the right.</p>
 							<pre class="brush: html">
 								<div class="frigg-text-container frigg-right frigg-title-bottom">
 							</pre>
@@ -1025,19 +1027,19 @@
 
 <div class="frigg-instructions-element">
 						<h3>Image</h3>
-						<p>This component has one image for the icon. The src attribute specifies the URL of the image.</p>
+						<p>This component has one image to define the icon. The src attribute specifies the URL of the image.</p>
 						<pre class="brush: html">
 							<img src="/static/images/t2_header.png"> 			
 						</pre>
 
 						<h3>Text</h3>
-						<p>The text styles are defined inside the attribute "style" of the element:</p>
+						<p>The text styles are defined by the "style" attribute of the element:</p>
 						<pre class="brush: html">
 							<div style=" "></div>
 						</pre>
-						<p>The properties that can be changed are:</p>
+						<p>The following properties can be changed:</p>
 						<h4>Font family</h4>
-						<p>The following rule specify the font. These are the google fonts selected</p>
+						<p>The following rule specifies the font. The selected google fonts are:</p>
 						<pre class="brush: css">
 							font-family: 'Poppins';
 							font-family: 'IBM Plex Sans';
@@ -1049,32 +1051,32 @@
 						</pre>
 
 						<h4>Color</h4>
-						<p>The following rule specify the text color</p>
+						<p>The following rule specifies the text color</p>
 						<pre class="brush: css">
 							color: #f5f5f5; 			/* Hexadecimal color */
 							color: rgb(245, 245, 245); 			 /* RGB color */ 
 						</pre>
 
 						<h4>Font style</h4>
-						<p>The following rule specify the italic font</p>
+						<p>The following rule specifies the italic font</p>
 						<pre class="brush: css">
 							font-style: italic; 		
 						</pre>
 
 						<h4>Font bold</h4>
-						<p>The following rule specify the bold font</p>
+						<p>The following rule defines the bold font</p>
 						<pre class="brush: css">
 							font-weight: bold; 		
 						</pre>
 
 						<h4>Font size</h4>
-						<p>The following rule specify the size font</p>
+						<p>The following rule specifies the font size</p>
 						<pre class="brush: css">
 							font-size: 25px; 		
 						</pre>
 
 						<h4>Text-align</h4>
-						<p>The following rule specify the text alignment. This has four options:</p>
+						<p>The following rule specifies the text alignment. There are four options:</p>
 						<pre class="brush: css">
 							text-align: center;
 							text-align: left;
@@ -1083,7 +1085,7 @@
 						</pre>
 
 						<h4>Background</h4>
-						<p>The following rule specify the element background</p>
+						<p>The following rule defines the background for the E6 task element.</p>
 						<pre class="brush: css">
 							background: #f5f5f5; 			/* Hexadecimal color */
 							background: rgb(245, 245, 245); 			 /* RGB color */ 
@@ -1127,7 +1129,7 @@
 
 	<div class="frigg-instructions-element">
 		<h3>Image</h3>
-		<p>This component has one image. The src attribute specifies the URL of the image. The border can be defined in the element with the attribute style.</p>
+		<p>This component has one unique image. The src attribute specifies the URL for the image. The border can be defined by the element with the style attribute.</p>
 		<pre class="brush: html">
 			<img src="/static/images/t2_header.png" style="
 			padding: 50px;
@@ -1142,6 +1144,37 @@
 			padding-left: 50px;
 			"> 			
 		</pre>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active">
+	<div class="frigg-container-element frigg-image-border" style="
+			padding: 50px;
+			">
+
+			</div>
+		</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		
 	</div>
 
 </div>
@@ -1161,10 +1194,11 @@
 </div>
 </div>
 
-<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
 <script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shCore.js"></script>
 <script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushXml.js"></script>
 <script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushCss.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js""></script>
 
 <script type="text/javascript">
 	SyntaxHighlighter.defaults['toolbar'] = false;

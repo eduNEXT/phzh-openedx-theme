@@ -14,29 +14,33 @@ html body .window-wrap {
 }
 
 .wrapper-header .course-header{
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
- }
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
 
 /**** Nav content ****/
 .course-material .navbar-collapse {
 	display: none;
-    background: none;
-    border: none;
-    font-size: 1.7rem;
-    padding-left: 25px;
-    transition: ease 0.2s all;
-    color: $color-blue;
+	background: none;
+	border: none;
+	font-size: 1.7rem;
+	padding-left: 25px;
+	transition: ease 0.2s all;
+	color: $color-blue;
 
-    &:hover{
-    	background: none;
-    }
+	&:hover{
+		background: none;
+	}
 
-    &:active,
-    &:focus{
-    	box-shadow: none;
-    }
+	&:active,
+	&:focus{
+		box-shadow: none;
+	}
+
+	.fa-bars:before{
+		content: url('../images/icon_menu.png');
+	}
 }
 
 .courseware.wrapper-course-material{
@@ -56,8 +60,8 @@ html body .window-wrap {
 .collapse-open{
 	background: #fff;
 	border-radius: 4px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
-    border: 1px solid #c8c8c8;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+	border: 1px solid #c8c8c8;
 }
 
 .window-wrap .course-wrapper .course-content .vert-mod{
@@ -66,13 +70,13 @@ html body .window-wrap {
 
 /***** Course content *****/
 html body.view-in-course .container{
-		padding: 0;
-	}
+	padding: 0;
+}
 
 .window-wrap{
 
 	.course-content .page-header{
-	display: none;
+		display: none;
 	}
 
 	.content-wrapper .page-header{
@@ -105,21 +109,28 @@ html body.view-in-course .container{
 	.bookmark-button{
 		font-size: 1.7rem;
 		float: right;
-		padding: 20px 20px 8px 20px;
+		padding: 12px 20px 8px 20px;
 		font-weight: 100;
 		color: $color-blue;
 
 		&:hover,
 		&:focus{
-			border-bottom: 3px solid;
+			// border-bottom: 3px solid;
 			text-decoration: none !important;
 			color: $color-blue;
 		}
-    	
 
 		span{
 			display: none;
 		}
+	}
+
+	.course-content .bookmark-button.bookmarked:before{
+		content: url('../images/bookmarkActive.png');
+	}
+
+	.course-content .bookmark-button:before{
+		content: url('../images/bookmarkInactive.png');
 	}
 
 	.sequence-bottom .bookmark-button{
@@ -159,7 +170,9 @@ html body.view-in-course .container{
 			min-width: 80px;
 
 			&:hover{
-				border-bottom: 3px solid #0075b4;
+				// border-bottom: 3px solid #0075b4;
+				padding-top: 0px;
+
 			}
 		}
 	}
@@ -200,101 +213,101 @@ html body.view-in-course .container{
 		.dashboard .my-courses .course .details{
 
 			.course-title a{
-			font-size: 25px;
-			line-height: 25px;
+				font-size: 25px;
+				line-height: 25px;
 			}
 			.wrapper-course-image{
 				width: 100%;
 
 				.cover{
-				margin: 20px;
+					margin: 20px;
 
-				.course-image{
-				height: 120px;
-				width: 180px;
+					.course-image{
+						height: 120px;
+						width: 180px;
 					}
 				} 
 			} 
 
 			.wrapper-course-details{
-			float: none;
-			width: 100%;
+				float: none;
+				width: 100%;
 			}
 
 		}
 
-		 .course-info .course-sidebar header .social-sharing{
-		 	height: 70px;
-		 }
+		.course-info .course-sidebar header .social-sharing{
+			height: 70px;
+		}
 
-		 .course-info{
+		.course-info{
 
-		 	.container{
-		 		padding: 25px;
-		 	}
+			.container{
+				padding: 25px;
+			}
 
-		 	.details {
-		 		width: 100%;
-		 	}
+			.details {
+				width: 100%;
+			}
 
-		 	 .course-sidebar{
-		 	width: 100%;
-		 	padding: 10px;
-		 	} 
+			.course-sidebar{
+				width: 100%;
+				padding: 10px;
+			} 
 
-		 	header.course-profile{
-		 		padding-top: 70px;
-		 		height: 500px;
+			header.course-profile{
+				padding-top: 70px;
+				height: 500px;
 
-		 		.intro-inner-wrapper{
-		 			margin: 25px;
+				.intro-inner-wrapper{
+					margin: 25px;
 
-		 			.intro{
-			 		display: block;
-			 		width: 100%;
-			 		}
+					.intro{
+						display: block;
+						width: 100%;
+					}
 
-			 		.media{
-			 		display: block;
-			 		width: 100%;
-			 		text-align: center;
+					.media{
+						display: block;
+						width: 100%;
+						text-align: center;
 
-			 			.hero{
-			 				width: 70%;
-			 			}
-			 		}
+						.hero{
+							width: 70%;
+						}
+					}
 
-		 		} 
-		 	} 
-		 }
+				} 
+			} 
+		}
 
-		 .wrapper-account-settings .account-settings-container{
-		 	padding: 20px;
-		 }
+		.wrapper-account-settings .account-settings-container{
+			padding: 20px;
+		}
 
-		 .account-settings-sections .section .account-settings-section-body .u-field{
-		 	width: 100%;
+		.account-settings-sections .section .account-settings-section-body .u-field{
+			width: 100%;
 
-		 	.field{
-		 		width: 100%;
-		 	}
+			.field{
+				width: 100%;
+			}
 
-		 	.u-field-message{
-		 		width: 100%;
-		 		padding: 10px 0;
-		 	}
-		 }
+			.u-field-message{
+				width: 100%;
+				padding: 10px 0;
+			}
+		}
 
 		 /*** Discusion ***/
-	    .discussion-body .home-helpgrid .helpgrid-row {
-	        display: flex;
-	        flex-flow: column;
+		 .discussion-body .home-helpgrid .helpgrid-row {
+		 	display: flex;
+		 	flex-flow: column;
 
-	      .row-item {
-	        width: 100%;
-	        padding: 10px;
-	      }
-	    }
+		 	.row-item {
+		 		width: 100%;
+		 		padding: 10px;
+		 	}
+		 }
 
 	    /**** Content search ***/
 	    .page-header-search{
@@ -319,8 +332,8 @@ html body.view-in-course .container{
 
 	    	.action-resume-course{
 	    		width: 95%;
-			    text-align: center;
-			    margin-top: 15px;
+	    		text-align: center;
+	    		margin-top: 15px;
 	    	}
 	    }
 
@@ -336,8 +349,8 @@ html body.view-in-course .container{
 			min-width: 0;
 
 			.search-responsive {
-			width: 90%;
-			float: none;
+				width: 90%;
+				float: none;
 			}
 
 			.my-courses{
@@ -350,7 +363,7 @@ html body.view-in-course .container{
 	.view-in-course.view-course-info .window-wrap {
 		min-width: 70px;
 	}
-		
+
 }
 
 /****** Responsive - PHZH ****/
@@ -361,7 +374,7 @@ html body.view-in-course .container{
 		.wrapper-header {
 			.user .user-dropdown-menu .menu-dropdown-show,
 			.user-menu .dropdown-menu .menu-dropdown-show {
-			display: block
+				display: block
 			}
 			
 			.menu-nav-hidden {
@@ -374,9 +387,9 @@ html body.view-in-course .container{
 
 			.wrapper-course-material.courseware{				
 				position: absolute;
-			    left: 0;
-			    top: 0;
-			    width: 100%;
+				left: 0;
+				top: 0;
+				width: 100%;
 			}
 
 		}
@@ -385,7 +398,7 @@ html body.view-in-course .container{
 			padding: 10px 0 0 0;
 
 			.navbar-collapse {
-			display: block;
+				display: block;
 			}
 
 			.course-tabs{
