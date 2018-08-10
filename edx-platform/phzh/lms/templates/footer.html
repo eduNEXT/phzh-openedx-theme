@@ -74,15 +74,6 @@
       % endif
     >
       <div class="colophon">
-        <nav class="nav-colophon" aria-label="${_('About')}">
-          <ol>
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-              <li class="nav-colophon-0${item_num}">
-                <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-              </li>
-              % endfor
-          </ol>
-        </nav>
 
         % if context.get('include_language_selector', footer_language_selector_is_enabled()):
             <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
@@ -105,6 +96,23 @@
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
         <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
+
+        <nav class="nav-colophon" aria-label="${_('About')}">
+          <ol>
+              <li class="nav-colophon-01">
+                <a id="about" href="/about">${_('About')}</a>
+              </li>
+              <li class="nav-colophon-02">
+                <a id="privacy" href="/privacy">${_('Privacy Policy')}</a>
+              </li>
+              <li class="nav-colophon-03">
+                <a id="tos" href="/tos">${_('Terms of service')}</a>
+              </li>
+              <li class="nav-colophon-04}">
+                <a id="faq" href="/faq">${_('FAQ')}</a>
+              </li>
+          </ol>
+        </nav>
 
         <nav class="nav-legal" aria-label="${_('Legal')}">
           <ul>
@@ -231,26 +239,28 @@
       $(this).find('input:checked').closest('label').addClass('frigg-checked');
       $(this).find('input').change(function(event){
         $(event.target).closest('label').addClass('frigg-checked');
+        findImage();
       })
     })
 
   }
 
   function checkedOptions(){
-    $('.frigg-problem-1 button.submit').click(function( event ){
-      event.preventDefault();
-      // event.stopPropagation();
-      $('.frigg-problem-1 .problem .field input').parent().css( {"background-color": "#cbcbcb", "color": "#000"});
-      $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
-    });  
-  }
+   $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
 
-  function messageFeedback(){
+ }
+
+  function messages(){
     var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
 
     containerProblems.each(function(){
       $(this).find('.message').appendTo($(this).find('.submit-attempt-container'));
       $(this).find('.notification-show-answer').appendTo($(this).find('.submit-attempt-container'));
+      $(this).find('.notification.problem-hint').appendTo($(this).find('.submit-attempt-container'));
+      $(this).find('.notification.warning').appendTo($(this).find('.submit-attempt-container'));
+      $(this).find('.notification.success').appendTo($(this).find('.submit-attempt-container'));
+      $(this).find('.notification.error').appendTo($(this).find('.submit-attempt-container'));
+
     })
   }
 
@@ -282,6 +292,14 @@
     })
   }
 
+  function findImage(){
+    var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+    containerProblems.each(function(){
+      $(this).find('.field label').has('img').addClass('label-with-images');
+    })
+  }
+
   $(document).ready(function(){    
       cloneBookmark();
       classBookmark();
@@ -290,11 +308,13 @@
       positionLegendProblem();  
       checkedInput();
       checkedOptions();
-      messageFeedback();
+      messages();
       iconsAction();
       activeIcon();
       observer2();
-  })
+      observer3();
+      findImage();
+    })
 
   target = $('#seq_content');
   config = { childList: true };
@@ -306,9 +326,12 @@
           multipleChoiceProblem(); 
           positionLegendProblem();
           checkedOptions();
-          messageFeedback();
+          messages();
           iconsAction();
           checkedInput();
+          observer2();
+          observer3();
+          findImage();
         }
     });
   });
@@ -327,6 +350,26 @@
       });
 
       observer2.observe(target2, config2);
+    });
+  }
+
+  function observer3(){
+    var containerProblem2 = $('.frigg-problem-2 .problems-wrapper')
+    var config3 = {childList: true};
+
+    containerProblem2.each(function () {
+      var target3 = this;
+      var observer3 = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          positionLegendProblem();
+          messages();
+          iconsAction();
+          checkedInput()
+          findImage();
+        });
+      });
+
+      observer3.observe(target3, config3);
     });
   }
 
