@@ -101,8 +101,19 @@
 		box-shadow: none;
 	}
 
-	
+	.frigg-dark{
+		background: #fff;
+		color: #000;
+	}
 
+	.frigg-container-component.frigg-show-problem .frigg-container-element{
+		display: none;
+	}
+
+	.frigg-container-component.frigg-show-problem img{
+		margin: 0 auto;
+		display: block;
+	}
 
 </style>
 
@@ -135,12 +146,12 @@
 														<div class="frigg-container-element frigg-back-image">
 
 															<!-- background image -->
-															<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+															<img src="${static.url('images/frigg-components/t2_header.png')}" class="back-image"> 
 
 															<div class="frigg-text-container frigg-center frigg-text-center">
 
 																<!-- icon image -->
-																<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
+																<img class="frigg-icon" src="${static.url('images/frigg-components/icon_t2.png')}">
 
 																<!-- vertical spacer -->
 																<div class="frigg-vertical-spacer"></div>
@@ -391,7 +402,7 @@
 										<div class="frigg-text-container">
 
 											<!-- icon image -->
-											<img class="frigg-icon frigg-center " src="${static.url('images/icon_t2_u3.png')}">
+											<img class="frigg-icon frigg-center " src="${static.url('images/frigg-components/icon_t2_u3.png')}">
 
 											<!-- title styles -->
 											<div class="frigg-title" style="
@@ -411,7 +422,7 @@
 													<!-- first item list-->
 													<li>
 														<!-- bullet image -->
-														<img src="${static.url('images/bullet.png')}">
+														<img src="${static.url('images/frigg-components/bullet.png')}">
 
 														<!-- caption item list -->
 														 I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules
@@ -419,13 +430,13 @@
 
 													<!-- second item list -->
 													<li>
-														<img src="${static.url('images/bullet.png')}"> 
+														<img src="${static.url('images/frigg-components/bullet.png')}"> 
 														I can take part in a discussion by stating my point of view and giving reasons.
 													</li>
 
 													<!-- third item list -->
 													<li>
-														<img src="${static.url('images/bullet.png')}"> 
+														<img src="${static.url('images/frigg-components/bullet.png')}"> 
 														I am able to change my perspective and view a problem from another point of view
 													</li>
 												</ul>
@@ -588,12 +599,12 @@
 						<div class="frigg-container-element frigg-back-image">
 
 									<!-- background image -->
-									<img src="${static.url('images/t2_u3_s2_header.png')}" class="back-image">
+									<img src="${static.url('images/frigg-components/t2_u3_s2_header.png')}" class="back-image">
 
 									<div class="frigg-text-container frigg-center frigg-text-center">
 
 										<!-- first icon image -->
-										<img class="frigg-icon" src="${static.url('images/icon_t2_u3.png')}">
+										<img class="frigg-icon" src="${static.url('images/frigg-components/icon_t2_u3.png')}">
 
 										<div class="frigg-vertical-spacer"></div>
 
@@ -621,7 +632,7 @@
 										</div>
 
 										<!-- second image title -->
-										<img class="frigg-icon" src="${static.url('images/icon_time.png')}" style="
+										<img class="frigg-icon" src="${static.url('images/frigg-components/icon_time.png')}" style="
 										width: 50px;
 										padding-bottom: 0;
 										">
@@ -769,7 +780,7 @@
 						<div class="frigg-container-element frigg-back-image">
 
 									<!-- background image -->
-									<img src="${static.url('images/t2_u3_s2_pic1.png')}" class="back-image"> 
+									<img src="${static.url('images/frigg-components/t2_u3_s2_pic1.png')}" class="back-image"> 
 									<div class="frigg-text-container frigg-left frigg-title-top">
 
 										<!-- title styles -->
@@ -921,7 +932,7 @@
 						<div class="frigg-text-container">
 
 							<!-- icon image -->
-							<img class="frigg-icon frigg-center " src="${static.url('images/icon_alone.png')}">
+							<img class="frigg-icon frigg-center " src="${static.url('images/frigg-components/icon_alone.png')}">
 
 							<!-- title styles -->
 							<div class="frigg-center" style="
@@ -1110,7 +1121,7 @@
 			">
 
 				<!-- url image -->
-				<img src="${static.url('images/t2_u3_s2_pic2.png')}"> 
+				<img src="${static.url('images/frigg-components/t2_u3_s2_pic2.png')}"> 
 			</div>
 		</div>
 
@@ -1150,7 +1161,7 @@
 
 <div class="vert">	
 	<div class="frigg-header-element">
-		<h2>P1 Multiple choice simplified</h2>
+		<h2>P1 Multiple choice simplified - Dark background</h2>
 		<div class="tabs">
 			<button class="tab1 frigg-header-button">View Live</button>
 			<button class="tab2 frigg-header-button">Code</button>
@@ -1158,23 +1169,567 @@
 		</div>
 	</div>														
 
-	<div class="frigg-container-component active">
-	<div class="frigg-container-element frigg-image-border" style="
-			padding: 50px;
-			">
-
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-dark-1.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
 			</div>
+
 		</div>
+	</div>
 
 	<div class="frigg-source-code">
 		<button class="frigg-copy-button">Copy code</button>
 		<pre class="brush: html">
-			
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+
+				<label>Add the question text, or prompt, here. This text is required.</label>
+
+				  </div>
+				<choicegroup type="MultipleChoice">
+
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
 		</pre>
 	</div>	
 
 	<div class="frigg-instructions-element">
-		
+		<p>This is the multiple choice problem simplified with dark background and doesn't show correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - light background</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-light-1.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-problem-multiplechoice">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				  
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				 
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+				</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-problem-multiplechoice">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with light background and doesn't show correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - dark background with notifications</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-dark-2.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				  
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				    
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				  
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				    
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				 
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with dark background and shows correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - dark background with notifications</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-light-2.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with light background and shows correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with images</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-1.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				<problem>
+				  <multiplechoiceresponse>
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+				    <choicegroup type="MultipleChoice">
+				     
+				      <choice correct="true"><img src="/static/avestruz.png"/>the correct answer<choicehint>Well done! !</choicehint></choice>
+				      
+				      <choice correct="false"><img src="/static/castor.jpeg" alt="castor"/>an incorrect answer<choicehint>Feedback </choicehint></choice>
+				      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted</choicehint></choice>
+
+				      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>an incorrect answer <choicehint>This is a feedback</choicehint> </choice>
+
+				    </choicegroup>
+				  </multiplechoiceresponse>
+				  <demandhint>
+
+				    <hint>This is hint 1</hint>
+				    <hint>This is hint 2</hint>
+				    <hint>This is hint 3</hint>
+
+				  </demandhint>
+				</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				<problem>
+				  <multiplechoiceresponse>
+				     
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+				    
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+				    
+				    <choicegroup type="MultipleChoice">
+				      
+				      <choice correct="true"><img src="/static/avestruz.png"/>the correct answer<choicehint>Well done! !</choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/castor.jpeg" alt="castor"/>an incorrect answer<choicehint>Feedback </choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted</choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>an incorrect answer <choicehint>This is a feedback</choicehint> </choice>
+				   
+				    </choicegroup>
+				  </multiplechoiceresponse>
+				  <demandhint>
+				    
+				    <hint>This is hint 1</hint>
+				    <hint>This is hint 2</hint>
+				    <hint>This is hint 3</hint>
+				 
+				  </demandhint>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with images, the src attribute specifies the URL for the image.  <p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with images partially correct</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-2.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+			<problem>
+			  <multiplechoiceresponse partial_credit="points">
+			      <label>Add the question text, or prompt, here. THis text is required</label>
+
+			    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+			    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+			    <choicegroup type="MultipleChoice">
+			      
+			      <choice correct="true"><img src="/static/avestruz.png"/>Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+			      
+			      <choice correct="partial" point_value="0.5"><img src="/static/castor.jpeg" alt="castor"/>Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+			     
+			      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+			      
+			      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>Another picture <choicehint>Think once again...</choicehint> </choice>
+			    </choicegroup>
+			  
+			  </multiplechoiceresponse>
+			  <demandhint>
+			    
+			    <hint>This is hint 1</hint>
+			    <hint>This is hint 2</hint>
+			    <hint>This is hint 3</hint>
+			  
+			  </demandhint>
+			</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+			<problem>
+			  <multiplechoiceresponse partial_credit="points">
+			     
+			      <label>Add the question text, or prompt, here. THis text is required</label>
+			    
+			    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+			    
+			    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+			    
+			    <choicegroup type="MultipleChoice">
+			     
+			      <choice correct="true"><img src="/static/avestruz.png"/>Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+			      
+			      <choice correct="partial" point_value="0.5"><img src="/static/castor.jpeg" alt="castor"/>Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+			      
+			      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+			     
+			      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>Another picture <choicehint>Think once again...</choicehint> </choice>
+			    
+			    </choicegroup>
+			  </multiplechoiceresponse>
+			  <demandhint>
+			   
+			    <hint>This is hint 1</hint>
+			    <hint>This is hint 2</hint>
+			   
+			    <hint>This is hint 3</hint>
+			  </demandhint>
+			</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with images partially correct, the src attribute specifies the URL for the image.  <p>
+	</div>
+
+</div>
+
+div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with only text</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-3.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+
+				<problem>
+				  <multiplechoiceresponse>
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+				    <choicegroup type="MultipleChoice">
+
+				      <choice correct="true">Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+				      
+				      <choice correct="false">Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+				      
+				      <choice correct="false">Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+				      
+				      <choice correct="false">Another pictur.. i found out, that in multiple choice problems only one answer may be submitted not like checkboxes <choicehint>Think once again...</choicehint> </choice>
+				    </choicegroup>
+				  </multiplechoiceresponse>
+
+				</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				
+				<problem>
+				  
+				  <multiplechoiceresponse>
+				     
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+				    
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+				   
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+				   
+				    <choicegroup type="MultipleChoice">
+				     
+				      <choice correct="true">Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+				     
+				      <choice correct="false">Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+				     
+				      <choice correct="false">Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+				    
+				      <choice correct="false">Another pictur.. i found out, that in multiple choice problems only one answer may be submitted not like checkboxes <choicehint>Think once again...</choicehint> </choice>
+				    </choicegroup>
+				  
+				  </multiplechoiceresponse>
+
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with only text. <p>
 	</div>
 
 </div>
