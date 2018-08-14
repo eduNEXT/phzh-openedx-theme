@@ -3,7 +3,7 @@
 	position: relative;
 
 	.back-image{
-		min-height: 400px;
+		min-height: 500px;
 	}
 
 	.frigg-text-container{
@@ -32,11 +32,13 @@
 
 .frigg-paragraph{
 	padding: 20px 15%;
+	line-height: 1.6;
+	font-size: 1.3rem;
 }
 
 .frigg-title{
 	font-weight: 800;
-	font-size: 20px;
+	font-size: 1.6rem;
 }
 
 .frigg-center{
@@ -191,6 +193,11 @@ img.frigg-center{
 			border: none;
 		}
 
+	}
+
+	.field label.frigg-checked{
+		background-color: #307cff;
+		color: #fff;
 	}
 
 }

@@ -124,37 +124,41 @@
               </li>
           </ul>
         </nav>
+
+        ## Please leave this link and use one of the logos provided
+        ## The OpenEdX link may be hidden when this view is served
+        ## through an API to partner sites (such as marketing sites or blogs),
+        ## which are not technically powered by OpenEdX.
+        % if not hide_openedx_link:
+        <div class="footer-about-openedx">
+          <section class="social-feed">
+            <a href="/" target="_blank">
+              <span class="icon fa fa-linkedin" aria-hidden="true"></span>
+            </a>
+            <a href="/" target="_blank">
+              <span class="icon fa fa-twitter" aria-hidden="true"></span>
+            </a>
+            <a href="/" target="_blank">
+              <span class="icon fa fa-facebook" aria-hidden="true"></span>
+            </a>
+            <a href="/" target="_blank">
+              <span class="icon fa fa-youtube" aria-hidden="true"></span>
+            </a>
+          </section>
+          <div class="footer-logo-edx">
+            <p>
+              <a href="${footer['openedx_link']['url']}">
+                <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+              </a>
+            </p>
+          </div>
+        </div>
+        % endif
+
+
       </div>
 
-      ## Please leave this link and use one of the logos provided
-      ## The OpenEdX link may be hidden when this view is served
-      ## through an API to partner sites (such as marketing sites or blogs),
-      ## which are not technically powered by OpenEdX.
-      % if not hide_openedx_link:
-      <div class="footer-about-openedx">
-        <section class="social-feed">
-          <a href="/" target="_blank">
-            <span class="icon fa fa-linkedin" aria-hidden="true"></span>
-          </a>
-          <a href="/" target="_blank">
-            <span class="icon fa fa-twitter" aria-hidden="true"></span>
-          </a>
-          <a href="/" target="_blank">
-            <span class="icon fa fa-facebook" aria-hidden="true"></span>
-          </a>
-          <a href="/" target="_blank">
-            <span class="icon fa fa-youtube" aria-hidden="true"></span>
-          </a>
-       </section>
-            <div class="footer-logo-edx">
-              <p>
-                <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
-                </a>
-              </p>
-            </div>
-      </div>
-      % endif
+      
     </footer>
   </div>
 % endif
@@ -217,7 +221,6 @@
         }
       })
 
-      $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
   }
 
   function positionLegendProblem(){
@@ -246,7 +249,16 @@
   }
 
   function checkedOptions(){
-   $('.frigg-problem-1 .problem .field input:checked').parent().css( {"background-color": "#307cff", "color": "#fff"});
+    var containerProblems = $('.frigg-problem-multiplechoice').closest('.vert');
+
+    containerProblems.each(function(){
+      $(this).find('input:checked').closest('label').addClass('frigg-checked');
+      $(this).find('input').change(function(event){
+        $(event.target).closest('label').siblings().removeClass('frigg-checked')
+        $(event.target).closest('label').addClass('frigg-checked');
+        
+      })
+    })
 
  }
 
