@@ -27,7 +27,7 @@ html body .window-wrap {
 	font-size: 1.7rem;
 	padding-left: 15px;
 	padding-top: 10px;
-	transition: ease 0.2s all;
+	transition: all 0.2s ease;
 	color: $color-blue;
 
 	&:hover{
@@ -459,7 +459,7 @@ body .wrapper-footer{
 
 			.collapse-open{
 				display: grid;
-				transition: ease 0.3s all;
+				transition: all 0.2s ease;
 			}
 		}
 
@@ -498,6 +498,10 @@ body .wrapper-footer{
 		.discussion-module{
 			text-align: center;
 			// padding: 30px 30px 50px 30px;
+
+			.discussion-article{
+				position: static;
+			}
 
 			.discussion-module-header{
 				width: 100%;
@@ -604,11 +608,144 @@ body .wrapper-footer{
 
 						.forum-nav-thread-wrapper-1{
 							margin-left: 15px;
+							max-width: calc(100% - 75px);
 
 							.forum-nav-thread-title{
 								font-weight: bold;
 							}
 						}
+
+						.forum-nav-thread-wrapper-2{
+							align-self: self-start;
+							min-width: 35px;
+						}
+
+						.forum-nav-thread-labels{
+							text-align: right;
+
+							li{
+								color: #414141;
+
+								span{
+									color: #007db8;
+								}
+							}
+						}
+
+						.forum-nav-thread-comments-count{
+							background-color: #fff;
+							border: 1px solid #000;
+							min-width: 1.3em;
+						}
+
+						.forum-nav-thread-comments-count:after{
+							border-right-color: #000;
+						}
+					}
+
+					.forum-nav-thread-link{
+						transition: all 0.2s ease;
+					}
+
+					.forum-nav-thread-link:hover{
+						background-color: #ccc;
+
+						.forum-nav-thread-comments-count{
+							background-color: #ccc;
+						}
+					}
+
+					.inline-thread{
+						border: none;
+						border-top:  2px solid #999;
+						margin: 0 25px;
+						text-align: left;
+						position: relative;
+
+						.forum-nav-bar{
+							padding: 10px 0;
+							width: 50%;
+						}
+
+						.post-header-actions{
+							position: absolute;
+							top: 0;
+							right: 0;
+						}
+
+						.forum-content{
+							padding: 10px 0;
+						}
+
+						.response-actions-list .actions-item,
+						.post-header-actions .actions-item{
+							display: inline-block;
+						}
+
+						.post-title{
+							font-weight: bold;
+						}
+
+						button.action-vote .action-icon{
+							border-radius: 50%;
+							border: 1.5px solid #999;
+						}
+
+						.action-button.action-vote.is-checked .action-icon,
+						.action-button.action-vote:hover .action-icon,
+						.action-button.action-vote:focus .action-icon{
+							color: #498351;
+							background: #fff;
+							border-color: #498351;
+						}
+
+						.action-button.action-answer.is-checked .action-icon,
+						.action-button.action-answer:hover .action-icon,
+						.action-button.action-answer:focus .action-icon{
+							background: #fff;
+							color: #498351;
+						}
+
+						.action-button.action-follow.is-checked .action-icon,
+						.action-button.action-follow:hover .action-icon,
+						.action-button.action-follow:focus .action-icon{
+							background: #fff;
+							color: #007db8;
+						}
+
+						.action-button.action-endorse.is-checked .action-icon,
+						.action-button.action-endorse:hover .action-icon,
+						.action-button.action-endorse:focus .action-icon{
+							background: #fff;
+							color: #007db8;
+						}
+
+						.forum-response{
+							border: none;
+							box-shadow: none;
+							border-radius: 0;
+						}
+
+						.discussion-response{
+							border-left: 1px solid #007db8;
+						}
+
+						.comments{
+							background: #fff;
+							box-shadow: none;
+						}
+
+						.comments >	li{
+							border: none;
+							border-left: 1px solid #007db8;
+							margin: 15px 25px;
+						}
+
+						.comments .new-comment{
+							border: none;
+							margin: 0;
+						}
+						
 					}
 				}
 
@@ -664,7 +801,7 @@ body .wrapper-footer{
 						}
 					}
 
-					.forum-new-post-form div:last-child{
+					div.post-options + div{
 						text-align: center;
 
 						button{
@@ -696,9 +833,13 @@ body .wrapper-footer{
 					}
 				}
 			}
+
+			.discussion .action-button .action-icon{
+				border: none;
+			}
 		}
 	}
-}
+}	
 
 /*** Responsive Discussion ***/
 
