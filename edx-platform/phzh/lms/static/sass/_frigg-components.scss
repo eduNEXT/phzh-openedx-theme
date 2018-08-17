@@ -68,6 +68,22 @@ img.frigg-center{
 
 .course-wrapper .course-content .vert-mod .frigg-list ul{
 	list-style-type: none;
+
+	li{
+		display: flex;
+		align-items: baseline;
+
+		img{
+			margin: 0 10px 0 0;
+			display: inline-flex;
+			height: 100%;
+		}
+
+		span{
+			display: inline-block;
+			line-height: 1.5
+		}
+	}
 }
 
 .back-image{
@@ -183,10 +199,22 @@ img.frigg-center{
 		border: none;
 	}
 
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label{
+		font-weight: bold;
+		font-family: 'Poppins';
+		font-size: 1.2rem;
+		letter-spacing: .5px;
+	}
+
 	.xmodule_display.xmodule_CapaModule div.problem .submit-attempt-container .submit{
 		height: 70px;
-		border-radius: 50px;
 		border: none;
+		transition: all 0.2s ease;
+		width: 74px;
+		padding: 0;
+		color: #3c3c3c;
+		border-radius: 40%;
+		font-weight: bold;
 
 		&:hover{
 			background-color: #cbcbcb;
@@ -198,6 +226,24 @@ img.frigg-center{
 	.field label.frigg-checked{
 		background-color: #307cff;
 		color: #fff;
+	}
+
+	.frigg-problem-label{
+		margin-bottom: 30px;
+
+		label{
+			font-weight: bold;
+			font-size: 1.5rem;
+			font-family: 'IBM Plex Sans';
+		}
+	}
+
+	.hint-text,
+	.hint-label{
+		font-style: italic;
+		font-weight: bold;
+		font-size: 1.3rem;
+		font-family: 'IBM Plex Sans';
 	}
 
 }
@@ -221,7 +267,7 @@ img.frigg-center{
 		display: none;
 	}
 
-	.frigg-no-notifications .explanation-title,
+	.explanation-title,
 	.xmodule_display.xmodule_CapaModule .frigg-no-notifications .hint-label{
 		display: none;
 	}
@@ -244,8 +290,12 @@ img.frigg-center{
 
 	.submit-attempt-container .submit{
 		background: #fff;
-		color: #000;
+		color: #3c3c3c;
 
+	}
+
+	.hint-text{
+		color: #fff;
 	}
 } 
 
@@ -261,7 +311,12 @@ img.frigg-center{
 
 	.submit-attempt-container .submit{
 		background: #eaeaea;
-		color: #000;
+		color: #3c3c3c;
+	}
+
+	.hint-text,
+	.hint-label{
+		color: #169dff;
 	}
 }
 
@@ -296,7 +351,7 @@ img.frigg-center{
 			box-sizing: border-box;
 			padding: 20px 30px;
 			font-weight: 600;
-			font-size: 1.1rem;
+			font-size: 1.5rem;
 
 			.problem-header{
 				color: #fff;
@@ -316,13 +371,13 @@ img.frigg-center{
 	.xmodule_display.xmodule_CapaModule div.problem .question-description{
 		color: #fff;
 		margin: 10px 0;
-		font-size: 0.9rem;
+		font-size: 1.2rem;
 		font-weight: normal;
 	}
 
 	.frigg-description{
 		padding: 0px 30px;
-		font-size: 0.9rem;
+		font-size: 1.2rem;
 	}
 
 	.field{
@@ -341,6 +396,9 @@ img.frigg-center{
 			background: #f2f2f2;
 			border-radius: 50%;
 			vertical-align: middle;
+			position: absolute;
+			left: 22px;
+			top: 0;
 		}
 
 		label.label-with-images:before{
@@ -352,6 +410,9 @@ img.frigg-center{
 			background: #f2f2f2;
 			border-radius: 50%;
 			position: absolute;
+			top: auto;
+			left: 36px;
+			z-index: 2;
 		}
 
 
@@ -364,6 +425,9 @@ img.frigg-center{
 			background: #f2f2f2;
 			border-radius: 50%;
 			vertical-align: middle;
+			position: absolute;
+			left: 22px;
+			top: 0;
 		}
 
 		label.frigg-checked.label-with-images:before{
@@ -375,6 +439,9 @@ img.frigg-center{
 			background: #f2f2f2;
 			border-radius: 50%;
 			position: absolute;
+			left: 36px;
+			top: auto;
+			z-index: 2;
 		}
 
 	}
@@ -384,17 +451,53 @@ img.frigg-center{
 		border: none;
 	}
 
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label{
+		padding-left: 67px;
+		font-size: 1.2rem;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label.label-with-images{
+		height: 150px;
+		padding-left: 265px;
+
+		img{
+			position: absolute;
+			left: 36px;
+		}
+
+	}
+
 	.xmodule_display.xmodule_CapaModule div.problem .choicegroup input{
 		display: none;
 	}
 
 	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit{
 		float: none;
+		font-size: 1.2rem;
 	}
 
 	.xmodule_display.xmodule_CapaModule div.problem .action .submission-feedback{
 		color: #3c3c3c;
+		font-size: 1.2rem;
 	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .message,
+	.xmodule_display.xmodule_CapaModule div.problem .notification{
+		font-size: 1.2rem;
+	}
+
+	.problem-action-buttons-wrapper button:hover{
+		border-color: #b2b2b2;
+	}
+
+	.problem-action-buttons-wrapper button:disabled{
+		border: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .problem-action-button-wrapper{
+		border: none;
+	}
+
 
 	.problem{
 
@@ -425,7 +528,8 @@ img.frigg-center{
 			color: #fff;
 			margin-top: 10px;
 
-			.explanation-title{
+			.explanation-title,
+			.hint-label{
 				display: none;
 			}
 		}
@@ -509,6 +613,9 @@ img.frigg-center{
 			background: #7ac842;
 			border-radius: 50%;
 			vertical-align: middle;
+			position: absolute;
+			left: 22px;
+			top: 0;
 		}
 
 		label.choicegroup_correct.label-with-images:before{
@@ -520,6 +627,9 @@ img.frigg-center{
 			background: #7ac842;
 			border-radius: 50%;
 			position: absolute;
+			left: 36px;
+			top: auto;
+			z-index: 2;
 		}
 
 
@@ -532,6 +642,9 @@ img.frigg-center{
 			background: #ff1a27;
 			border-radius: 50%;
 			vertical-align: middle;
+			position: absolute;
+			left: 22px;
+			top: 0;
 		}
 
 		label.choicegroup_incorrect.label-with-images:before{
@@ -543,6 +656,9 @@ img.frigg-center{
 			background: #ff1a27;
 			border-radius: 50%;
 			position: absolute;
+			left: 36px;
+			top: auto;
+			z-index: 2;
 		}
 
 		label.choicegroup_partially-correct:before{
@@ -554,6 +670,9 @@ img.frigg-center{
 			background: #fcee20;
 			border-radius: 50%;
 			vertical-align: middle;
+			position: absolute;
+			left: 22px;
+			top: 0;
 		}
 
 		label.choicegroup_partially-correct.label-with-images:before{
@@ -565,6 +684,9 @@ img.frigg-center{
 			background: #fcee20;
 			border-radius: 50%;
 			position: absolute;
+			left: 36px;
+			top: auto;
+			z-index: 2;
 		}
 
 	} 

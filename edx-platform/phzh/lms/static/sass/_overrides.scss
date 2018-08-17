@@ -69,6 +69,18 @@ html body .window-wrap {
 	padding-top: 75px;
 }
 
+.content-wrapper{
+	position: relative;
+
+	.wrapper-course-material.courseware{				
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+
+}
+
 /***** Course content *****/
 html body.view-in-course .container{
 	padding: 0;
@@ -211,6 +223,11 @@ html body.view-in-course .container{
 	.studio-view a{
 		position: relative;
 		z-index: 3;
+	}
+
+	.xmodule_display.xmodule_VideoModule .video{
+		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -420,6 +437,21 @@ body .wrapper-footer{
 
 /****** Responsive - PHZH ****/
 
+@media only screen and (max-width: 860px){
+	.window-wrap{
+
+		.course-material{
+			.course-tabs{
+				display: none;
+			}
+
+			.navbar-collapse {
+				display: block;
+			}
+		} 
+	} 
+} 
+
 @media only screen and (max-width: 768px) {
 	.window-wrap {
 
@@ -434,28 +466,8 @@ body .wrapper-footer{
 			}
 		}
 
-		.content-wrapper{
-			position: relative;
-
-			.wrapper-course-material.courseware{				
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-			}
-
-		}
-
 		.course-material {
 			padding: 10px 0 0 0;
-
-			.navbar-collapse {
-				display: block;
-			}
-
-			.course-tabs{
-				display: none;
-			}
 
 			.collapse-open{
 				display: grid;
@@ -489,7 +501,7 @@ body .wrapper-footer{
 
 }
 
-/***** Discussion *****/
+/***** Inline Discussion *****/
 
 .window-wrap{
 	.discussion-container{
@@ -745,6 +757,23 @@ body .wrapper-footer{
 							border: none;
 							margin: 0;
 						}
+
+						.reply-post-control{
+							text-align: center;
+
+							.discussion-submit-post{
+								word-wrap: break-word;
+								background: #007db8;
+								color: #fff;
+								border-radius: 50%;
+								width: 90px;
+								height: 90px;
+								white-space: initial;
+								font-size: 1rem;
+								padding: 5px;
+								transition: all 0.2s ease;
+							}
+						}
 						
 					}
 				}
@@ -841,7 +870,7 @@ body .wrapper-footer{
 	}
 }	
 
-/*** Responsive Discussion ***/
+/*** Responsive inline Discussion ***/
 
 @media only screen and (max-width: 768px){
 	.window-wrap{
@@ -851,6 +880,257 @@ body .wrapper-footer{
 				width: 100%;
 			}
 
+		}
+	}
+}
+
+/*** Discussion ***/
+
+.window-wrap .discussion-board{
+
+	.new-post-article{
+		border: none;
+		text-align: left;
+
+		.forum-new-post-form{
+			padding: 20px 35px;
+
+			.thread-title{
+				color: #1b1464;
+				font-size: 1.4rem;
+			}
+
+			.field-help{
+				font-size: 0.9rem;
+			}
+
+			.post-type-label input,
+			.post-type-label .field-input-label span.icon{
+				display: none;
+			}
+
+			.post-type-label .field-input-label:before{
+				content: "";
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				margin: 5px;
+				background: #f2f2f2;
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+
+			.field-label .post-type-label .field-input:checked+.field-input-label{
+				color: #2f2f2f;
+			}
+
+			.field-label .post-type-label .field-input:checked+.field-input-label:before{
+				content: url(../images/inputbullet.png);
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				margin: 5px;
+				background: #f2f2f2;
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+
+			.field-label-text{
+				font-weight: bold;
+			}
+		}
+
+		div.post-options + div{
+			text-align: center;
+
+			button{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				padding: 0;
+				margin: 0 10px;
+				border: none;
+
+				&.submit{
+					background-color: #007db8;
+
+					&:hover{
+						background-color: #036fbd !important;
+					}
+				}
+
+				&.cancel{
+					background-color: #cccbcb;
+					color: #f2f2f2;
+
+					&:hover{
+						background-color: #afafaf !important;
+					}
+				}
+			}
+
+
+
+			.forum-new-post-form .post-field .field-label .field-input,
+			.forum-new-post-form .post-field .field-label .js-post-title{
+				width: 100%;
+			}
+		}
+
+	}
+
+	.discussion-thread-list-container{
+		.forum-nav-refine-bar{
+			background-color: #fff;
+			border: none;
+			font-weight: bold;
+		}
+
+		.forum-nav-thread-list{
+			text-align: left;
+
+			.fa-comments:before{
+				content: url("../images/discussion-inactive.png");
+			}
+
+			.fa-question:before{
+				content: url("../images/question-inactive.png");
+			}
+
+			.fa-check-square-o:before{
+				content: url("../images/answer-active.png");
+			}
+
+			.forum-nav-thread-wrapper-1{
+				margin-left: 15px;
+				max-width: calc(100% - 75px);
+
+				.forum-nav-thread-title{
+					font-weight: bold;
+				}
+			}
+
+			.forum-nav-thread-wrapper-2{
+				align-self: self-start;
+				min-width: 35px;
+			}
+
+			.forum-nav-thread-labels{
+				text-align: right;
+
+				li{
+					color: #414141;
+
+					span{
+						color: #007db8;
+					}
+				}
+			}
+
+			.forum-nav-thread-comments-count{
+				background-color: #fff;
+				border: 1px solid #000;
+			}
+
+			.forum-nav-thread-comments-count:after{
+				border-right-color: #000;
+			}
+		}
+
+		.forum-nav-thread-link{
+			transition: all 0.2s ease;
+		}
+
+		.forum-nav-thread-link:hover{
+			background-color: #ccc;
+
+			.forum-nav-thread-comments-count{
+				background-color: #ccc;
+			}
+		}
+	}
+
+	.forum-content{
+		.response-actions-list .actions-item,
+		.post-header-actions .actions-item{
+			display: inline-block;
+		}
+
+		button.action-vote .action-icon{
+			border-radius: 50%;
+			border: 1.5px solid #999;
+		}
+
+		.action-button.action-vote.is-checked .action-icon,
+		.action-button.action-vote:hover .action-icon,
+		.action-button.action-vote:focus .action-icon{
+			color: #498351;
+			background: #fff;
+			border-color: #498351;
+		}
+
+		.action-button.action-answer.is-checked .action-icon,
+		.action-button.action-answer:hover .action-icon,
+		.action-button.action-answer:focus .action-icon{
+			background: #fff;
+			color: #498351;
+		}
+
+		.action-button.action-follow.is-checked .action-icon,
+		.action-button.action-follow:hover .action-icon,
+		.action-button.action-follow:focus .action-icon{
+			background: #fff;
+			color: #007db8;
+		}
+
+		.action-button.action-endorse.is-checked .action-icon,
+		.action-button.action-endorse:hover .action-icon,
+		.action-button.action-endorse:focus .action-icon{
+			background: #fff;
+			color: #007db8;
+		}
+
+		.forum-response{
+			border: none;
+			box-shadow: none;
+			border-radius: 0;
+		}
+
+		.discussion-response{
+			border-left: 1px solid #007db8;
+		}
+
+		.comments{
+			background: #fff;
+			box-shadow: none;
+		}
+
+		.comments >	li{
+			border: none;
+			border-left: 1px solid #007db8;
+			margin: 15px 25px;
+		}
+
+		.comments .new-comment{
+			border: none;
+			margin: 0;
+		}
+
+		.reply-post-control{
+			text-align: center;
+
+			.discussion-submit-post{
+				word-wrap: break-word;
+				background: #007db8;
+				color: #fff;
+				border-radius: 50%;
+				width: 90px;
+				height: 90px;
+				white-space: initial;
+				font-size: 1rem;
+				padding: 5px;
+				transition: all 0.2s ease;
+			}
 		}
 	}
 }
