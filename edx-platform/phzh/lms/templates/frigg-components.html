@@ -1796,21 +1796,25 @@
 		$(".frigg-copy-button").click(function(){
 			// var code = $(this).closest(".vert").find('.frigg-container-component');
 			var code;
+			var el, serializer, str;
 			var containerComponent = $(this).closest(".vert");
 
 			if( containerComponent.children('.frigg-show-problem').toArray().length != 0 ){
-				code = containerComponent.find('.frigg-container-component .frigg-container-element');
-				// console.log(code.html().text());
+				code = containerComponent.find('.frigg-container-component .frigg-container-problem');
+				serializer = new XMLSerializer ();
+				str = serializer.serializeToString (code[0]);
+				el = document.createElement('textarea');
+				el.value = str.replace(/^\s+/mg, "");
+				el.value = el.value.replace('xmlns="http://www.w3.org/1999/xhtml"','')
+
 			}else{
 				code = containerComponent.find('.frigg-container-component');
+				el = document.createElement('textarea');
+				el.value = code.html().replace(/^\s+/mg, "");
 			}
-
-			var el = document.createElement('textarea');
-			
-			el.value = code.html().replace(/^\s+/mg, "");
+				
 			document.body.appendChild(el);
 			el.select();
-			// console.log(el.value)
 			document.execCommand("copy");
 			document.body.removeChild(el);
 
