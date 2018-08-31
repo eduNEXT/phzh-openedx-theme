@@ -142,6 +142,11 @@ img.frigg-center {
 	.frigg-paragraph {
 		padding: 20px 5%;
 	}
+
+	.frigg-text-container{
+		left: 5%;
+		width: 90%;
+	}
 }
 
 @media only screen and (max-width: 576px){
@@ -197,6 +202,8 @@ img.frigg-center {
 
 	//Show answer and hint buttons
 	.action {
+		padding: 0 20px;
+		
 		.submit-attempt-container {
 			text-align: center;
 		}

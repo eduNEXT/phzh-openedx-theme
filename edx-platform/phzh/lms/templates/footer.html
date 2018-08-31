@@ -184,6 +184,21 @@
   var bookmark_bottom = '.sequence-bottom .bookmark-button';
   var target, config, callback, observer, target2, config2, callback2, observer2;
 
+  function collapseMenu(){
+   var collapse_element = '<button class="navbar-collapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>';
+   var list_element = $('.course-material ol');
+   $('.course-material').prepend(collapse_element);
+
+        // click event collapse menu    
+        $('.navbar-collapse').click(function(){
+          if( list_element.hasClass('collapse-open')){
+            list_element.removeClass('collapse-open');
+          }else{
+            list_element.addClass('collapse-open');
+          }
+        })
+      }
+
   function classBookmark(){
       $(bookmark_top).on('click', function(){
         if( $(bookmark_top).hasClass('bookmarked')){
@@ -312,22 +327,24 @@
     })
   }
 
-  $(document).ready(function(){    
-      cloneBookmark();
-      classBookmark();
-      studioButton(); 
-      multipleChoiceProblem();   
-      positionLegendProblem();  
-      checkedInput();
-      checkedOptions();
-      messages();
-      iconsAction();
-      activeIcon();
-      observer2();
-      observer3();
-      findImage();
-      addClassDiscussion();
-    })
+  $(document).ready(function(){  
+    collapseMenu();  
+    cloneBookmark();
+    classBookmark();
+    studioButton(); 
+    multipleChoiceProblem();   
+    positionLegendProblem();  
+    checkedInput();
+    checkedOptions();
+    messages();
+    iconsAction();
+    activeIcon();
+    observer2();
+    observer3();
+    findImage();
+    addClassDiscussion();
+
+  })
 
   target = $('#seq_content');
   config = { childList: true };
