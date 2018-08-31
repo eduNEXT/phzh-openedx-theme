@@ -174,6 +174,12 @@
 			.navbar-collapse {
 				display: block;
 			}
+
+			.collapse-open {
+				display: grid;
+				transition: all 0.2s ease;
+				margin-top: 10px;
+			}
 		} 
 	} 
 } 
@@ -193,11 +199,6 @@
 
 		.course-material {
 			padding: 10px 0 0 0;
-
-			.collapse-open {
-				display: grid;
-				transition: all 0.2s ease;
-			}
 		}
 
 		.xmodule_display.xmodule_SequenceModule nav.sequence-bottom  .bookmark-button {
@@ -234,6 +235,14 @@
 				width: 100%;
 			}
 
+		}
+	}
+}
+
+@media only screen and (max-width: 576px){
+	.window-wrap {
+		.discussion-container .discussion-module .discussion-module-header .inline-discussion-topic {
+			font-size: 1rem !important;
 		}
 	}
 }

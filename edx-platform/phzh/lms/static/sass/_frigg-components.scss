@@ -14,15 +14,20 @@
 
 	.frigg-text-center {
 		width: 40%;
-		left: 30%;
-		right: 30%;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		// left: 30%;
+		// right: 30%;
 	}
 }
 
 .frigg-text-container {
 	position: relative;
-	left: 15%;
+	// left: 15%;
 	width: 70%;
+	left: 0;
+	margin: 0 auto;
 
 	.frigg-paragraph {
 		padding: 20px 0;
@@ -144,7 +149,9 @@ img.frigg-center {
 	}
 
 	.frigg-text-container{
-		left: 5%;
+		// left: 5%;
+		left: 0;
+		margin: 0 auto;
 		width: 90%;
 	}
 }
@@ -202,8 +209,6 @@ img.frigg-center {
 
 	//Show answer and hint buttons
 	.action {
-		padding: 0 20px;
-		
 		.submit-attempt-container {
 			text-align: center;
 		}
@@ -291,6 +296,21 @@ img.frigg-center {
 		display: none;
 	}
 
+	.xmodule_display.xmodule_CapaModule div.problem .action {
+		width: auto;
+		max-width: 100%;
+
+		.submit-attempt-container {
+			.submit {
+				margin-right: 0;
+			}
+
+			.submission-feedback {
+				display: none;
+			}
+		} 
+	}
+
 
 }
 
@@ -358,8 +378,15 @@ img.frigg-center {
 		}
 	}
 
-	.frigg-container-problem.frigg-problem-multiplechoice .choicegroup fieldset{
+	.frigg-container-problem.frigg-problem-multiplechoice .choicegroup fieldset {
 		width: 70%;
+	}
+
+	.frigg-back-image .frigg-text-center {
+		width: 90%;
+		// left: 7%;
+		// right: 7%;
+
 	}
 }
 
