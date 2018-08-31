@@ -1,5 +1,9 @@
 
-$color-blue:#23a2ff;
+$color-blue: #23A2FF;
+$white: #FFF;
+
+@import 'responsive';
+@import 'discussion-overrides';
 
 html body.view-in-course .window-wrap,
 html body .window-wrap {
@@ -9,11 +13,11 @@ html body .window-wrap {
 
 /***** Header ***/
 .wrapper-header .user .user-dropdown-menu .menu-dropdown-show,
-.wrapper-header .user-menu .dropdown-menu .menu-dropdown-show{
+.wrapper-header .user-menu .dropdown-menu .menu-dropdown-show {
 	display: none;
 }
 
-.wrapper-header .course-header{
+.wrapper-header .course-header {
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow: ellipsis;
@@ -26,1111 +30,248 @@ html body .window-wrap {
 	border: none;
 	font-size: 1.7rem;
 	padding-left: 15px;
-	padding-top: 10px;
+	padding-top: 15px;
 	transition: all 0.2s ease;
 	color: $color-blue;
 
-	&:hover{
+	&:hover {
 		background: none;
 	}
 
 	&:active,
-	&:focus{
+	&:focus {
 		box-shadow: none;
 	}
 
-	.fa-bars:before{
-		content: url('../images/icon_menu.png');
+	.fa-bars:before {
+		content: url(../images/Hamburger.svg);
+		display: block;
+		width: 26px;
+		height: 26px;
 	}
 }
 
-.courseware.wrapper-course-material{
+.courseware.wrapper-course-material {
 	z-index: 2;
 	margin-bottom: -50px;
 	position: relative;
 
-	.course-material{
+	.course-material {
 		padding: 0;
-
 	}
 }
 
-.course-material{
-	background: #fff;
+.course-material {
+	background: $white;
 }
-.collapse-open{
-	background: #fff;
+.collapse-open {
+	background: $white;
 	border-radius: 4px;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
 	border: 1px solid #c8c8c8;
 }
 
-.window-wrap .course-wrapper .course-content .vert-mod{
+.window-wrap .course-wrapper .course-content .vert-mod {
 	padding-top: 75px;
 }
 
-.content-wrapper{
+.content-wrapper {
 	position: relative;
 
-	.wrapper-course-material.courseware{				
+	.wrapper-course-material.courseware {				
 		position: absolute;
 		left: 0;
 		top: 0;
 		width: 100%;
 	}
-
 }
 
 /***** Course content *****/
-html body.view-in-course .container{
+
+html body.view-in-course .container {
 	padding: 0;
 }
 
-.window-wrap{
-
-	.course-content .page-header{
+.window-wrap {
+	.course-content .page-header {
 		display: none;
 	}
 
-	.content-wrapper .page-header{
+	.content-wrapper .page-header {
 		padding-top: 60px;
 	}
 
-	.sequence-list-wrapper{
+	.sequence-list-wrapper {
 		display: none;
 	}
 
-	.course-wrapper{
+	.course-wrapper {
 		border: none;
 	}
 
-	.unit-title{
+	.unit-title {
 		display: none;
 	}
 
-	#main{
+	#main {
 		padding: 0;
 
 	}
 
-	.course-content .bookmark-button-wrapper{
+	.course-content .bookmark-button-wrapper {
 		margin:0;
 		z-index: 3;
 		position: relative;
 	}
 
-	.bookmark-button{
+	.bookmark-button {
 		font-size: 1.7rem;
 		float: right;
-		padding: 21px 50px 8px 20px;
+		padding: 23px 0px 8px 20px;
 		font-weight: 100;
 		color: $color-blue;
 
 		&:hover,
-		&:focus{
+		&:focus {
 			// border-bottom: 3px solid;
 			text-decoration: none !important;
 			color: $color-blue;
 		}
 
-		span{
+		span {
 			display: none;
 		}
 	}
 
-	.course-content .bookmark-button.bookmarked:before{
-		content: url('../images/bookmarkActive.png');
+	.course-content .bookmark-button.bookmarked:before {
+		content: url(../images/icon_bookmark_activ.svg);
+		display: block;
+		width: 33px;
+		height: 33px;
 	}
 
-	.course-content .bookmark-button:before{
-		content: url('../images/bookmarkInactive.png');
+	.course-content .bookmark-button:before {
+		content: url(../images/icon_bookmark.svg);
+		display: block;
+		width: 33px;
+		height: 33px;
 	}
 
-	.sequence-bottom{
+	.sequence-bottom {
 		border-top: 2px solid #333333;
 		padding: 10px 0;
 
-		.bookmark-button{
-			padding: 0 50px;
+		.bookmark-button {
+			padding: 0;
 		}
 
 	} 
 
-	.xmodule_display.xmodule_SequenceModule .sequence-nav{
+	.xmodule_display.xmodule_SequenceModule .sequence-nav {
 		float: right;
 		z-index: 3;
 		height: 60px;
 	}
 
 	.sequence-nav,
-	.sequence-bottom{
+	.sequence-bottom {
 
 
-		span:not(.fa){
+		span:not(.fa) {
 			display: none;
 		}
 
-		.fa-chevron-prev:before{
-			content: url("../images/navi_left.png");
+		.fa-chevron-prev:before {
+			content: url(../images/Icon-backward-activ.svg);
+			width: 55px;
+			height: 55px;
+			display: block;
 		}
 
-		.fa-chevron-next:before{
-			content: url("../images/navi_right.png");
+		.fa-chevron-next:before {
+			content: url(../images/Icon-forward-activ.svg);
+			width: 55px;
+			height: 55px;
+			display: block;
 		}
 	}
 
-	.xmodule_display.xmodule_SequenceModule nav.sequence-bottom{
+	.xmodule_display.xmodule_SequenceModule nav.sequence-bottom {
 		justify-content: flex-end;
-
-		.bookmark-button{
-			margin: auto;
-		}
 	} 
 
 	.xmodule_display.xmodule_SequenceModule .sequence-nav,
-	.xmodule_display.xmodule_SequenceModule .sequence-bottom{
+	.xmodule_display.xmodule_SequenceModule .sequence-bottom {
 		margin: 0;
 		margin-top: 10px;
 		height: 60px; 
 
-		.sequence-nav-button{
+		.sequence-nav-button {
 			border: none;
 			font-size: 1.5rem;
 			min-width: 60px;
 
-			&:hover{
+			&:hover {
 				// border-bottom: 3px solid #0075b4;
 				padding-top: 0px;
 
 			}
 
-			&.button-previous{
+			&.button-previous {
 				padding-right: 0;
 			}
 
-			&.button-next{
+			&.button-next {
 				padding-left: 0;
+				padding-right: 15px;
 			}
 		}
 	}
 
-	.course-wrapper .course-content .vert-mod .vert>.xblock-student_view{
+	.course-wrapper .course-content .vert-mod .vert>.xblock-student_view {
 		border: 0;
 		margin: 0;
 		padding: 0;
 	}
 
-	.studio-view a{
+	.studio-view a {
 		position: relative;
 		z-index: 3;
 	}
 
-	.xmodule_display.xmodule_VideoModule .video{
+	.xmodule_display.xmodule_VideoModule .video {
 		padding: 0;
 		margin: 0;
 	}
 }
 
 /***Footer ***/
-body .wrapper-footer{
+body .wrapper-footer {
 	.social-feed{
 		display: none;
 	}
 
-	.wrapper-logo{
+	.wrapper-logo {
 		display: none;
 	}
 
-	.nav-legal{
+	.nav-legal {
 		display: none;
 	}
 
-	footer#footer-openedx{
+	footer#footer-openedx {
 
-		.colophon{
+		.colophon {
 			width: 100%;
 
-			.nav-colophon{
+			.nav-colophon {
 				float: left;
 				margin-top: 20px;
 			}
 		}
 
-		.footer-about-openedx{
+		.footer-about-openedx {
 			float: right;
 		}
-
 	} 
 } 
-
-
-/****** Responsive - general****/
-@media only screen and (max-width: 576px) {
-
-	.window-wrap {
-		
-
-		div.info-wrapper section.handouts {
-			padding: 0;
-		}
-
-		.course-header,
-		.header-global.slim .course-header {
-			width: 40%;
-		}
-
-		.dashboard .my-courses .course .details{
-
-			.course-title a{
-				font-size: 25px;
-				line-height: 25px;
-			}
-			.wrapper-course-image{
-				width: 100%;
-
-				.cover{
-					margin: 20px;
-
-					.course-image{
-						height: 120px;
-						width: 180px;
-					}
-				} 
-			} 
-
-			.wrapper-course-details{
-				float: none;
-				width: 100%;
-			}
-
-		}
-
-		.course-info .course-sidebar header .social-sharing{
-			height: 70px;
-		}
-
-		.course-info{
-
-			.container{
-				padding: 25px;
-			}
-
-			.details {
-				width: 100%;
-			}
-
-			.course-sidebar{
-				width: 100%;
-				padding: 10px;
-			} 
-
-			header.course-profile{
-				padding-top: 70px;
-				height: 500px;
-
-				.intro-inner-wrapper{
-					margin: 25px;
-
-					.intro{
-						display: block;
-						width: 100%;
-					}
-
-					.media{
-						display: block;
-						width: 100%;
-						text-align: center;
-
-						.hero{
-							width: 70%;
-						}
-					}
-
-				} 
-			} 
-		}
-
-		.wrapper-account-settings .account-settings-container{
-			padding: 20px;
-		}
-
-		.account-settings-sections .section .account-settings-section-body .u-field{
-			width: 100%;
-
-			.field{
-				width: 100%;
-			}
-
-			.u-field-message{
-				width: 100%;
-				padding: 10px 0;
-			}
-		}
-
-		 /*** Discusion ***/
-		 .discussion-body .home-helpgrid .helpgrid-row {
-		 	display: flex;
-		 	flex-flow: column;
-
-		 	.row-item {
-		 		width: 100%;
-		 		padding: 10px;
-		 	}
-		 }
-
-	    /**** Content search ***/
-	    .page-header-search{
-	    	width: 100%;
-
-	    	.search-form{
-	    		width: 100%;
-
-	    		.search-input{
-	    			width: 65%;
-	    		}
-
-	    		.search-button{
-	    			width: 25%;
-	    		}
-	    	}
-	    }
-
-	    .content-wrapper .page-header.has-secondary .page-header-secondary .form-actions{
-	    	margin: 0;
-	    	width: 100%;
-
-	    	.action-resume-course{
-	    		width: 95%;
-	    		text-align: center;
-	    		margin-top: 15px;
-	    	}
-	    }
-
-
-	}	
-}
-
-@media only screen and (max-width: 768px) {
-
-	.window-wrap {
-
-		.container {
-			min-width: 0;
-
-			.search-responsive {
-				width: 90%;
-				float: none;
-			}
-
-			.my-courses{
-				width: 90%;
-				margin-left: 5%;
-			}
-		}
-	}
-
-	.view-in-course.view-course-info .window-wrap {
-		min-width: 70px;
-	}
-
-}
-
-/****** Responsive - PHZH ****/
-
-@media only screen and (max-width: 860px){
-	.window-wrap{
-
-		.course-material{
-			.course-tabs{
-				display: none;
-			}
-
-			.navbar-collapse {
-				display: block;
-			}
-		} 
-	} 
-} 
-
-@media only screen and (max-width: 768px) {
-	.window-wrap {
-
-		.wrapper-header {
-			.user .user-dropdown-menu .menu-dropdown-show,
-			.user-menu .dropdown-menu .menu-dropdown-show {
-				display: block
-			}
-			
-			.menu-nav-hidden {
-				display: none;
-			}
-		}
-
-		.course-material {
-			padding: 10px 0 0 0;
-
-			.collapse-open{
-				display: grid;
-				transition: all 0.2s ease;
-			}
-		}
-
-		.xmodule_display.xmodule_SequenceModule nav.sequence-bottom  .bookmark-button{
-			margin: 0;
-		} 
-	}
-}
-
-@media only screen and (max-width: 576px){
-	body .wrapper-footer{
-		footer#footer-openedx .colophon{
-			.footer-about-openedx{
-				width: 30%;
-			}
-
-			.nav-colophon{
-				width: 45%;
-				margin-top: 0;
-
-				li{
-					margin: 5px 10px;
-				}
-			}
-		}
-	} 
-
-}
-
-/***** Inline Discussion *****/
-
-.window-wrap{
-	.discussion-container{
-		background-color: #2d3092;
-
-		.discussion-module{
-			text-align: center;
-			// padding: 30px 30px 50px 30px;
-
-			.discussion-article{
-				position: static;
-			}
-
-			.discussion-module-header{
-				width: 100%;
-				color: #179dff;
-
-				.discussion-module-title{
-					display: none;
-				}
-
-				.inline-discussion-topic-title{
-					display: none;
-				}
-
-				.inline-discussion-topic{
-					font-size: 1.7rem;
-					font-style: italic;
-					font-weight: bold; 
-					font-family: 'Poppins';
-				}
-			}
-
-			.discussion-module-header:before{
-				content: url("../images/discussion-icon.png");
-				display: block;
-				margin: 5px;
-			}
-
-			.discussion-show.btn{
-				background-color: #179dff;
-				color: #fff;
-				border: none;
-				border-radius: 16px;
-				width: 230px;
-				float: none;
-				margin-bottom: 50px;
-
-				&:hover,
-				&:active,
-				&:focus{
-					background-color: #036fbd !important;
-				}
-			}
-
-			.discussion.inline-discussion{
-				background-color: #fff;
-				padding-top: 15px;
-
-				.add_post_btn_container {
-					text-align: center;
-					height: 110px;
-
-					.btn-link.new-post-btn{
-						word-wrap: break-word;
-						background: #007db8;
-						color: #fff;
-						border-radius: 50%;
-						width: 90px;
-						height: 90px;
-						white-space: initial;
-						font-size: 1rem;
-						padding: 5px;
-						transition: all 0.2s ease;
-
-						&:hover{
-							background-color: #036fbd !important;
-							text-decoration: none !important;
-
-						}
-					}
-				}
-
-				.inline-discussion-thread-container{
-
-					.inline-threads{
-						border: none;
-						border-top: 2px solid #999;
-						margin: 0 25px;
-					}
-					.forum-nav-refine-bar{
-						background-color: #fff;
-						border: none;
-						padding: 10px 0;
-						font-weight: bold;
-					}
-
-					.forum-nav-thread-list{
-						text-align: left;
-
-						li.forum-nav-thread a {
-							padding: 10px 0;
-						}
-
-						.fa-comments:before{
-							content: url("../images/discussion-inactive.png");
-						}
-
-						.fa-question:before{
-							content: url("../images/question-inactive.png");
-						}
-
-						.fa-check-square-o:before{
-							content: url("../images/answer-active.png");
-						}
-
-						.forum-nav-thread-wrapper-1{
-							margin-left: 15px;
-							max-width: calc(100% - 75px);
-
-							.forum-nav-thread-title{
-								font-weight: bold;
-							}
-						}
-
-						.forum-nav-thread-wrapper-2{
-							align-self: self-start;
-							min-width: 35px;
-						}
-
-						.forum-nav-thread-labels{
-							text-align: right;
-
-							li{
-								color: #414141;
-
-								span{
-									color: #007db8;
-								}
-							}
-						}
-
-						.forum-nav-thread-comments-count{
-							background-color: #fff;
-							border: 1px solid #000;
-							min-width: 1.3em;
-						}
-
-						.forum-nav-thread-comments-count:after{
-							border-right-color: #000;
-						}
-					}
-
-					.forum-nav-thread-link{
-						transition: all 0.2s ease;
-					}
-
-					.forum-nav-thread-link:hover{
-						background-color: #ccc;
-
-						.forum-nav-thread-comments-count{
-							background-color: #ccc;
-						}
-					}
-
-					.inline-thread{
-						border: none;
-						border-top:  2px solid #999;
-						margin: 0 25px;
-						text-align: left;
-						position: relative;
-
-						.forum-nav-bar{
-							padding: 10px 0;
-							width: 50%;
-						}
-
-						.post-header-actions{
-							position: absolute;
-							top: 0;
-							right: 0;
-						}
-
-						.forum-content{
-							padding: 10px 0;
-						}
-
-						.response-actions-list .actions-item,
-						.post-header-actions .actions-item{
-							display: inline-block;
-						}
-
-						.post-title{
-							font-weight: bold;
-						}
-
-						button.action-vote .action-icon{
-							border-radius: 50%;
-							border: 1.5px solid #999;
-						}
-
-						.action-button.action-vote.is-checked .action-icon,
-						.action-button.action-vote:hover .action-icon,
-						.action-button.action-vote:focus .action-icon{
-							color: #498351;
-							background: #fff;
-							border-color: #498351;
-						}
-
-						.action-button.action-answer.is-checked .action-icon,
-						.action-button.action-answer:hover .action-icon,
-						.action-button.action-answer:focus .action-icon{
-							background: #fff;
-							color: #498351;
-						}
-
-						.action-button.action-follow.is-checked .action-icon,
-						.action-button.action-follow:hover .action-icon,
-						.action-button.action-follow:focus .action-icon{
-							background: #fff;
-							color: #007db8;
-						}
-
-						.action-button.action-endorse.is-checked .action-icon,
-						.action-button.action-endorse:hover .action-icon,
-						.action-button.action-endorse:focus .action-icon{
-							background: #fff;
-							color: #007db8;
-						}
-
-						.forum-response{
-							border: none;
-							box-shadow: none;
-							border-radius: 0;
-						}
-
-						.discussion-response{
-							border-left: 1px solid #007db8;
-						}
-
-						.comments{
-							background: #fff;
-							box-shadow: none;
-						}
-
-						.comments >	li{
-							border: none;
-							border-left: 1px solid #007db8;
-							margin: 15px 25px;
-						}
-
-						.comments .new-comment{
-							border: none;
-							margin: 0;
-						}
-
-						.reply-post-control{
-							text-align: center;
-
-							.discussion-submit-post{
-								word-wrap: break-word;
-								background: #007db8;
-								color: #fff;
-								border-radius: 50%;
-								width: 90px;
-								height: 90px;
-								white-space: initial;
-								font-size: 1rem;
-								padding: 5px;
-								transition: all 0.2s ease;
-							}
-						}
-						
-					}
-				}
-
-				.new-post-article{
-					border: none;
-					text-align: left;
-
-					.forum-new-post-form{
-						padding: 20px 35px;
-
-						.thread-title{
-							color: #1b1464;
-							font-size: 1.4rem;
-						}
-
-						.field-help{
-							font-size: 0.9rem;
-						}
-
-						.post-type-label input,
-						.post-type-label .field-input-label span.icon{
-							display: none;
-						}
-
-						.post-type-label .field-input-label:before{
-							content: "";
-							display: inline-block;
-							width: 32px;
-							height: 32px;
-							margin: 5px;
-							background: #f2f2f2;
-							border-radius: 50%;
-							vertical-align: middle;
-						}
-
-						.field-label .post-type-label .field-input:checked+.field-input-label{
-							color: #2f2f2f;
-						}
-
-						.field-label .post-type-label .field-input:checked+.field-input-label:before{
-							content: url(../images/inputbullet.png);
-							display: inline-block;
-							width: 32px;
-							height: 32px;
-							margin: 5px;
-							background: #f2f2f2;
-							border-radius: 50%;
-							vertical-align: middle;
-						}
-
-						.field-label-text{
-							font-weight: bold;
-						}
-					}
-
-					div.post-options + div{
-						text-align: center;
-
-						button{
-							width: 80px;
-							height: 80px;
-							border-radius: 50%;
-							padding: 0;
-							margin: 0 10px;
-							border: none;
-
-							&.submit{
-								background-color: #007db8;
-
-								&:hover{
-									background-color: #036fbd !important;
-								}
-							}
-
-							&.cancel{
-								background-color: #cccbcb;
-								color: #f2f2f2;
-
-								&:hover{
-									background-color: #afafaf !important;
-								}
-							}
-						}
-
-					}
-				}
-			}
-
-			.discussion .action-button .action-icon{
-				border: none;
-			}
-		}
-	}
-}	
-
-/*** Responsive inline Discussion ***/
-
-@media only screen and (max-width: 768px){
-	.window-wrap{
-		.discussion-container .discussion-module .forum-new-post-form{
-
-			.js-post-title.field-input{
-				width: 100%;
-			}
-
-		}
-	}
-}
-
-/*** Discussion ***/
-
-.window-wrap .discussion-board{
-
-	.new-post-article{
-		border: none;
-		text-align: left;
-
-		.forum-new-post-form{
-			padding: 20px 35px;
-
-			.thread-title{
-				color: #1b1464;
-				font-size: 1.4rem;
-			}
-
-			.field-help{
-				font-size: 0.9rem;
-			}
-
-			.post-type-label input,
-			.post-type-label .field-input-label span.icon{
-				display: none;
-			}
-
-			.post-type-label .field-input-label:before{
-				content: "";
-				display: inline-block;
-				width: 32px;
-				height: 32px;
-				margin: 5px;
-				background: #f2f2f2;
-				border-radius: 50%;
-				vertical-align: middle;
-			}
-
-			.field-label .post-type-label .field-input:checked+.field-input-label{
-				color: #2f2f2f;
-			}
-
-			.field-label .post-type-label .field-input:checked+.field-input-label:before{
-				content: url(../images/inputbullet.png);
-				display: inline-block;
-				width: 32px;
-				height: 32px;
-				margin: 5px;
-				background: #f2f2f2;
-				border-radius: 50%;
-				vertical-align: middle;
-			}
-
-			.field-label-text{
-				font-weight: bold;
-			}
-		}
-
-		div.post-options + div{
-			text-align: center;
-
-			button{
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				padding: 0;
-				margin: 0 10px;
-				border: none;
-
-				&.submit{
-					background-color: #007db8;
-
-					&:hover{
-						background-color: #036fbd !important;
-					}
-				}
-
-				&.cancel{
-					background-color: #cccbcb;
-					color: #f2f2f2;
-
-					&:hover{
-						background-color: #afafaf !important;
-					}
-				}
-			}
-
-
-
-			.forum-new-post-form .post-field .field-label .field-input,
-			.forum-new-post-form .post-field .field-label .js-post-title{
-				width: 100%;
-			}
-		}
-
-	}
-
-	.discussion-thread-list-container{
-		.forum-nav-refine-bar{
-			background-color: #fff;
-			border: none;
-			font-weight: bold;
-		}
-
-		.forum-nav-thread-list{
-			text-align: left;
-
-			.fa-comments:before{
-				content: url("../images/discussion-inactive.png");
-			}
-
-			.fa-question:before{
-				content: url("../images/question-inactive.png");
-			}
-
-			.fa-check-square-o:before{
-				content: url("../images/answer-active.png");
-			}
-
-			.forum-nav-thread-wrapper-1{
-				margin-left: 15px;
-				max-width: calc(100% - 75px);
-
-				.forum-nav-thread-title{
-					font-weight: bold;
-				}
-			}
-
-			.forum-nav-thread-wrapper-2{
-				align-self: self-start;
-				min-width: 35px;
-			}
-
-			.forum-nav-thread-labels{
-				text-align: right;
-
-				li{
-					color: #414141;
-
-					span{
-						color: #007db8;
-					}
-				}
-			}
-
-			.forum-nav-thread-comments-count{
-				background-color: #fff;
-				border: 1px solid #000;
-			}
-
-			.forum-nav-thread-comments-count:after{
-				border-right-color: #000;
-			}
-		}
-
-		.forum-nav-thread-link{
-			transition: all 0.2s ease;
-		}
-
-		.forum-nav-thread-link:hover{
-			background-color: #ccc;
-
-			.forum-nav-thread-comments-count{
-				background-color: #ccc;
-			}
-		}
-	}
-
-	.forum-content{
-		.response-actions-list .actions-item,
-		.post-header-actions .actions-item{
-			display: inline-block;
-		}
-
-		button.action-vote .action-icon{
-			border-radius: 50%;
-			border: 1.5px solid #999;
-		}
-
-		.action-button.action-vote.is-checked .action-icon,
-		.action-button.action-vote:hover .action-icon,
-		.action-button.action-vote:focus .action-icon{
-			color: #498351;
-			background: #fff;
-			border-color: #498351;
-		}
-
-		.action-button.action-answer.is-checked .action-icon,
-		.action-button.action-answer:hover .action-icon,
-		.action-button.action-answer:focus .action-icon{
-			background: #fff;
-			color: #498351;
-		}
-
-		.action-button.action-follow.is-checked .action-icon,
-		.action-button.action-follow:hover .action-icon,
-		.action-button.action-follow:focus .action-icon{
-			background: #fff;
-			color: #007db8;
-		}
-
-		.action-button.action-endorse.is-checked .action-icon,
-		.action-button.action-endorse:hover .action-icon,
-		.action-button.action-endorse:focus .action-icon{
-			background: #fff;
-			color: #007db8;
-		}
-
-		.forum-response{
-			border: none;
-			box-shadow: none;
-			border-radius: 0;
-		}
-
-		.discussion-response{
-			border-left: 1px solid #007db8;
-		}
-
-		.comments{
-			background: #fff;
-			box-shadow: none;
-		}
-
-		.comments >	li{
-			border: none;
-			border-left: 1px solid #007db8;
-			margin: 15px 25px;
-		}
-
-		.comments .new-comment{
-			border: none;
-			margin: 0;
-		}
-
-		.reply-post-control{
-			text-align: center;
-
-			.discussion-submit-post{
-				word-wrap: break-word;
-				background: #007db8;
-				color: #fff;
-				border-radius: 50%;
-				width: 90px;
-				height: 90px;
-				white-space: initial;
-				font-size: 1rem;
-				padding: 5px;
-				transition: all 0.2s ease;
-			}
-		}
-	}
-}
