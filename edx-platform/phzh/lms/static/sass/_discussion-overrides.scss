@@ -43,9 +43,10 @@ $gray-l: #F2F2F2;
 			}
 
 			.discussion-module-header:before {
-				content: url("../images/discussion-icon.png");
+				content: url(../images/discussion-inline.svg);
 				display: block;
-				margin: 5px;
+				margin: 22px auto;
+				width: 130px;
 			}
 
 			.discussion-show.btn {
@@ -114,15 +115,21 @@ $gray-l: #F2F2F2;
 						}
 
 						.fa-comments:before {
-							content: url("../images/discussion-inactive.png");
+							content: url(../images/discussion-inactiv.svg);
+							width: 18px;
+							display: block;
 						}
 
 						.fa-question:before {
-							content: url("../images/question-inactive.png");
+							content: url(../images/question-inactiv.svg);
+							width: 18px;
+							display: block;
 						}
 
 						.fa-check-square-o:before {
-							content: url("../images/answer-active.png");
+							content: url(../images/answer-active.svg);
+							width: 18px;
+							display: block;
 						}
 
 						.forum-nav-thread-wrapper-1 {
@@ -481,15 +488,21 @@ $gray-l: #F2F2F2;
 			text-align: left;
 
 			.fa-comments:before {
-				content: url("../images/discussion-inactive.png");
+				content: url(../images/discussion-inactiv.svg);
+				width: 18px;
+				display: block;
 			}
 
 			.fa-question:before {
-				content: url("../images/question-inactive.png");
+				content: url(../images/question-inactiv.svg);
+				width: 18px;
+				display: block;
 			}
 
 			.fa-check-square-o:before {
-				content: url("../images/answer-active.png");
+				content: url(../images/answer-active.svg);
+				width: 18px;
+				display: block;
 			}
 
 			.forum-nav-thread-wrapper-1 {

@@ -103,7 +103,8 @@
 		 	display: flex;
 		 	flex-flow: column;
 
-		 	.row-item {
+		 	.row-item,
+		 	.row-item-full {
 		 		width: 100%;
 		 		padding: 10px;
 		 	}
@@ -126,7 +127,11 @@
 	    	}
 	    }
 
-	    .content-wrapper .page-header.has-secondary .page-header-secondary .form-actions {
+	    .view-discussion-home .helpgrid-row .row-item-full .row-description {
+	    	width: 60%;
+	    }
+
+	    .course-view .page-header.has-secondary .page-header-secondary .form-actions {
 	    	margin: 0;
 	    	width: 100%;
 
@@ -160,6 +165,33 @@
 		min-width: 70px;
 	}
 
+}
+
+/*** Responsive Discussion tab ***/
+
+@media only screen and (max-width: 768px){
+	.window-wrap .discussion-body .forum-nav-browse-menu,
+	.window-wrap .discussion-body .forum-nav-thread-list {
+		height: 362px !important;
+	}
+
+	.window-wrap .discussion-body .forum-nav {
+		height: 400px !important;
+	}
+
+	.window-wrap .discussion-body .discussion-column {
+		margin-top: 60px;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.window-wrap .discussion-board .page-header-secondary {
+		width: 100%;
+	}
+
+	.window-wrap.discussion-board .page-header-secondary{
+		width: 100%;
+	}
 }
 
 /****** Responsive - PHZH ****/

@@ -4,6 +4,7 @@
 
 	.back-image {
 		min-height: 500px;
+		width: 100%;
 	}
 
 	.frigg-text-container {
@@ -153,6 +154,11 @@ img.frigg-center {
 		left: 0;
 		margin: 0 auto;
 		width: 90%;
+	}
+
+	.frigg-left,
+	.frigg-right {
+		margin: 0;
 	}
 }
 
@@ -596,23 +602,31 @@ img.frigg-center {
 			text-align: center;
 
 			.hint-button .fa-question:before {
-				content: url("../images/hintInactiv.png");
+				content: url(../images/hint-inactiv.svg);
+				width: 30px;
+				display: block;
 			}
 
 			.save .fa-save:before,
 			.save .fa-floppy-o:before {
-				content: url("../images/save.png");
+				content: url(../images/save.svg);
+				width: 36px;
+				display: block;
 			}
 
 			.reset {
 				margin: 0 20% 0 25%;
 				.fa-refresh:before {
-					content: url("../images/reset.png");
+					content: url(../images/reset.svg);
+					width: 37px;
+					display: block;
 				}
 			} 
 
 			.show .fa-info-circle:before {
-				content: url("../images/showAnswerInactiv.png");
+				content: url(../images/show-answer-inactiv.svg);
+				width: 50px;
+				display: block;
 			}
 			// .show.frigg-button-active .fa-info-circle:before{
 			// 	content: url("../images/showAnswerActiv.png");
@@ -778,4 +792,14 @@ img.frigg-center {
 			}
 		}
 	}
+}
+
+/**** Accordion component ****/
+
+.frigg-accordion .frigg-accordion-body {
+	display: none;
+}
+
+.frigg-accordion .active-acc .frigg-accordion-body {
+	display: block;
 }
