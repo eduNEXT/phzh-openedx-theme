@@ -536,7 +536,7 @@ img.frigg-center {
 
 	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit {
 		float: none;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 
 	.xmodule_display.xmodule_CapaModule div.problem .action .submission-feedback {
@@ -570,10 +570,11 @@ img.frigg-center {
 
 			.submit.btn-brand {
 				border-radius: 50%;
-				height: 80px;
-				width: 85px;
+				height: 85px;
+				width: 90px;
 				padding: 0;
 				background: #007cb8;
+				color: #FFF;
 			}
 
 			.submission-feedback {
@@ -798,8 +799,57 @@ img.frigg-center {
 
 .frigg-accordion .frigg-accordion-body {
 	display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
 }
 
 .frigg-accordion .active-acc .frigg-accordion-body {
-	display: block;
+	display: block !important;
+	height: auto;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.frigg-accordion {
+	.frigg-accordion-title {
+		width: 100%;
+		background: none;
+		box-shadow: none;
+		font-size: 1.3rem;
+		text-align: left;
+		font-family: 'Poppins';
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: none;
+			box-shadow: none;
+			color: #222266;
+		}
+
+		&:before {
+			content: "\f105";
+			font-family: "FontAwesome"!important;
+			margin: 0 15px;
+		}
+	}
+
+	.frigg-panel.active-acc .frigg-accordion-title {
+		&:before {
+			content: "\f107";
+			font-family: "FontAwesome"!important;
+			margin: 0 12px;
+		}
+	}
+
+	.frigg-accordion-body {
+		padding: 15px 25px;
+		line-height: 1.5rem;
+		letter-spacing: .02rem;
+
+		p {
+			font-family: 'Poppins';
+		}
+		
+	}
 }
