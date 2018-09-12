@@ -1,4 +1,5 @@
 
+$white-color: #FFF;
 .frigg-back-image {
 	position: relative;
 
@@ -58,12 +59,13 @@
 }
 
 .frigg-right {
-	text-align: right;
-
+	@include text-align(right);
+	// text-align: right;
 }
 
 .frigg-left {
-	text-align: left;
+	@include text-align(left);
+	// text-align: left;
 
 }
 
@@ -85,7 +87,8 @@ img.frigg-center {
 		align-items: baseline;
 
 		img{
-			margin: 0 10px 0 0;
+			@include margin-right(10px);
+			// margin: 0 10px 0 0;
 			display: inline-flex;
 			height: 100%;
 		}
@@ -104,19 +107,22 @@ img.frigg-center {
 .frigg-title-top.frigg-text-container {
 	width: 90%;
 	top: 5%;
-	left: 5%;
+	@include left(5%);
+	// left: 5%;
 }
 
 .frigg-title-bottom.frigg-text-container {
 	top: 85%;
 	width: 90%;
-	left: 5%;
+	@include left(5%);
+	// left: 5%;
 }
 
 .frigg-title-center.frigg-text-container {
 	width: 90%;
 	top: 45%;
-	left: 5%;
+	@include left(5%);
+	// left: 5%;
 }
 
 .frigg-image-border {
@@ -234,7 +240,8 @@ img.frigg-center {
 		font-family: 'Poppins';
 		font-size: 1rem;
 		letter-spacing: .5px;
-		padding-left: 10px;
+		@include padding-left(10px);
+		// padding-left: 10px;
 	}
 
 	.xmodule_display.xmodule_CapaModule div.problem .submit-attempt-container .submit {
@@ -243,22 +250,22 @@ img.frigg-center {
 		border: none;
 		transition: all 0.2s ease;
 		padding: 0;
-		color: #fff;
+		color: $white-color;
 		border-radius: 50%;
 		font-weight: bold;
-		background: #007db8;
+		background: #007DB8;
 		font-size: 14px;
 
 		&:hover {
-			background-color: #036fbd ;
+			background-color: #036FBD ;
 			border: none;
 		}
 
 	}
 
 	.field label.frigg-checked {
-		background-color: #0066cc;
-		color: #fff;
+		background-color: #0066CC;
+		color: $white-color;
 	}
 
 	.frigg-problem-label {
@@ -308,7 +315,8 @@ img.frigg-center {
 
 		.submit-attempt-container {
 			.submit {
-				margin-right: 0;
+				@include margin-right(0)
+				// margin-right: 0;
 			}
 
 			.submission-feedback {
@@ -331,7 +339,7 @@ img.frigg-center {
 
 	.field label {
 		background: #333366;
-		color: #fff;
+		color: $white-color;
 	}
 
 	.hint-text {
@@ -342,11 +350,11 @@ img.frigg-center {
 // color light
 
 .frigg-light {
-	background: #fff;
+	background: $white-color;
 
 	.field label {
 		background: #333366;
-		color: #fff;
+		color: $white-color;
 	}
 
 	.hint-text,
@@ -410,14 +418,14 @@ img.frigg-center {
 		legend {
 			background: #323355;
 			width: 100%;
-			color: #fff;
+			color: $white-color;
 			box-sizing: border-box;
 			padding: 20px 30px;
 			font-weight: 600;
 			font-size: 1.5rem;
 
 			.problem-header {
-				color: #fff;
+				color: $white-color;
 			}
 
 			.problem-progress {
@@ -426,13 +434,13 @@ img.frigg-center {
 			}
 
 			.frigg-problem-header {
-				color: #fff;
+				color: $white-color;
 			}
 		}	
 	}
 
 	.xmodule_display.xmodule_CapaModule div.problem .question-description {
-		color: #fff;
+		color: $white-color;
 		margin: 10px 0;
 		font-size: 1.2rem;
 		font-weight: normal;
@@ -574,7 +582,7 @@ img.frigg-center {
 				width: 90px;
 				padding: 0;
 				background: #007cb8;
-				color: #FFF;
+				color: $white-color;
 			}
 
 			.submission-feedback {
@@ -589,7 +597,7 @@ img.frigg-center {
 		.message {
 			padding: 20px 66px;
 			background: #999;
-			color: #fff;
+			color: $white-color;
 			margin-top: 10px;
 
 			.explanation-title,
@@ -643,7 +651,7 @@ img.frigg-center {
 	.xmodule_display.xmodule_CapaModule div.problem .notification.general.notification-show-answer {
 		border-top: none;
 		background: #999999;
-		color: #fff;
+		color: $white-color;
 
 		span.fa {
 			display: none;
@@ -787,9 +795,9 @@ img.frigg-center {
 		}
 
 		ol li {
-			color: #fff;
+			color: $white-color;
 			strong {
-				color: #fff;
+				color: $white-color;
 			}
 		}
 	}

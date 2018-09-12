@@ -23,13 +23,17 @@ html body .window-wrap {
 	text-overflow: ellipsis;
 }
 
+.window-wrap .header-global.slim .logo {
+	@include margin(0, 10px, 0, 0);
+}
+
 /**** Nav content ****/
 .course-material .navbar-collapse {
 	display: none;
 	background: none;
 	border: none;
 	font-size: 1.7rem;
-	padding-left: 15px;
+	@include padding-left(15px);
 	padding-top: 15px;
 	transition: all 0.2s ease;
 	color: $color-blue;
@@ -80,7 +84,7 @@ html body .window-wrap {
 
 	.wrapper-course-material.courseware {				
 		position: absolute;
-		left: 0;
+		@include left(0);
 		top: 0;
 		width: 100%;
 	}
@@ -97,7 +101,7 @@ html body.view-in-course .container {
 		display: none;
 	}
 
-	.content-wrapper .page-header {
+	.content-wrapper .course-view .page-header {
 		padding-top: 60px;
 	}
 
@@ -126,8 +130,8 @@ html body.view-in-course .container {
 
 	.bookmark-button {
 		font-size: 1.7rem;
-		float: right;
-		padding: 23px 0px 8px 20px;
+		@include float(right);
+		@include padding(23px, 0px, 8px, 20px)
 		font-weight: 100;
 		color: $color-blue;
 
@@ -160,6 +164,7 @@ html body.view-in-course .container {
 	.sequence-bottom {
 		border-top: 2px solid #333333;
 		padding: 10px 0;
+		box-sizing: content-box;
 
 		.bookmark-button {
 			padding: 0;
@@ -168,14 +173,13 @@ html body.view-in-course .container {
 	} 
 
 	.xmodule_display.xmodule_SequenceModule .sequence-nav {
-		float: right;
+		@include float(right);
 		z-index: 3;
 		height: 60px;
 	}
 
 	.sequence-nav,
 	.sequence-bottom {
-
 
 		span:not(.fa) {
 			display: none;
@@ -214,16 +218,15 @@ html body.view-in-course .container {
 			&:hover {
 				// border-bottom: 3px solid #0075b4;
 				padding-top: 0px;
-
 			}
 
 			&.button-previous {
-				padding-right: 0;
+				@include padding-right(0);
 			}
 
 			&.button-next {
-				padding-left: 0;
-				padding-right: 15px;
+				@include padding-left(0);
+				@include padding-right(15px);
 			}
 		}
 	}
@@ -265,13 +268,13 @@ body .wrapper-footer {
 			width: 100%;
 
 			.nav-colophon {
-				float: left;
+				@include float(left);
 				margin-top: 20px;
 			}
 		}
 
 		.footer-about-openedx {
-			float: right;
+			@include float(right);
 		}
 	} 
-} 
+}

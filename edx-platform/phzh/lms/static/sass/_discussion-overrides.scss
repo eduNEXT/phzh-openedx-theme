@@ -108,7 +108,7 @@ $gray-l: #F2F2F2;
 					}
 
 					.forum-nav-thread-list {
-						text-align: left;
+						@include text-align(left);
 
 						li.forum-nav-thread a {
 							padding: 10px 0;
@@ -133,7 +133,7 @@ $gray-l: #F2F2F2;
 						}
 
 						.forum-nav-thread-wrapper-1 {
-							margin-left: 15px;
+							@include margin-left(15px);
 							max-width: calc(100% - 75px);
 
 							.forum-nav-thread-title {
@@ -147,7 +147,7 @@ $gray-l: #F2F2F2;
 						}
 
 						.forum-nav-thread-labels {
-							text-align: right;
+							@include text-align(right);
 
 							li{
 								color: #414141;
@@ -165,7 +165,7 @@ $gray-l: #F2F2F2;
 						}
 
 						.forum-nav-thread-comments-count:after {
-							border-right-color: $black;
+							@include border-right-color($black);
 						}
 					}
 
@@ -185,7 +185,7 @@ $gray-l: #F2F2F2;
 						border: none;
 						border-top:  2px solid #999;
 						margin: 0 25px;
-						text-align: left;
+						@include text-align(left);
 						position: relative;
 
 						.forum-nav-bar {
@@ -196,7 +196,7 @@ $gray-l: #F2F2F2;
 						.post-header-actions {
 							position: absolute;
 							top: 0;
-							right: 0;
+							@include right(0);
 						}
 
 						.forum-content {
@@ -253,7 +253,7 @@ $gray-l: #F2F2F2;
 						}
 
 						.discussion-response {
-							border-left: 1px solid $blue-d;
+							@include border-left(1px solid $blue-d);
 						}
 
 						.comments {
@@ -263,7 +263,7 @@ $gray-l: #F2F2F2;
 
 						.comments >	li {
 							border: none;
-							border-left: 1px solid $blue-d;
+							@include border-left(1px solid $blue-d);
 							margin: 15px 25px;
 						}
 
@@ -293,7 +293,7 @@ $gray-l: #F2F2F2;
 
 				.new-post-article {
 					border: none;
-					text-align: left;
+					@include text-align(left);
 
 					.forum-new-post-form {
 						padding: 20px 35px;
@@ -389,7 +389,7 @@ $gray-l: #F2F2F2;
 
 	.new-post-article {
 		border: none;
-		text-align: left;
+		@include text-align(left);
 
 		.forum-new-post-form {
 			padding: 20px 35px;
@@ -485,7 +485,7 @@ $gray-l: #F2F2F2;
 		}
 
 		.forum-nav-thread-list {
-			text-align: left;
+			@include text-align(left);
 
 			.fa-comments:before {
 				content: url(../images/discussion-inactiv.svg);
@@ -506,7 +506,7 @@ $gray-l: #F2F2F2;
 			}
 
 			.forum-nav-thread-wrapper-1 {
-				margin-left: 15px;
+				@include margin-left(15px);
 				max-width: calc(100% - 75px);
 
 				.forum-nav-thread-title {
@@ -520,7 +520,7 @@ $gray-l: #F2F2F2;
 			}
 
 			.forum-nav-thread-labels {
-				text-align: right;
+				@include text-align(right);
 
 				li{
 					color: #414141;
@@ -537,7 +537,7 @@ $gray-l: #F2F2F2;
 			}
 
 			.forum-nav-thread-comments-count:after {
-				border-right-color: $black;
+				@include border-right-color($black);
 			}
 		}
 
@@ -601,7 +601,7 @@ $gray-l: #F2F2F2;
 		}
 
 		.discussion-response {
-			border-left: 1px solid $blue-d;
+			@include border-left(1px solid $blue-d);
 		}
 
 		.comments {
@@ -611,7 +611,7 @@ $gray-l: #F2F2F2;
 
 		.comments >	li {
 			border: none;
-			border-left: 1px solid $blue-d;
+			@include border-left(1px solid $blue-d);
 			margin: 15px 25px;
 		}
 

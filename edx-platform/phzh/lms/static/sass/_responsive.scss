@@ -100,48 +100,55 @@
 
 		 /*** Discusion ***/
 		 .discussion-body .home-helpgrid .helpgrid-row {
-		 	display: flex;
-		 	flex-flow: column;
+			display: flex;
+			flex-flow: column;
 
-		 	.row-item,
-		 	.row-item-full {
-		 		width: 100%;
-		 		padding: 10px;
-		 	}
+			.row-item,
+			.row-item-full {
+				width: 100%;
+				padding: 10px;
+			}
 		 }
 
-	    /**** Content search ***/
-	    .page-header-search {
-	    	width: 100%;
+		/**** Content search ***/
+		.page-header-search {
+			width: 100%;
 
-	    	.search-form {
-	    		width: 100%;
+			.search-form {
+				width: 100%;
 
-	    		.search-input {
-	    			width: 65%;
-	    		}
+				.search-input {
+					width: 65%;
+				}
 
-	    		.search-button {
-	    			width: 25%;
-	    		}
-	    	}
-	    }
+				.search-button {
+					width: 25%;
+				}
+			}
+		}
 
-	    .view-discussion-home .helpgrid-row .row-item-full .row-description {
-	    	width: 60%;
-	    }
+		.view-discussion-home .helpgrid-row .row-item-full .row-description {
+			width: 60%;
+		}
 
-	    .course-view .page-header.has-secondary .page-header-secondary .form-actions {
-	    	margin: 0;
-	    	width: 100%;
+		.course-view .page-header.has-secondary .page-header-secondary .form-actions {
+			margin: 0;
+			width: 100%;
 
-	    	.action-resume-course {
-	    		width: 95%;
-	    		text-align: center;
-	    		margin-top: 15px;
-	    	}
-	    }
+			.action-resume-course {
+				width: 95%;
+				text-align: center;
+				margin-top: 15px;
+			}
+		}
 	}	
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1180px) {
+	.window-wrap .container.dashboard {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 @media only screen and (max-width: 768px) {
@@ -155,8 +162,8 @@
 			}
 
 			.my-courses {
-				width: 90%;
-				margin-left: 5%;
+				width: 90%;	
+				@include margin-left(5%);
 			}
 		}
 	}
