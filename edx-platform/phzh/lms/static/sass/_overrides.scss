@@ -4,6 +4,7 @@ $white: #FFF;
 
 @import 'responsive';
 @import 'discussion-overrides';
+@import 'discussion-inline';
 
 html body.view-in-course .window-wrap,
 html body .window-wrap {
@@ -266,15 +267,25 @@ body .wrapper-footer {
 
 		.colophon {
 			width: 100%;
+			margin: 0;
+		}
 
-			.nav-colophon {
-				@include float(left);
-				margin-top: 20px;
-			}
+		.nav-colophon {
+			@include float(left);
+			margin-top: 20px;
 		}
 
 		.footer-about-openedx {
 			@include float(right);
+			margin: 0;
+		}
+
+		.footer-about-openedx p {
+			margin: 0;
+		}
+
+		.nav-colophon ol {
+			margin: 0;
 		}
 	} 
 }

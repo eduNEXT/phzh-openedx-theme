@@ -19,16 +19,16 @@
 			}
 			.wrapper-course-image {
 				width: 100%;
+			}
 
-				.cover {
-					margin: 20px;
+			.wrapper-course-image .cover {
+				margin: 20px;
+			}
 
-					.course-image {
-						height: 120px;
-						width: 180px;
-					}
-				} 
-			} 
+			.wrapper-course-image .cover .course-image {
+				height: 120px;
+				width: 180px;
+			}
 
 			.wrapper-course-details {
 				float: none;
@@ -58,27 +58,26 @@
 			header.course-profile {
 				padding-top: 70px;
 				height: 500px;
+			}
 
-				.intro-inner-wrapper {
-					margin: 25px;
+			header.course-profile .intro-inner-wrapper {
+				margin: 25px;
+			}
 
-					.intro {
-						display: block;
-						width: 100%;
-					}
+			header.course-profile .intro-inner-wrapper .intro {
+				display: block;
+				width: 100%;
+			}
 
-					.media {
-						display: block;
-						width: 100%;
-						text-align: center;
+			header.course-profile .intro-inner-wrapper .media {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
 
-						.hero {
-							width: 70%;
-						}
-					}
-
-				} 
-			} 
+			header.course-profile .intro-inner-wrapper .hero {
+				width: 70%;
+			}
 		}
 
 		.wrapper-account-settings .account-settings-container {
@@ -100,14 +99,14 @@
 
 		 /*** Discusion ***/
 		 .discussion-body .home-helpgrid .helpgrid-row {
-			display: flex;
-			flex-flow: column;
+		 	display: flex;
+		 	flex-flow: column;
 
-			.row-item,
-			.row-item-full {
-				width: 100%;
-				padding: 10px;
-			}
+		 	.row-item,
+		 	.row-item-full {
+		 		width: 100%;
+		 		padding: 10px;
+		 	}
 		 }
 
 		/**** Content search ***/
@@ -116,14 +115,14 @@
 
 			.search-form {
 				width: 100%;
+			}
 
-				.search-input {
-					width: 65%;
-				}
+			.search-input {
+				width: 65%;
+			}
 
-				.search-button {
-					width: 25%;
-				}
+			.search-button {
+				width: 25%;
 			}
 		}
 
@@ -247,20 +246,20 @@
 }
 
 @media only screen and (max-width: 576px){
-	body .wrapper-footer {
-		footer#footer-openedx .colophon {
-			.footer-about-openedx {
-				width: 30%;
-			}
+	body .wrapper-footer footer#footer-openedx .colophon {
+		
+		.footer-about-openedx {
+			width: 30%;
+		}
 
-			.nav-colophon {
-				margin-top: 8px;
+		.nav-colophon {
+			margin-top: 8px;
 
-				li a{
-					font-size: .7rem;
-				}
+			li a {
+				font-size: .7rem;
 			}
 		}
+		
 	} 
 
 }
@@ -269,11 +268,8 @@
 
 @media only screen and (max-width: 768px){
 	.window-wrap {
-		.discussion-container .discussion-module .forum-new-post-form {
-			.js-post-title.field-input {
-				width: 100%;
-			}
-
+		.discussion-container .discussion-module .forum-new-post-form .js-post-title.field-input {
+			width: 100%;
 		}
 	}
 }

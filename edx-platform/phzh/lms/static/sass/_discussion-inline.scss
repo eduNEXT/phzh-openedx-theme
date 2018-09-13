@@ -1,0 +1,375 @@
+@import 'variables-theme';
+
+/***** Inline Discussion *****/
+.window-wrap {
+	.discussion-container {
+		background-color: #333366;
+	}
+
+	.discussion-module {
+		text-align: center;
+
+		.discussion-article {
+			position: static;
+		}
+
+		.discussion-module-header {
+			width: 100%;
+			color: $white;
+		}
+
+		.discussion-module-title {
+			display: none;
+		}
+
+		.inline-discussion-topic-title {
+			display: none;
+		}
+
+		.inline-discussion-topic {
+			font-size: 1.3rem;
+			font-style: italic;
+			font-weight: 600; 
+			font-family: 'Poppins';
+			padding: 0 15px;
+			width: auto;
+			max-width: 100%;
+		}
+
+		.discussion-module-header:before {
+			content: url(../images/discussion-inline.svg);
+			display: block;
+			margin: 22px auto;
+			width: 130px;
+		}
+
+		.discussion-show.btn {
+			background-color: #0066CC;
+			color: $white;
+			border: none;
+			border-radius: 16px;
+			width: 230px;
+			float: none;
+			margin-bottom: 50px;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: #0356A9 !important;
+			}
+		}
+
+		.discussion.inline-discussion {
+			background-color: $white;
+			padding-top: 15px;
+
+			.inline-threads {
+				border: none;
+				border-top: 2px solid #999;
+				margin: 0 25px;
+			}
+
+			.forum-nav-refine-bar {
+				background-color: $white;
+				border: none;
+				padding: 10px 0;
+				font-weight: bold;
+			}
+
+			.forum-nav-thread-list {
+				@include text-align(left);
+			}
+
+			li.forum-nav-thread a {
+				padding: 10px 0;
+			}
+
+			.fa-comments:before {
+				content: url(../images/discussion-inactiv.svg);
+				width: 18px;
+				display: block;
+			}
+
+			.fa-question:before {
+				content: url(../images/question-inactiv.svg);
+				width: 18px;
+				display: block;
+			}
+
+			.fa-check-square-o:before {
+				content: url(../images/answer-active.svg);
+				width: 18px;
+				display: block;
+			}
+
+			.forum-nav-thread-wrapper-1 {
+				@include margin-left(15px);
+				max-width: calc(100% - 75px);
+			}
+
+			.forum-nav-thread-title {
+				font-weight: bold;
+			}
+
+			.forum-nav-thread-wrapper-2 {
+				align-self: self-start;
+				min-width: 35px;
+			}
+
+			.forum-nav-thread-labels {
+				@include text-align(right);
+			}
+
+			.forum-nav-thread-labels li {
+				color: #414141;
+			}
+
+			.forum-nav-thread-labels li span{
+				color: $blue-d;
+			}
+
+			.forum-nav-thread-comments-count {
+				background-color: $white;
+				border: 1px solid $black;
+				min-width: 1.3em;
+			}
+
+			.forum-nav-thread-comments-count:after {
+				@include border-right-color($black);
+			}
+
+			.forum-nav-thread-link {
+				transition: all 0.2s ease;
+			}
+
+			.forum-nav-thread-link:hover {
+				background-color: $gray;
+
+				.forum-nav-thread-comments-count {
+					background-color: $gray;
+				}
+			}
+
+			.inline-thread button.action-vote .action-icon {
+				border-radius: 50%;
+				border: 1.5px solid #999;
+			}
+		}
+
+		.inline-thread {
+			border: none;
+			border-top:  2px solid #999;
+			margin: 0 25px;
+			@include text-align(left);
+			position: relative;
+
+			.forum-nav-bar {
+				padding: 10px 0;
+				width: 50%;
+			}
+
+			.post-header-actions {
+				position: absolute;
+				top: 0;
+				@include right(0);
+			}
+
+			.forum-content {
+				padding: 10px 0;
+			}
+
+			.response-actions-list .actions-item,
+			.post-header-actions .actions-item {
+				display: inline-block;
+			}
+
+			.post-title {
+				font-weight: bold;
+			}
+
+			.action-button.action-vote.is-checked .action-icon,
+			.action-button.action-vote:hover .action-icon,
+			.action-button.action-vote:focus .action-icon {
+				color: $green;
+				background: $white;
+				border-color: $green;
+			}
+
+			.action-button.action-answer.is-checked .action-icon,
+			.action-button.action-answer:hover .action-icon,
+			.action-button.action-answer:focus .action-icon {
+				background: $white;
+				color: $green;
+			}
+
+			.action-button.action-follow.is-checked .action-icon,
+			.action-button.action-follow:hover .action-icon,
+			.action-button.action-follow:focus .action-icon {
+				background: $white;
+				color: $blue-d;
+			}
+
+			.action-button.action-endorse.is-checked .action-icon,
+			.action-button.action-endorse:hover .action-icon,
+			.action-button.action-endorse:focus .action-icon {
+				background: $white;
+				color: $blue-d;
+			}
+
+			.forum-response {
+				border: none;
+				box-shadow: none;
+				border-radius: 0;
+			}
+
+			.discussion-response {
+				@include border-left(1px solid $blue-d);
+			}
+
+			.comments {
+				background: $white;
+				box-shadow: none;
+			}
+
+			.comments >	li {
+				border: none;
+				@include border-left(1px solid $blue-d);
+				margin: 15px 25px;
+			}
+
+			.comments .new-comment {
+				border: none;
+				margin: 0;
+			}
+
+			.reply-post-control {
+				text-align: center;
+			}
+
+			.discussion-submit-post {
+				word-wrap: break-word;
+				background: $blue-d;
+				color: $white;
+				border-radius: 50%;
+				width: 90px;
+				height: 90px;
+				white-space: initial;
+				font-size: 1rem;
+				padding: 5px;
+				transition: all 0.2s ease;
+			}
+		}
+
+		.new-post-article {
+			border: none;
+			@include text-align(left);
+
+			.forum-new-post-form {
+				padding: 20px 35px;
+
+			}
+
+			.thread-title {
+				color: #1b1464;
+				font-size: 1.4rem;
+			}
+
+			.field-help {
+				font-size: 0.9rem;
+			}
+
+			.post-type-label input,
+			.post-type-label .field-input-label span.icon {
+				display: none;
+			}
+
+			.post-type-label .field-input-label:before {
+				content: "";
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				margin: 5px;
+				background: $gray-l;
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+
+			.field-label .post-type-label .field-input:checked+.field-input-label {
+				color: #2f2f2f;
+			}
+
+			.field-label .post-type-label .field-input:checked+.field-input-label:before {
+				content: url(../images/inputbullet.png);
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				margin: 5px;
+				background: $gray-l;
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+
+			.field-label-text {
+				font-weight: bold;
+			}
+		}
+
+		div.post-options + div {
+			text-align: center;
+
+			button {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				padding: 0;
+				margin: 0 10px;
+				border: none;
+			}
+
+			button.submit {
+				background-color: $blue-d;
+
+				&:hover {
+					background-color: $blue-hover !important;
+				}
+			}
+
+			button.cancel {
+				background-color: #cccbcb;
+				color: $gray-l;
+
+				&:hover {
+					background-color: #afafaf !important;
+				}
+			}
+		}
+
+		.add_post_btn_container {
+			text-align: center;
+			height: 110px;	
+		}
+
+		.btn-link.new-post-btn {
+			word-wrap: break-word;
+			background: $blue-d;
+			color: $white;
+			border-radius: 50%;
+			width: 90px;
+			height: 90px;
+			white-space: initial;
+			font-size: 1rem;
+			padding: 5px;
+			transition: all 0.2s ease;
+
+			&:hover {
+				background-color: $blue-hover !important;
+				text-decoration: none !important;
+			}
+		}
+
+	}
+
+	.discussion-container .discussion-module .discussion .action-button .action-icon {
+		border: none;
+	}
+}
