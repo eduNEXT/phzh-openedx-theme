@@ -180,6 +180,17 @@ img.frigg-center {
 	}
 }
 
+@media only screen and (max-width: 400px) {
+	.frigg-back-image .frigg-text-container.frigg-two-icons,
+	.frigg-back-image .frigg-text-container {
+		width: 100%;
+	}
+
+	.frigg-icon {
+		width: 132px;
+	}
+}
+
 /**** Accordion component ****/
 
 .frigg-accordion .frigg-accordion-body {
