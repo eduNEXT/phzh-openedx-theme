@@ -1,0 +1,75 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Terms of Service")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container tos">
+        <h1>${_("General Terms and Conditions")}</h1>
+        <h4>${_("edx.phzh.ch")}</h4>
+        <p>${_("Date of publication: September 5th 2018")}</p>
+        <p>${_("The General Terms and Conditions (hereafter ")}<strong>"GTC"</strong>${_(") set out the conditions under which the Zurich University of Teacher Education, 8090 Zurich (Switzerland) (hereafter ")}<strong>"PHZH"</strong>${_(" or ")}<strong>"We"</strong>${_(") proposes access and use of PHZH Courseware (hereafter ")}<strong>"Services</strong>${_(") to users (hereafter ")}<strong>"User"</strong>${_(" or ")}<strong>"You"</strong>${_("), namely via the websites ")}<a href="https://edx.phzh.ch">https://edx.phzh.ch</a>${_(" (hereafter individually or collectively the ")}<strong>"Website"</strong>${_("). The Website aims to publish various content, materials and components in relation to the Services, namely including videos, images and content relating to online courses.")}</p>
+        <h4>${_("1. Acceptance of the GTC")}</h4>
+        <p>${_("By accessing the Website and/or using the Services, You acknowledge that you have read, understood and accepted that You are subject to all of the conditions laid down in the GTC. The GTC, alongside any procurement and any specific conditions, form the contract (hereafter ")}<strong>"Cibtract"</strong>${_("). Where Services are provided via a third-party site (for example, Youtube), You also accept the general terms and conditions and the privacy policy of the third-party site, for which PHZH accepts no liability.")}</p>
+        <p>${_("PHZH reserves the right to modify the present GTC and/or Privacy Policy at any time. If You are a registered User, You shall be informed where necessary by email of any new versions of the GTC or Privacy Policy. New versions of the GTC or Privacy Policy shall also be made available on the Website. You are responsible for regularly checking the GTC and the Privacy Policy and for keeping yourself up to date regarding any modifications. Your continued use of the Website and Services after the posting of modifications will constitute express acceptance of the modifications.")}</p>
+        <h4>${_("2. Strictly prohibited Uses/Contents")}</h4>
+        <p>${_("The following uses and contents are strictly prohibited when using the Website and Services on edx.phzh.ch:")}</p>
+        <ul>
+            <li>${_("Content/Use in a manner that defames, harasses or threatens others;")}</li>
+            <li>${_("Content that discusses illegal activities with the intent to commit them;")}</li>
+            <li>${_("Content that infringes another\'s intellectual property, including, but not limited to, copyrights, trademarks or licensing rights;")}</li>
+            <li>${_("Racist, sexist, violence-glorifying, profane, pornographic, obscene, indecent or unlawful content;")}</li>
+            <li>${_("Advertising or any form of commercial solicitation;")}</li>
+            <li>${_("Content related to partisan political activities;")}</li>
+            <li>${_("Unauthorized copying, modification and deletion of data")}</li>
+            <li>${_("Viruses, trojan horses, worms, time bombs, corrupted files, malware, spyware, or any other similar software that may damage or manipulate the operation of another\'s computer or property or allow unauthorized access; and")}</li>
+            <li>${_("Content that contains intentionally inaccurate information or that is posted with the intent of misleading others (this list, collectively, \"Strictly Prohibited Items\").")}</li>
+        </ul>
+        <p>${_("You may not submit, post, publish, share, or otherwise distribute any of the above Strictly Prohibited Contents on or via the edx.phzh.ch site or use the Website or Services in a manner that violates this GTC, other provisions of the applicable law or any rights of third parties.")}</p>
+        <h4>${_("3. Registered Users")}</h4>
+        <p>${_("Use of Services may be reserved for registered Users. In order to become and in becoming a registered User, You represent and warrant that:")}</p>
+        <ul>
+            <li>${_("You are aged thirteen (13) years or over, ")}</li>
+            <li>${_("The information that You provide at the point of your inscription or online registration (hereafter ")}<strong>"Registration data"</strong>${_(") is accurate, current and complete, and You shall maintain this information up to date.")}</li>
+            <li>${_("You have the right to access the Website and to use the Services from your country of residence and in accordance with the laws applicable to you.")}</li>
+            <li>${_("You shall never transfer your account, your username or your password to a third-party.")}</li>
+        </ul>
+        <h4>${_("5. Fees")}</h4>
+        <p>${_("You agree that PHZH may, at its sole discretion, modify, suspend or even close the Website and the Services, cancel a course, exclude a User, block, cancel or suspend your account, subcontract certain Services, and make certain parts or all of the Services chargeable or free, this with or without reason, with or without notice, and at any moment. PHZH shall not incur any liability towards You in such a case, including for any prejudice or loss of data which may ensue - explicit reference is made in Article 5.3 below. In the case of significant modification to the Services, You shall be given prior notice and You shall be provided the possibility of cancelling your registration.")}</p>
+        <p>${_("You may cancel your account at any time with a notice of termination addressed to PHZH in accordance with the instructions available on the Website. Your access, possibility of using the Website and participation in the Website, including any content which may be found there, may be excluded by PHZH at any time.")}</p>
+        <h4>${_("4. Modifications and Cancellation")}</h4>
+        <p>${_("All of the prices relating to Services (hereafter ")}<strong>"Fees"</strong>${_(") include VAT for Services subject to VAT, unless expressly stated otherwise. No reduction or compensation is permitted. PHZH shall provide no reimbursement should the Services be purchased but not used. In the case of cancellation, all fees already paid shall remain with PHZH.")}</p>
+        <p>${_("Fees are payable in advance. In the case of late payment, PHZH may, immediately and without prior warning, limit or suspend access to the Services. PHZH shall not incur any liability for damages resulting from the suspension of access to the Services, including the loss of information which may ensue.")}</p>
+        <h4>${_("6. Guarantees")}</h4>
+        <h5>${_("6.1. User liability")}</h5>
+        <p>${_("You agree to withhold from violating any legal standard and to withhold from using the Services for unlawful purposes or for any purpose other than that for which they are offered to You. Specifically, you agree to respect the Directive on the Use of PHZH IT resources by students (")}<a href="https://stud.phzh.ch/globalassets/phzh.ch/ueber-uns/organisation/weisungen/weisung_nutzung_it-mittel-studierende.pdf">https://stud.phzh.ch/globalassets/phzh.ch/ueber-uns/organisation/weisungen/weisung_nutzung_it-mittel-studierende.pdf</a>${_(")")}</p>
+        <p>${_("You also agree to compensate and to hold harmless PHZH and its employees from and against all claims, costs, damages and expenses (including legal fees and court expenses) resulting from (i) your use of the Services; (ii) your non-respect or violation of any provision of the GTC or the conditions applicable to a third-party website; (iii) the non-authorised use of your account; (iv) damages caused following the violation of third-party rights via the use of the Services and (v) any other cause leading to damages for PHZH.")}</p>
+        <h5>${_("6.2. Availability")}</h5>
+        <p>${_("PHZH shall endeavour to ensure the reliable and lasting functioning of the Website and the Services, but We cannot guarantee smooth and uninterrupted use of the Website and Services, nor can We guarantee that the Website or Services remain free from viruses, malfunctions or faults.")}</p>
+        <p>${_("The Website and Services accessible over the internet may be affected by periods of temporary unavailability. From time to time, PHZH shall update the Website and Services, an action which shall render them inaccessible during a certain period.")}</p>
+        <p>${_("If the User must access the Website and the Services before a specific deadline, he/she shall take into account the risks of unavailability and shall be considered solely responsible for taking the necessary measures in order achieve access in advance.")}</p>
+        <h5>${_("6.3. Exclusion of liability")}</h5>
+        <p>${_("You use the Website and Services at your sole risk. PHZH endeavours to offer quality, up to date content in the training courses it provides. However, We do not guarantee that the content of the Website or the Services shall be constantly up to date, available, free from error or consistent with the User\'s expectations.")}</p>
+        <p>${_("If examinations are offered by PHZH or by a third-party, PHZH does not guarantee success, nor that they shall correspond to the training course content, nor that they shall be recognized by a third-party (academically, professionally or otherwise).")}</p>
+        <p>${_("Within the limitations of the law, PHZH accepts no liability or responsibility. This exclusion of liability includes namely, but not exclusively, all prejudice as well as all indirect, special, consecutive, exemplary or punitive damages and interests, missed examinations, loss of profits, loss of income or loss of data. The total liability of PHZH for any claim within the framework of the Contract and the use of the Services, including for all implicit guarantees, is limited to the amount that You have paid to Us for use of the Services over the course of the previous six (6) months.")}</p>
+        <h4>${_("7. Account, password and security")}</h4>
+        <p>${_("The User is responsible for the quality and confidentiality of the password chosen at the time of his/her registration, as well as for all activity generated through his/her password and account. The User shall keep the passwords given to him/her confidential and shall ensure that they are never shared with a third-party.")}</p>
+        <p>${_("You agree to inform PHZH immediately of any fraudulent use of your password or your account and of any other breach of security, and You agree to close your account at the end of each session (logout). You are solely responsible for the conservation and safeguarding of your data.")}</p>
+        <h4>${_("8. Intellectual property")}</h4>
+        <p>${_("The Website and their Services, as well as their content, are protected by Swiss legislation relating to intellectual property, in particular copyright and trademark laws. For the duration of your lessons, and provided that You respect the terms of the Contract, PHZH grants You a time-limited, personal, non-exclusive, non-sublicensable, non-transferable license to use the Services for non-commercial purposes. This license may be revoked at any time.")}</p>
+        <p>${_("Unless expressly and specifically provided for, the present GTC grant You no right, title or interest with regards to the Services, trademarks, rights, logos and other elements of PHZH identity or that of any other third-party which may participate in relation to the Services.")}</p>
+        <p>${_("Any use which would violate this license, namely use for commercial purposes or the distribution of lesson aids, shall result in the immediate and automatic cancelation of the Contract, without prejudice to any other rights (namely damages) which may be asserted by PHZH.")}</p>
+        <h4>${_("9. Privacy policy")}</h4>
+        <p>${_("By using the Website and the Services, You agree to provide certain personal data, including Registration data and certain other information about You. PHZH agrees to collect and handle this data in accordance with the Privacy Policy available")}<a href="https://courseware.epfl.ch/privacy"> here</a>${_(".")}</p>
+        <h4>${_("10. Miscellaneous")}</h4>
+        <p>${_("PHZH\'s failure to exercise or enforce any right or provision in the terms and conditions shall not constitute a waiver of such a right or provision.")}</p>
+        <p>${_("If a provision of the Contract is found to be entirely or partially invalid, You nevertheless accept that the intentions, as reflected in the provision, shall be enforced to the greatest possible extent and that the other provisions of the Contract remain valid.")}</p>
+        <p>${_("You shall not assign or transfer any of your rights or obligations, nor shall You subcontract the performance of your obligations. PHZH may assign or transfer any right or obligation, or may subcontract the performance of any of its obligations resulting from the Contract to a third-party at any time, without your express consent, as it is understood that your consent is provided through the present GTC.")}</p>
+        <p>${_("The present GTC, as well as any document constituting the Contract, shall only be modified in writing. Use of electronic messaging is considered sufficient.")}</p>
+        <h4>${_("11. Jurisdiction and applicable law")}</h4>
+        <p>${_("The Contract and all resulting questions or questions in connection with it, including those relating to the use of the Website and the Services, shall be governed by and construed in accordance with Swiss law, without regard to conflict of law principles. You hereby agree that the courts of the district of Zurich (Switzerland) shall have exclusive jurisdiction.")}</p>
+        <h4>${_("12. Contact")}</h4>
+        <p>${_("For all questions regarding the GTC, and to report any violation, please contact us at PHZH, Digital Learning, Lagerstrasse 2, PO Box, CH-8090 Zurich or by email digitallearning@phzh.ch.")}</p>
+    </section>
+</main>
