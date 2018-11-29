@@ -83,7 +83,7 @@ html body .window-wrap {
 .content-wrapper {
 	position: relative;
 
-	.wrapper-course-material.courseware {				
+	.wrapper-course-material.courseware {
 		position: absolute;
 		@include left(0);
 		top: 0;
@@ -171,7 +171,7 @@ html body.view-in-course .container {
 			padding: 0;
 		}
 
-	} 
+	}
 
 	.xmodule_display.xmodule_SequenceModule .sequence-nav {
 		@include float(right);
@@ -203,13 +203,13 @@ html body.view-in-course .container {
 
 	.xmodule_display.xmodule_SequenceModule nav.sequence-bottom {
 		justify-content: flex-end;
-	} 
+	}
 
 	.xmodule_display.xmodule_SequenceModule .sequence-nav,
 	.xmodule_display.xmodule_SequenceModule .sequence-bottom {
 		margin: 0;
 		margin-top: 10px;
-		height: 60px; 
+		height: 60px;
 
 		.sequence-nav-button {
 			border: none;
@@ -287,5 +287,25 @@ body .wrapper-footer {
 		.nav-colophon ol {
 			margin: 0;
 		}
-	} 
+	}
+}
+
+.container.tos,
+.container.privacy {
+
+	padding: 40px 50px;
+
+	h4 {
+		margin: 10px 0;
+		font-size: 1.4em;
+	}
+
+	h5 {
+		margin: 10px;
+	}
+
+	p,
+	li {
+		line-height: 1.1;
+	}
 }

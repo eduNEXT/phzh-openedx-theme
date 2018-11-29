@@ -12,7 +12,7 @@ $white-color: #FFF;
 	}
 
 	.frigg-text-container {
-		font-size: 20px;	
+		font-size: 20px;
 		top: 10%;
 		position: absolute;
 	}
@@ -82,7 +82,7 @@ img.frigg-center {
 .course-wrapper .course-content .vert-mod .frigg-list ul {
 	list-style-type: none;
 
-	li {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+	li {
 		display: flex;
 		align-items: baseline;
 
@@ -247,6 +247,14 @@ img.frigg-center {
 		p {
 			font-family: 'Poppins';
 		}
-		
+
+	}
+}
+
+.xblock.xblock-student_view-drag-and-drop-v2 .xblock--drag-and-drop {
+	margin: 0 auto;
+
+	.keyboard-help-button {
+		display: none;
 	}
 }
