@@ -1,0 +1,1991 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+
+<!DOCTYPE html>
+<html>
+<head dir="ltr">
+	<meta charset="utf-8">
+	<title>frigg Components</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="${static.url('css/lms-main-v1.css')}">
+	<link rel="stylesheet" type="text/css" href="${static.url('css/lms-course.css')}">
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/phzh/css/lms-course.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/css/discussion/inline-discussion.css"> -->
+
+	<!-- for highlight -->
+	<link href="${static.url('libs/shCore.css')}" rel="stylesheet" type="text/css"/>
+	<link href="${static.url('libs/shThemeDefault.css')}" rel="stylesheet" type="text/css"/>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+
+	<!-- <link href="https://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css"/> -->
+	<!-- <link href="https://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css"/> -->
+
+
+	<style>
+	.frigg-header-element{
+		margin-top: 15px;
+	}
+	.frigg-source-code{
+		display: none;
+	}
+	.frigg-container-component{
+		display: none;
+	}
+	.frigg-instructions-element{
+		padding: 20px;
+		display: none;
+	}
+
+	.frigg-source-code.active{
+		display: block;
+	}
+
+	.frigg-container-component.active{
+		display: block;
+	}
+
+	.frigg-instructions-element.active{
+		display: block;
+	}
+
+	.code .container .line{
+		white-space: pre-wrap !important; 
+		display: block;
+	}
+
+	.frigg-header-element .tabs{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.frigg-header-element .tabs button{
+		flex-basis: 0;
+		flex-grow: 1;
+		padding: 15px;
+		color: #fff;
+		background: #2dace3;
+		border: 1px solid #4273bf;
+	}
+
+	.frigg-header-element .tabs button:active,
+	.frigg-header-element .tabs button:focus{
+		background: #4273bf;
+		box-shadow: none;
+	}
+
+	.frigg-instructions-element h3{
+		font-size: 1.5rem;
+	}
+
+	.frigg-copy-button{
+		float: right;
+		margin: 15px;
+		background: #4273bf;
+		color: #fff;
+	}
+
+	.frigg-source-code .frigg-copy-button:hover,
+	.frigg-source-code .frigg-copy-button:focus,
+	.frigg-source-code .frigg-copy-button:active{
+		background-color: #2b508a;
+		background-image: none;
+		box-shadow: none;
+	}
+
+	.frigg-dark{
+		background: #fff;
+		color: #000;
+	}
+
+	.frigg-container-component.frigg-show-problem .frigg-container-element{
+		display: none;
+	}
+
+	.frigg-container-component.frigg-show-problem img{
+		margin: 0 auto;
+		display: block;
+	}
+
+</style>
+
+</head>
+<body class="ltr view-in-course view-courseware courseware">
+	<div class="window-wrap">
+		<div class="content-wrapper  main-container">
+			<div class="container">
+				<div class="course-wrapper">
+					<section class="course-content">
+						<main id="main">
+							<div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule xblock-initialized">
+								<div class="sequence">
+									<div id="seq_content">
+										<div class="xblock xblock-student_view xblock-student_view-vertical xblock-initialized">
+											<div class="vert-mod">
+												<div>
+													<h2>Components</h2>
+												</div>
+												<div class="vert">
+													<div class="frigg-header-element">
+														<h2>E1 Header Topic and Unit</h2>
+														<div class="tabs ">
+															<button class="tab1 frigg-header-button">View Live</button>
+															<button class="tab2 frigg-header-button">Code</button>
+															<button class="tab3 frigg-header-button">Instructions</button>
+														</div>	
+													</div>	
+													<div class="frigg-container-component active">
+														<div class="frigg-container-element frigg-back-image">
+
+															<!-- background image -->
+															<img src="${static.url('images/frigg-components/t2_header.png')}" class="back-image"> 
+
+															<div class="frigg-text-container frigg-center frigg-text-center">
+
+																<!-- icon image -->
+																<img class="frigg-icon" src="${static.url('images/frigg-components/icon_t2.png')}">
+
+																<!-- vertical spacer -->
+																<div class="frigg-vertical-spacer"></div>
+
+																<!-- first title styles -->
+																<div style="
+																color: #a175ff;
+																font-family: 'Poppins';
+																font-size: 1.6rem;
+																">
+
+																<!-- caption first title -->
+																Topic 2
+															</div>
+															<div class="frigg-vertical-spacer"></div>
+
+															<!-- second title styles -->
+															<div style="
+															color: #fff;
+															font-family: 'IBM Plex Sans';
+															font-weight: bold;
+															font-size: 2.2rem;
+															">
+
+															<!-- caption second title -->
+															That's important to me, you and us!
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="frigg-source-code">
+												<button class="frigg-copy-button">Copy code</button>
+												<pre class="brush: html">
+													<div class="frigg-container-element frigg-back-image">
+
+														<!-- background image -->
+														<img src="${static.url('images/t2_header.png')}" class="back-image"> 
+
+														<div class="frigg-text-container frigg-center frigg-text-center">
+
+															<!-- icon image -->
+															<img class="frigg-icon" src="${static.url('images/icon_t2.png')}">
+
+															<!-- vertical spacer -->
+															<div class="frigg-vertical-spacer"></div>
+
+															<!-- first title styles -->
+															<div style="
+															color: #a175ff;
+															font-family: 'Poppins';
+															font-size: 1.6rem;
+															">
+
+															<!-- caption first title -->
+															Topic 2
+														</div>
+														<div class="frigg-vertical-spacer"></div>
+
+														<!-- second title styles -->
+														<div style="
+														color: #fff;
+														font-family: 'IBM Plex Sans';
+														font-weight: bold;
+														font-size: 2.2rem;
+														">
+
+														<!-- caption second title -->
+														That's important to me, you and us!
+													</div>
+												</div>
+											</div>
+										</pre>
+									</div>
+
+									<div class="frigg-instructions-element">
+										<h3>Images</h3>
+										<p>This component consists of two images, one to modify the background and another to modify the icon. The src attribute specifies the URL of the image.</p>
+										<pre class="brush: html">
+											<img src="/static/images/t2_header.png"> 			
+										</pre>
+										<h3>Vertical Spacer</h3>
+										<p>This element applies a vertical space of 15px</p>
+										<pre class="brush: html">
+											<div class="frigg-vertical-spacer"></div>
+										</pre>
+										<h3>Text</h3>
+										<p>The text styles are defined by the "style" attriute of the element:</p>
+										<pre class="brush: html">
+											<div style=" "></div>
+										</pre>
+										<p>The following properties can be changed:</p>
+										<h4>Font family</h4>
+										<p>This rule specifies the font for this section. The selected google fonts are:</p>
+										<pre class="brush: css">
+											font-family: 'Poppins';
+											font-family: 'IBM Plex Sans';
+											font-family: 'IBM Plex Sans Condensed';
+											font-family: 'Roboto';
+											font-family: 'Roboto Slab';
+											font-family: 'Roboto Condensed';
+											font-family: 'Source Sans Pro';
+										</pre>
+
+										<h4>Color</h4>
+										<p>The following rule specifies the text color</p>
+										<pre class="brush: css">
+											color: #f5f5f5; 			/* Hexadecimal color */
+											color: rgb(245, 245, 245); 			 /* RGB color */ 
+										</pre>
+
+										<h4>Font style</h4>
+										<p>The following rule specifies the italic font</p>
+										<pre class="brush: css">
+											font-style: italic; 		
+										</pre>
+
+										<h4>Font bold</h4>
+										<p>The following rule defines the bold font</p>
+										<pre class="brush: css">
+											font-weight: bold; 		
+										</pre>
+
+										<h4>Font size</h4>
+										<p>The following rule specifies the font size</p>
+										<pre class="brush: css">
+											font-size: 25px; 		
+										</pre>
+
+									</div>
+
+								</div>
+
+								<div class="vert">
+									<div class="frigg-header-element">
+										<h2>E2 Simple Text</h2>
+										<div class="tabs">
+													<button class="tab1 frigg-header-button">View Live</button>
+													<button class="tab2 frigg-header-button">Code</button>
+													<button class="tab3 frigg-header-button">Instructions</button>
+												</div>
+											</div>	
+											<div class="frigg-container-component active">
+											<!-- paragraph styles -->
+												<div class="frigg-container-element frigg-paragraph" style="
+												font-family: 'Poppins';
+												color: #fff;
+												background: #202020; 
+												">
+
+												<!-- paragraph text -->
+												In the unit «Fair for all of us» you will learn about specific and universal rules. In «Step 1» you will consider a set of rules and decide which ones are fair or unfair, and if they make sense at all.  In «Step 2» you will take part in a thought experiment, create you own rules, discuss the results in class, and share the results in a discussion group. Afterwards you will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. The unit ends with a «Self-evaluation».		
+												</div>
+											</div>
+										<div class="frigg-source-code">
+											<button class="frigg-copy-button">Copy code</button>
+											<pre class="brush: html">
+
+												<!-- paragraph styles -->
+												<div class="frigg-container-element frigg-paragraph" style="
+												font-family: 'Poppins';
+												color: #fff;
+												background: #202020; 
+												">
+
+												<!-- paragraph text -->
+												In the unit «Fair for all of us» you will learn about specific and universal rules. In «Step 1» you will consider a set of rules and decide which ones are fair or unfair, and if they make sense at all.  In «Step 2» you will take part in a thought experiment, create you own rules, discuss the results in class, and share the results in a discussion group. Afterwards you will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. The unit ends with a «Self-evaluation».		
+												</div>
+												
+										</pre>
+									</div>	
+									<div class="frigg-instructions-element">
+										<h3>Text</h3>
+												<p>The text styles are defined by the "style" attribute of the element:</p>
+												<pre class="brush: html">
+														<div style=" "></div>
+													</pre>
+												<p>The following properties can be changed:</p>
+												<h4>Font family</h4>
+													<p>The following rule specifies the font. The selected google fonts are:</p>
+													<pre class="brush: css">
+														font-family: 'Poppins';
+														font-family: 'IBM Plex Sans';
+														font-family: 'IBM Plex Sans Condensed';
+														font-family: 'Roboto';
+														font-family: 'Roboto Slab';
+														font-family: 'Roboto Condensed';
+														font-family: 'Source Sans Pro';
+													</pre>
+
+													<h4>Color</h4>
+													<p>The following rule specifies the text color</p>
+													<pre class="brush: css">
+														color: #f5f5f5; 			/* Hexadecimal color */
+														color: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font style</h4>
+													<p>The following rule defines the italic font</p>
+													<pre class="brush: css">
+														font-style: italic; 		
+													</pre>
+
+													<h4>Font bold</h4>
+													<p>The following rule defines the bold font</p>
+													<pre class="brush: css">
+														font-weight: bold; 		
+													</pre>
+
+													<h4>Font size</h4>
+													<p>The following rule specifies the size font</p>
+													<pre class="brush: css">
+														font-size: 25px; 		
+													</pre>
+
+													<h4>Text-align</h4>
+													<p>The following rule specifies the text alignment. This has four options:</p>
+													<pre class="brush: css">
+														text-align: center;
+														text-align: left;
+														text-align: right;
+														text-align: justify;		
+													</pre>
+
+													<h4>Background</h4>
+													<p>The following rule defines the background for the E2 simple text element.</p>
+													<pre class="brush: css">
+														background: #f5f5f5; 			/* Hexadecimal color */
+														background: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+									</div>											
+								</div>
+
+								<div class="vert">	
+									<div class="frigg-header-element">
+										<h2>E3 Instructional Text</h2>
+										<div class="tabs">
+											<button class="tab1 frigg-header-button">View Live</button>
+											<button class="tab2 frigg-header-button">Code</button>
+											<button class="tab3 frigg-header-button">Instructions</button>
+										</div>
+									</div>												
+
+									<div class="frigg-container-component active">
+									<!-- container styles -->
+									<div class="frigg-container-element" style="	
+									background: #fff;
+									font-size: 1.2rem;												
+									">
+										<div class="frigg-text-container">
+
+											<!-- icon image -->
+											<img class="frigg-icon frigg-center " src="${static.url('images/frigg-components/icon_t2_u3.png')}">
+
+											<!-- title styles -->
+											<div class="frigg-title" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- caption title -->
+											Unit objectives: after studying this unit...
+											</div>
+											<div class="frigg-vertical-spacer"></div>
+											<div class="frigg-list">
+
+												<!-- list styles -->
+												<ul style="
+												font-family: 'Poppins';
+												">
+
+													<!-- first item list-->
+													<li>
+														<!-- bullet image -->
+														<img src="${static.url('images/frigg-components/bullet.png')}">
+
+														<!-- caption item list -->
+														 <span>I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules</span>
+													</li>
+
+													<!-- second item list -->
+													<li>
+														<img src="${static.url('images/frigg-components/bullet.png')}"> 
+														<span>I can take part in a discussion by stating my point of view and giving reasons.</span>
+													</li>
+
+													<!-- third item list -->
+													<li>
+														<img src="${static.url('images/frigg-components/bullet.png')}"> 
+														<span>I am able to change my perspective and view a problem from another point of view</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- paragraph styles -->
+										<div class="frigg-paragraph" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- paragraph text -->
+											In this unit you will learn and understand specific and universal rules. In «Step 1» you read a set of rules and decide which ones are fair or unfair and if they make sense at all. In «Step 2» you will take part in a thought experiment, create you own rules and discuss the results in class. You will then share the results in a discussion group. You will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. This unit ends with a «Self-evaluation».				
+										</div>
+									</div>
+								</div>
+							<div class="frigg-source-code">
+								<button class="frigg-copy-button">Copy code</button>
+								<pre class="brush: html">
+
+									<!-- container styles -->
+									<div class="frigg-container-element" style="	
+									background: #fff;	
+									font-size: 1.2rem;											
+									">
+										<div class="frigg-text-container">
+
+											<!-- icon image -->
+											<img class="frigg-icon frigg-center " src="${static.url('images/icon_t2_u3.png')}">
+
+											<!-- title styles -->
+											<div class="frigg-title" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- caption title -->
+											Unit objectives: after studying this unit...
+											</div>
+											<div class="frigg-vertical-spacer"></div>
+											<div class="frigg-list">
+
+												<!-- list styles -->
+												<ul style="
+												font-family: 'Poppins';
+												">
+
+													<!-- first item list-->
+													<li>
+														<!-- bullet image -->
+														<img src="${static.url('images/bullet.png')}">
+
+														<!-- caption item list -->
+														 <span>I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules</span>
+													</li>
+
+													<!-- second item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														<span>I can take part in a discussion by stating my point of view and giving reasons.</span>
+													</li>
+
+													<!-- third item list -->
+													<li>
+														<img src="${static.url('images/bullet.png')}"> 
+														<span>I am able to change my perspective and view a problem from another point of view</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- paragraph styles -->
+										<div class="frigg-paragraph" style="
+											font-family: 'Poppins';
+											">
+
+											<!-- paragraph text -->
+											In this unit you will learn and understand specific and universal rules. In «Step 1» you read a set of rules and decide which ones are fair or unfair and if they make sense at all. In «Step 2» you will take part in a thought experiment, create you own rules and discuss the results in class. You will then share the results in a discussion group. You will read about the declaration of Human Rights and its articles in «Step 3» and decide which ones you consider fair or unfair. This unit ends with a «Self-evaluation».				
+										</div>
+									</div>
+						</pre>
+					</div>	
+
+					<div class="frigg-instructions-element">
+						<h3>Image</h3>
+						<p>This component consists of four images, the main image for the icon and the others three for the bullet points. The src attribute specifies the URL of the image. The bullet point image does not have a margin.</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png"> 			
+						</pre>
+
+						<h3>Text</h3>
+						<p>The text styles are defined by the "style" attribute of the element:</p>
+						<pre class="brush: html">
+							<div style=" "></div>
+						</pre>
+						<p>The following properties can be changed:</p>
+						<h4>Font family</h4>
+						<p>The following rule specifies the font. The selected google fonts are:</p>
+						<pre class="brush: css">
+							font-family: 'Poppins';
+							font-family: 'IBM Plex Sans';
+							font-family: 'IBM Plex Sans Condensed';
+							font-family: 'Roboto';
+							font-family: 'Roboto Slab';
+							font-family: 'Roboto Condensed';
+							font-family: 'Source Sans Pro';
+						</pre>
+
+						<h4>Color</h4>
+						<p>The following rule specifies the text color</p>
+						<pre class="brush: css">
+							color: #f5f5f5; 			/* Hexadecimal color */
+							color: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+
+						<h4>Font style</h4>
+						<p>The following rule defines the italic font</p>
+						<pre class="brush: css">
+							font-style: italic; 		
+						</pre>
+
+						<h4>Font bold</h4>
+						<p>The following rule defines the bold font</p>
+						<pre class="brush: css">
+							font-weight: bold; 		
+						</pre>
+
+						<h4>Font size</h4>
+						<p>The following rule specifies the font size</p>
+						<pre class="brush: css">
+							font-size: 25px; 		
+						</pre>
+
+						<h4>Text-align</h4>
+						<p>The following rule specifies the text alignment. There are four options:</p>
+						<pre class="brush: css">
+							text-align: center;
+							text-align: left;
+							text-align: right;
+							text-align: justify;		
+						</pre>
+
+						<h4>Background</h4>
+						<p>The following rule defines the background for the E3 Instructional Text element.</p>
+						<pre class="brush: css">
+							background: #f5f5f5; 			/* Hexadecimal color */
+							background: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+					</div>																	
+				</div>
+
+					<div class="vert">	
+						<div class="frigg-header-element">
+							<h2>E4 Header Step</h2>
+							<div class="tabs">
+								<button class="tab1 frigg-header-button">View Live</button>
+								<button class="tab2 frigg-header-button">Code</button>
+								<button class="tab3 frigg-header-button">Instructions</button>
+							</div>
+						</div>										
+
+						<div class="frigg-container-component active">
+						<div class="frigg-container-element frigg-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/frigg-components/t2_u3_s2_header.png')}" class="back-image">
+
+									<div class="frigg-text-container frigg-center frigg-text-center">
+
+										<!-- first icon image -->
+										<img class="frigg-icon" src="${static.url('images/frigg-components/icon_t2_u3.png')}">
+
+										<div class="frigg-vertical-spacer"></div>
+
+										<!-- first title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption first title -->
+										Fair for all of us
+										</div>
+										<div class="frigg-vertical-spacer"></div>
+
+										<!-- second title styles -->
+										<div class="frigg-title" style="
+										color: #fff;
+										font-size: 2.3rem;
+										font-family: 'IBM Plex Sans';
+										">
+										
+										<!-- caption second title -->
+										Step 2
+										</div>
+
+										<!-- second image title -->
+										<img class="frigg-icon" src="${static.url('images/frigg-components/icon_time.png')}" style="
+										width: 50px;
+										padding-bottom: 0;
+										">
+
+										<!-- subtitle second icon styles -->
+										<div style="
+										color: #fff;
+										font-size: 16px;
+										">
+
+										<!-- caption subtitle second icon -->
+										~ 120 min
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="frigg-source-code">
+							<button class="frigg-copy-button">Copy code</button>
+							<pre class="brush: html">
+								<div class="frigg-container-element frigg-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_header.png')}" class="back-image">
+
+									<div class="frigg-text-container frigg-center frigg-text-center">
+
+										<!-- first icon image -->
+										<img class="frigg-icon" src="${static.url('images/icon_t2_u3.png')}">
+
+										<div class="frigg-vertical-spacer"></div>
+
+										<!-- first title styles -->
+										<div style="
+										color: #fff;
+										font-size: 25px;
+										font-family: 'Poppins';
+										">
+
+										<!-- caption first title -->
+										Fair for all of us
+										</div>
+										<div class="frigg-vertical-spacer"></div>
+
+										<!-- second title styles -->
+										<div class="frigg-title" style="
+										color: #fff;
+										font-size: 2.3rem;
+										font-family: 'IBM Plex Sans';
+										">
+										
+										<!-- caption second title -->
+										Step 2
+										</div>
+
+										<!-- second image title -->
+										<img class="frigg-icon" src="${static.url('images/icon_time.png')}" style="
+										width: 50px;
+										padding-bottom: 0;
+										">
+
+										<!-- subtitle second icon styles -->
+										<div style="
+										color: #fff;
+										font-size: 16px;
+										">
+
+										<!-- caption subtitle second icon -->
+										~ 120 min
+									</div>
+								</div>
+							</div>
+						</pre>
+					</div>
+					<div class="frigg-instructions-element">
+						<h3>Image</h3>
+						<p>This component consists of three images, one image to define the background and the other two images to define the icons. The src attribute specifies the URL of the image. You can define the width of the image using the element with the style attribute(style="width: 50px;). To delete the space between the icon and text, you can change the padding property. Depending on the position of the text, it could be either padding-bottom or padding-top.</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png" style="width: 50px; padding-bottom: 0;"> 			
+						</pre>
+
+						<h3>Vertical Spacer</h3>
+												<p>This element applies a vertical space of 15px.</p>
+												<pre class="brush: html">
+														<div class="frigg-vertical-spacer"></div>
+													</pre>
+												<h3>Text</h3>
+												<p>The text styles are defined inside the attribute "style" of the element:</p>
+												<pre class="brush: html">
+														<div style=" "></div>
+													</pre>
+												<p>The properties that can be changed are:</p>
+												<h4>Font family</h4>
+													<p>The following rule specifies the font. The selected google fonts are:</p>
+													<pre class="brush: css">
+														font-family: 'Poppins';
+														font-family: 'IBM Plex Sans';
+														font-family: 'IBM Plex Sans Condensed';
+														font-family: 'Roboto';
+														font-family: 'Roboto Slab';
+														font-family: 'Roboto Condensed';
+														font-family: 'Source Sans Pro';
+													</pre>
+
+													<h4>Color</h4>
+													<p>The following rule specifies the text color</p>
+													<pre class="brush: css">
+														color: #f5f5f5; 			/* Hexadecimal color */
+														color: rgb(245, 245, 245); 			 /* RGB color */ 
+													</pre>
+
+													<h4>Font style</h4>
+													<p>The following rule defines the italic font</p>
+													<pre class="brush: css">
+														font-style: italic; 		
+													</pre>
+
+													<h4>Font bold</h4>
+													<p>The following rule defines the bold font</p>
+													<pre class="brush: css">
+														font-weight: bold; 		
+													</pre>
+
+													<h4>Font size</h4>
+													<p>The following rule specifies the font size</p>
+													<pre class="brush: css">
+														font-size: 25px; 		
+													</pre>
+
+					</div>
+
+				</div>
+
+					<div class="vert">
+						<div class="frigg-header-element">
+							<h2>E5 Text over Image</h2>
+							<div class="tabs">
+								<button class="tab1 frigg-header-button">View Live</button>
+								<button class="tab2 frigg-header-button">Code</button>
+								<button class="tab3 frigg-header-button">Instructions</button>
+							</div>
+						</div>												
+
+						<div class="frigg-container-component active">
+						<div class="frigg-container-element frigg-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/frigg-components/t2_u3_s2_pic1.png')}" class="back-image"> 
+									<div class="frigg-text-container frigg-left frigg-title-top">
+
+										<!-- title styles -->
+										<div style="
+										color: #f6f6ee;
+										font-size: 2.4rem;
+										font-family: 'IBM Plex Sans';
+										font-style: italic;
+										font-weight: bold;
+										">
+
+										<!-- caption title -->
+										Make an exciting experiment!
+										</div>													
+									</div>
+								</div>
+							</div>
+
+
+						<div class="frigg-source-code">
+							<button class="frigg-copy-button">Copy code</button>
+							<pre class="brush: html">
+								<div class="frigg-container-element frigg-back-image">
+
+									<!-- background image -->
+									<img src="${static.url('images/t2_u3_s2_pic1.png')}" class="back-image"> 
+									<div class="frigg-text-container frigg-left frigg-title-top">
+
+										<!-- title styles -->
+										<div style="
+										color: #f6f6ee;
+										font-size: 2.4rem;
+										font-family: 'IBM Plex Sans';
+										font-style: italic;
+										font-weight: bold;
+										">
+
+										<!-- caption title -->
+										Make an exciting experiment!
+										</div>													
+									</div>
+								</div>
+							</pre>
+						</div>
+
+						<div class="frigg-instructions-element">
+							<h3>Image</h3>
+							<p>This component has one image to define the background. The src attribute specifies the URL of the image.</p>
+							<pre class="brush: html">
+								<img src="/static/images/t2_header.png"> 			
+							</pre>
+
+							<h3>Text</h3>
+							<p>The text styles are defined by the "style" attriute of the element:</p>
+							<pre class="brush: html">
+								<div style=" "></div>
+							</pre>
+							<p>The following properties can be changed:</p>
+							<h4>Font family</h4>
+							<p>The following rule specifies the font. The selected google fonts are:</p>
+							<pre class="brush: css">
+								font-family: 'Poppins';
+								font-family: 'IBM Plex Sans';
+								font-family: 'IBM Plex Sans Condensed';
+								font-family: 'Roboto';
+								font-family: 'Roboto Slab';
+								font-family: 'Roboto Condensed';
+								font-family: 'Source Sans Pro';
+							</pre>
+
+							<h4>Color</h4>
+							<p>The following rule specifies the text color</p>
+							<pre class="brush: css">
+								color: #f5f5f5; 			/* Hexadecimal color */
+								color: rgb(245, 245, 245); 			 /* RGB color */ 
+							</pre>
+
+							<h4>Font style</h4>
+							<p>The following rule defines the italic font</p>
+							<pre class="brush: css">
+								font-style: italic; 		
+							</pre>
+
+							<h4>Font bold</h4>
+							<p>The following rule defines the bold font</p>
+							<pre class="brush: css">
+								font-weight: bold; 		
+							</pre>
+
+							<h4>Font size</h4>
+							<p>The following rule specifies the font size</p>
+							<pre class="brush: css">
+								font-size: 25px; 		
+							</pre>
+
+							<h3>Position Text</h3>
+							<p>To change the text position, you can edit the div tag using the Frigg-text-container class. You can place the text at the top and align it along the left.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-left frigg-title-top">
+							</pre>
+							<p>To place the text at the top and align it along the center.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-center frigg-title-top">
+							</pre>
+							<p>To place the text at the top and align it along the right.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-right frigg-title-top">
+							</pre>
+							<p>To place the text in the center and align it along the left.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-left frigg-title-center">
+							</pre>
+							<p>To place the text in the center and align it along the center.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-center frigg-title-center">
+							</pre>
+							<p>To place the text in the center and align it along the right.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-right frigg-title-center">
+							</pre>
+							<p>To place the text at the bottom and align it along the left.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-left frigg-title-bottom">
+							</pre>
+							<p>To place the text at the bottom and align it along the center.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-center frigg-title-bottom">
+							</pre>
+							<p>To place the text at the bottom and align it to the right.</p>
+							<pre class="brush: html">
+								<div class="frigg-text-container frigg-right frigg-title-bottom">
+							</pre>
+
+						</div>
+
+					</div>
+
+					<div class="vert">
+						<div class="frigg-header-element">
+							<h2>E6 Task</h2>
+							<div class="tabs">
+								<button class="tab1 frigg-header-button">View Live</button>
+								<button class="tab2 frigg-header-button">Code</button>
+								<button class="tab3 frigg-header-button">Instructions</button>
+							</div>
+						</div>										
+
+						<div class="frigg-container-component active">
+						<!-- container styles -->
+					<div class="frigg-container-element" style="
+					background: #e9e9d6;												
+					">
+						<div class="frigg-text-container">
+
+							<!-- icon image -->
+							<img class="frigg-icon frigg-center " src="${static.url('images/frigg-components/icon_alone.png')}">
+
+							<!-- title styles -->
+							<div class="frigg-center" style="
+							font-size: 2rem;
+							font-family: 'IBM Plex Sans';
+							font-style: italic;
+							">
+
+							<!-- caption title -->
+							Task 1
+							</div>
+							<div class="frigg-vertical-spacer"></div>
+
+							<!-- subtitle styles -->
+							<div class="frigg-title" style="
+							font-family: 'Poppins';
+							color: #1a1363;
+							">
+
+							<!-- caption subtitle -->
+							Read the following thought experiment:
+							</div>
+						</div>
+
+						<!--first paragraph styles -->
+						<div class="frigg-paragraph" style="
+						font-family: 'Poppins';
+						">
+						<!-- caption first paragraph -->
+						Imagine you and your colleagues in this class had the possibility to determine the basic rules for the society you will live in. These rules will apply for everyone. While you and your colleagues discuss the rules and agree on the best ones, you are behind the veil of ignorance. Veil of ignorance means that you do not know, what you will be in this future society. When you have agreed on the rules and the veil of ignorance gets lifted, you might be rich or poor. You might be healthy, sick or have a disability. You might be a man, a woman, a child or an old person. You do not know the colour of your skin. You might be born and live in Brazil, Iceland, Afghanistan, Switzerland or any country around the world. You do not know which interests or skills you will have, nor what religion you belong to. You might be a Jew, Muslim, Christian, Bahai, or it might be that you do not believe in God at all.		
+						</div>
+
+						<!-- second paragraph style -->
+						<div class="frigg-paragraph" style="
+						font-family: 'IBM Plex Sans';
+						font-weight: bold;
+						text-align: center;
+						font-style: italic;
+						">
+
+						<!-- caption second paragraph -->
+						While you can make the rules for society, you cannot change human nature. Some people will be nice, others selfish, some will be cruel, others nobel and generous. 
+						(Idea by: Rawls, John (1971). A Theory of Justice)		
+						</div>
+					</div>	
+				</div>
+
+			<div class="frigg-source-code">
+				<button class="frigg-copy-button">Copy code</button>
+				<pre class="brush: html">
+
+					<!-- container styles -->
+					<div class="frigg-container-element" style="
+					background: #e9e9d6;												
+					">
+						<div class="frigg-text-container">
+
+							<!-- icon image -->
+							<img class="frigg-icon frigg-center " src="${static.url('images/icon_alone.png')}">
+
+							<!-- title styles -->
+							<div class="frigg-center" style="
+							font-size: 2rem;
+							font-family: 'IBM Plex Sans';
+							font-style: italic;
+							">
+
+							<!-- caption title -->
+							Task 1
+							</div>
+							<div class="frigg-vertical-spacer"></div>
+
+							<!-- subtitle styles -->
+							<div class="frigg-title" style="
+							font-family: 'Poppins';
+							color: #1a1363;
+							">
+
+							<!-- caption subtitle -->
+							Read the following thought experiment:
+							</div>
+						</div>
+
+						<!--first paragraph styles -->
+						<div class="frigg-paragraph" style="
+						font-family: 'IBM Plex Sans';
+						">
+						<!-- caption first paragraph -->
+						Imagine you and your colleagues in this class had the possibility to determine the basic rules for the society you will live in. These rules will apply for everyone. While you and your colleagues discuss the rules and agree on the best ones, you are behind the veil of ignorance. Veil of ignorance means that you do not know, what you will be in this future society. When you have agreed on the rules and the veil of ignorance gets lifted, you might be rich or poor. You might be healthy, sick or have a disability. You might be a man, a woman, a child or an old person. You do not know the colour of your skin. You might be born and live in Brazil, Iceland, Afghanistan, Switzerland or any country around the world. You do not know which interests or skills you will have, nor what religion you belong to. You might be a Jew, Muslim, Christian, Bahai, or it might be that you do not believe in God at all.		
+						</div>
+
+						<!-- second paragraph style -->
+						<div class="frigg-paragraph" style="
+						font-family: 'Roboto';
+						font-weight: bold;
+						text-align: center;
+						font-style: italic;
+						">
+
+						<!-- caption second paragraph -->
+						While you can make the rules for society, you cannot change human nature. Some people will be nice, others selfish, some will be cruel, others nobel and generous. 
+						(Idea by: Rawls, John (1971). A Theory of Justice)		
+						</div>
+					</div>	
+	</pre>
+</div>
+
+<div class="frigg-instructions-element">
+						<h3>Image</h3>
+						<p>This component has one image to define the icon. The src attribute specifies the URL of the image.</p>
+						<pre class="brush: html">
+							<img src="/static/images/t2_header.png"> 			
+						</pre>
+
+						<h3>Text</h3>
+						<p>The text styles are defined by the "style" attribute of the element:</p>
+						<pre class="brush: html">
+							<div style=" "></div>
+						</pre>
+						<p>The following properties can be changed:</p>
+						<h4>Font family</h4>
+						<p>The following rule specifies the font. The selected google fonts are:</p>
+						<pre class="brush: css">
+							font-family: 'Poppins';
+							font-family: 'IBM Plex Sans';
+							font-family: 'IBM Plex Sans Condensed';
+							font-family: 'Roboto';
+							font-family: 'Roboto Slab';
+							font-family: 'Roboto Condensed';
+							font-family: 'Source Sans Pro';
+						</pre>
+
+						<h4>Color</h4>
+						<p>The following rule specifies the text color</p>
+						<pre class="brush: css">
+							color: #f5f5f5; 			/* Hexadecimal color */
+							color: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+
+						<h4>Font style</h4>
+						<p>The following rule specifies the italic font</p>
+						<pre class="brush: css">
+							font-style: italic; 		
+						</pre>
+
+						<h4>Font bold</h4>
+						<p>The following rule defines the bold font</p>
+						<pre class="brush: css">
+							font-weight: bold; 		
+						</pre>
+
+						<h4>Font size</h4>
+						<p>The following rule specifies the font size</p>
+						<pre class="brush: css">
+							font-size: 25px; 		
+						</pre>
+
+						<h4>Text-align</h4>
+						<p>The following rule specifies the text alignment. There are four options:</p>
+						<pre class="brush: css">
+							text-align: center;
+							text-align: left;
+							text-align: right;
+							text-align: justify;		
+						</pre>
+
+						<h4>Background</h4>
+						<p>The following rule defines the background for the E6 task element.</p>
+						<pre class="brush: css">
+							background: #f5f5f5; 			/* Hexadecimal color */
+							background: rgb(245, 245, 245); 			 /* RGB color */ 
+						</pre>
+					</div>		
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>E7 Header Step</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active">
+	<div class="frigg-container-element frigg-image-border" style="
+			padding: 50px;
+			">
+
+				<!-- url image -->
+				<img src="${static.url('images/frigg-components/t2_u3_s2_pic2.png')}"> 
+			</div>
+		</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-element frigg-image-border" style="
+			padding: 50px;
+			">
+
+				<!-- url image -->
+				<img src="${static.url('images/t2_u3_s2_pic2.png')}"> 
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<h3>Image</h3>
+		<p>This component has one unique image. The src attribute specifies the URL for the image. The border can be defined by the element with the style attribute.</p>
+		<pre class="brush: html">
+			<img src="/static/images/t2_header.png" style="
+			padding: 50px;
+			"> 			
+		</pre>
+		<p>Using "padding" will define the same border for all sides of the image. But it's posible define each side: </p>
+		<pre class="brush: html">
+			<img src="/static/images/t2_header.png" style="
+			padding-top: 20px;
+			padding-right: 50px;
+			padding-bottom: 30px;
+			padding-left: 50px;
+			"> 			
+		</pre>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - Dark background</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-dark-1.png')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+
+				<label>Add the question text, or prompt, here. This text is required.</label>
+
+				  </div>
+				<choicegroup type="MultipleChoice">
+
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with dark background and doesn't show correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - light background</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-light-1.png')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-problem-multiplechoice">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				  
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				 
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+				</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-problem-multiplechoice">
+				<problem>
+				  <div class="frigg-feedback frigg-no-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with light background and doesn't show correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - dark background with notifications</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-dark-2.png')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				  
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				    
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-dark">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				  
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				    
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				 
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with dark background and shows correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P1 Multiple choice simplified - dark background with notifications</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-light-2.png')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				   
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				  
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-problem-multiplechoice frigg-container-problem">
+				<problem>
+				  <div class="frigg-feedback frigg-notifications frigg-multiple-light">
+				<multiplechoiceresponse>
+				<div class="frigg-problem-label">
+				
+				<label>Add the question text, or prompt, here. This text is required.</label>
+				 
+				  </div>
+				<choicegroup type="MultipleChoice">
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted.</choicehint>
+				</choice>
+				   
+				    <choice correct="true">the correct answer <choicehint>This is a feedback</choicehint></choice>
+				    
+				    <choice correct="false">an incorrect answer <choicehint>You can specify optional feedback for none, a subset, or all of the answers.</choicehint>
+				</choice>
+				
+				  </choicegroup>
+				</multiplechoiceresponse>
+				  </div>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem simplified with light background and shows correct or incorrect answer.<p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with images</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-1.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				<problem>
+				  <multiplechoiceresponse>
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+				    <choicegroup type="MultipleChoice">
+				     
+				      <choice correct="true"><img src="/static/avestruz.png"/>the correct answer<choicehint>Well done! !</choicehint></choice>
+				      
+				      <choice correct="false"><img src="/static/castor.jpeg" alt="castor"/>an incorrect answer<choicehint>Feedback </choicehint></choice>
+				      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted</choicehint></choice>
+
+				      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>an incorrect answer <choicehint>This is a feedback</choicehint> </choice>
+
+				    </choicegroup>
+				  </multiplechoiceresponse>
+				  <demandhint>
+
+				    <hint>This is hint 1</hint>
+				    <hint>This is hint 2</hint>
+				    <hint>This is hint 3</hint>
+
+				  </demandhint>
+				</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				<problem>
+				  <multiplechoiceresponse>
+				     
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+				    
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+				    
+				    <choicegroup type="MultipleChoice">
+				      
+				      <choice correct="true"><img src="/static/avestruz.png"/>the correct answer<choicehint>Well done! !</choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/castor.jpeg" alt="castor"/>an incorrect answer<choicehint>Feedback </choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/largatija.png" alt="lagartija"/>an incorrect answer <choicehint>You can specify optional feedback like this, which appears after this answer is submitted</choicehint></choice>
+				     
+				      <choice correct="false"><img src="/static/hiena.jpeg" alt="hiena"/>an incorrect answer <choicehint>This is a feedback</choicehint> </choice>
+				   
+				    </choicegroup>
+				  </multiplechoiceresponse>
+				  <demandhint>
+				    
+				    <hint>This is hint 1</hint>
+				    <hint>This is hint 2</hint>
+				    <hint>This is hint 3</hint>
+				 
+				  </demandhint>
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with images, the src attribute specifies the URL for the image.  <p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with images partially correct</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-2.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+			<problem>
+			  <multiplechoiceresponse partial_credit="points">
+			      <label>Add the question text, or prompt, here. THis text is required</label>
+
+			    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+			    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+			    <choicegroup type="MultipleChoice">
+			      
+			      <choice correct="true"> <img src="/static/avestruz.png"/> Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+			      
+			      <choice correct="partial" point_value="0.5"> <img src="/static/castor.jpeg" alt="castor"/> Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+			     
+			      <choice correct="false"> <img src="/static/largatija.png" alt="lagartija"/> Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+			      
+			      <choice correct="false"> <img src="/static/hiena.jpeg" alt="hiena"/> Another picture <choicehint>Think once again...</choicehint> </choice>
+			    </choicegroup>
+			  
+			  </multiplechoiceresponse>
+			  <demandhint>
+			    
+			    <hint>This is hint 1</hint>
+			    <hint>This is hint 2</hint>
+			    <hint>This is hint 3</hint>
+			  
+			  </demandhint>
+			</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: xhtml">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+			<problem>
+			  <multiplechoiceresponse partial_credit="points">
+			     
+			      <label>Add the question text, or prompt, here. THis text is required</label>
+			    
+			    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+			    
+			    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+			    
+			    <choicegroup type="MultipleChoice">
+			     
+			      <choice correct="true"> <img src="/static/avestruz.png"/> Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+			      
+			      <choice correct="partial" point_value="0.5"> <img src="/static/castor.jpeg" alt="castor"/> Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+			      
+			      <choice correct="false"> <img src="/static/largatija.png" alt="lagartija"/> Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+			     
+			      <choice correct="false"> <img src="/static/hiena.jpeg" alt="hiena"/> Another picture <choicehint>Think once again...</choicehint> </choice>
+			    
+			    </choicegroup>
+			  </multiplechoiceresponse>
+			  <demandhint>
+			   
+			    <hint>This is hint 1</hint>
+			    <hint>This is hint 2</hint>
+			   
+			    <hint>This is hint 3</hint>
+			  </demandhint>
+			</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with images partially correct, the src attribute specifies the URL for the image.  <p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>P2 Multiple choice with only text</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active frigg-show-problem">
+		<img src="${static.url('images/frigg-components/problem-images-3.jpg')}" alt="multiple choice simplified">
+		<div class="frigg-container-element">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+
+				<problem>
+				  <multiplechoiceresponse>
+
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+
+				    <choicegroup type="MultipleChoice">
+
+				      <choice correct="true">Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+				      
+				      <choice correct="false">Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+				      
+				      <choice correct="false">Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+				      
+				      <choice correct="false">Another pictur.. i found out, that in multiple choice problems only one answer may be submitted not like checkboxes <choicehint>Think once again...</choicehint> </choice>
+				    </choicegroup>
+				  </multiplechoiceresponse>
+
+				</problem>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-container-problem frigg-multiplechoice-images">
+			    
+			    <h2 class="frigg-problem-header">Problem header 2</h2>
+				
+				<problem>
+				  
+				  <multiplechoiceresponse>
+				     
+				      <label>Add the question text, or prompt, here. THis text is required</label>
+				    
+				    <description>Optional tip or note relatied to the prompt like this. will push stuff down </description>
+				   
+				    <p class="frigg-description">Describing text between in wrapper-problem-response. Hight of box according to ammount of describing text. Is pushing the choices down </p>
+				   
+				    <choicegroup type="MultipleChoice">
+				     
+				      <choice correct="true">Question or description<choicehint>Well done! This is the only completely righ answer!</choicehint></choice>
+				     
+				      <choice correct="false">Here we find a selected choice.<choicehint>Not quite: This answer is partially correct. There is an answer that suits better. Check the options again</choicehint></choice>
+				     
+				      <choice correct="false">Images are 3/2 format, all have grey outline 1pt in wsame color as dot <choicehint>Think once again...</choicehint></choice>
+				    
+				      <choice correct="false">Another pictur.. i found out, that in multiple choice problems only one answer may be submitted not like checkboxes <choicehint>Think once again...</choicehint> </choice>
+				    </choicegroup>
+				  
+				  </multiplechoiceresponse>
+
+				</problem>
+			</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<p>This is the multiple choice problem with only text. <p>
+	</div>
+
+</div>
+
+<div class="vert">	
+	<div class="frigg-header-element">
+		<h2>Accordion Component</h2>
+		<div class="tabs">
+			<button class="tab1 frigg-header-button">View Live</button>
+			<button class="tab2 frigg-header-button">Code</button>
+			<button class="tab3 frigg-header-button">Instructions</button>
+		</div>
+	</div>														
+
+	<div class="frigg-container-component active">
+		<div class="frigg-accordion">
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 1</button>
+				<div class="frigg-accordion-body"> 
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce odio mi, fringilla ut est ac, ultricies auctor lacus. Vivamus sed nisi pharetra, facilisis lorem sit amet, fringilla velit. In hac habitasse platea dictumst. Vestibulum pretium sem sapien, a convallis lectus euismod vel. Vivamus consectetur orci a purus vestibulum, sit amet ultricies lacus tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse id nibh accumsan, gravida libero vitae, pulvinar nulla.</p>
+				</div>
+			</div>
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 2</button>
+				<div class="frigg-accordion-body"> 
+					<p>Fusce id consectetur nibh. Nulla ac neque vel sapien ornare lacinia. Suspendisse potenti. Nunc blandit sapien mi, eget elementum lorem tempor non. Aliquam interdum leo et neque aliquet suscipit. Sed vitae mollis magna, ut finibus velit. Pellentesque ante nisl, pretium ac blandit quis, convallis nec odio. Morbi malesuada dolor leo, sit amet lacinia turpis fringilla vehicula. Cras libero urna, maximus in dignissim sed, aliquam nec eros.</p>
+					<div class="frigg-list">
+
+						<!-- list styles -->
+						<ul style="
+						font-family: 'Poppins';
+						">
+
+						<!-- first item list-->
+						<li>
+							<!-- bullet image -->
+							<img src="/static/phzh/images/frigg-components/bullet.png">
+
+							<!-- caption item list -->
+							<span>I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules</span>
+						</li>
+
+						<!-- second item list -->
+						<li>
+							<img src="/static/phzh/images/frigg-components/bullet.png"> 
+							<span>I can take part in a discussion by stating my point of view and giving reasons.</span>
+						</li>
+
+						<!-- third item list -->
+						<li>
+							<img src="/static/phzh/images/frigg-components/bullet.png"> 
+							<span>I am able to change my perspective and view a problem from another point of view</span>
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 3</button>
+				<div class="frigg-accordion-body"> 
+					<p>Donec luctus dui vel facilisis suscipit. Nullam efficitur blandit magna eu convallis. Nulla sed augue metus. Maecenas vestibulum rhoncus erat, sit amet dignissim eros sagittis id. Sed ac pharetra sapien. Nulla at lectus fermentum, pellentesque ipsum varius, fermentum dolor. Vivamus sodales facilisis blandit. Mauris consequat ex in urna volutpat rutrum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="frigg-source-code">
+		<button class="frigg-copy-button">Copy code</button>
+		<pre class="brush: html">
+			<div class="frigg-accordion">
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 1</button>
+				<div class="frigg-accordion-body"> 
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce odio mi, fringilla ut est ac, ultricies auctor lacus. Vivamus sed nisi pharetra, facilisis lorem sit amet, fringilla velit. In hac habitasse platea dictumst. Vestibulum pretium sem sapien, a convallis lectus euismod vel. Vivamus consectetur orci a purus vestibulum, sit amet ultricies lacus tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse id nibh accumsan, gravida libero vitae, pulvinar nulla.</p>
+				</div>
+			</div>
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 2</button>
+				<div class="frigg-accordion-body"> 
+					<p>Fusce id consectetur nibh. Nulla ac neque vel sapien ornare lacinia. Suspendisse potenti. Nunc blandit sapien mi, eget elementum lorem tempor non. Aliquam interdum leo et neque aliquet suscipit. Sed vitae mollis magna, ut finibus velit. Pellentesque ante nisl, pretium ac blandit quis, convallis nec odio. Morbi malesuada dolor leo, sit amet lacinia turpis fringilla vehicula. Cras libero urna, maximus in dignissim sed, aliquam nec eros.</p>
+					<div class="frigg-list">
+
+						<!-- list styles -->
+						<ul style="
+						font-family: 'Poppins';
+						">
+
+						<!-- first item list-->
+						<li>
+							<!-- bullet image -->
+							<img src="/static/phzh/images/frigg-components/bullet.png">
+
+							<!-- caption item list -->
+							<span>I am able to understand the importance and limitations of universal rules. I am able to understand the importance and limitations of universal rules</span>
+						</li>
+
+						<!-- second item list -->
+						<li>
+							<img src="/static/phzh/images/frigg-components/bullet.png"> 
+							<span>I can take part in a discussion by stating my point of view and giving reasons.</span>
+						</li>
+
+						<!-- third item list -->
+						<li>
+							<img src="/static/phzh/images/frigg-components/bullet.png"> 
+							<span>I am able to change my perspective and view a problem from another point of view</span>
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+			<div class="frigg-panel">
+				<button class="frigg-accordion-title">Section 3</button>
+				<div class="frigg-accordion-body"> 
+					<p>Donec luctus dui vel facilisis suscipit. Nullam efficitur blandit magna eu convallis. Nulla sed augue metus. Maecenas vestibulum rhoncus erat, sit amet dignissim eros sagittis id. Sed ac pharetra sapien. Nulla at lectus fermentum, pellentesque ipsum varius, fermentum dolor. Vivamus sodales facilisis blandit. Mauris consequat ex in urna volutpat rutrum.</p>
+				</div>
+			</div>
+		</div>
+		</pre>
+	</div>	
+
+	<div class="frigg-instructions-element">
+		<h3>Element title </h3>
+		<p>Between the div tag with frigg-accordion-title class you can modify the title</p>
+		<pre class="brush: html">
+			<button class="frigg-accordion-title">Section 1</button>
+		</pre>
+		<h3>Element content </h3>
+	</div>
+
+</div>
+
+<div>
+	
+</div>
+</div>
+</div>
+</div>
+</div>								
+</div>							
+</main>
+</section>
+</div>				
+</div>			
+</div>
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+<script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shCore.js"></script>
+<script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="https://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushCss.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js""></script> -->
+
+<script type="text/javascript">
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['tab-size'] = 2;
+	SyntaxHighlighter.all();
+	function accordionComponent(){
+			var containerAccordion = $('.frigg-accordion').closest('.vert');
+			var panelElements, height, body;
+
+			containerAccordion.each(function(){
+				panelElements= $(this).find('.frigg-panel');
+				panelElements.each(function(){
+					$(this).find('.frigg-accordion-title').click(function(event){
+						body = $(this).next();
+						body[0].style.maxHeight = 0;  
+						height = getHeight(body);
+
+						if($(this).parent().hasClass('active-acc')){
+							$(this).parent().removeClass('active-acc');
+							body[0].style.maxHeight = 0;    
+						}else{
+							$(this).parent().addClass('active-acc');
+							body[0].style.maxHeight = height;    
+						}
+						$(this).parent().siblings().removeClass('active-acc');
+
+					})
+				})
+			});
+		} 
+
+		function getHeight(elem){
+			var height, elem;
+			elem = elem[0];
+			elem.style.display = 'block';
+			height = elem.scrollHeight + 'px';
+			elem.style.display = 'none';
+			return height;
+ }
+	$(window).load(function(){
+		accordionComponent()
+		$(".frigg-header-button").click(function(){
+			var t = $(this),
+			code = $(this).closest(".vert").find('.frigg-source-code'),
+			live = $(this).closest(".vert").find('.frigg-container-component'),
+			instruction = $(this).closest(".vert").find('.frigg-instructions-element')
+			if(t.hasClass('tab1')){
+				live.addClass('active');
+				live.siblings().removeClass('active');
+			}
+			if(t.hasClass('tab2')){
+				code.addClass('active');
+				code.siblings().removeClass('active');
+			}
+			if(t.hasClass('tab3')){
+				instruction.addClass('active');
+				instruction.siblings().removeClass('active');
+			}
+		});
+
+		$(".frigg-copy-button").click(function(){
+			// var code = $(this).closest(".vert").find('.frigg-container-component');
+			var code;
+			var el, serializer, str;
+			var containerComponent = $(this).closest(".vert");
+
+			if( containerComponent.children('.frigg-show-problem').toArray().length != 0 ){
+				code = containerComponent.find('.frigg-container-component .frigg-container-problem');
+				serializer = new XMLSerializer ();
+				str = serializer.serializeToString (code[0]);
+				el = document.createElement('textarea');
+				el.value = str.replace(/^\s+/mg, "");
+				el.value = el.value.replace('xmlns="http://www.w3.org/1999/xhtml"','')
+
+			}else{
+				code = containerComponent.find('.frigg-container-component');
+				el = document.createElement('textarea');
+				el.value = code.html().replace(/^\s+/mg, "");
+			}
+				
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand("copy");
+			document.body.removeChild(el);
+
+			
+		});
+	})
+
+
+</script>
+</body>
+</html>

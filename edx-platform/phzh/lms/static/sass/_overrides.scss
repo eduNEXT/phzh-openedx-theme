@@ -1,0 +1,311 @@
+
+$color-blue: #23A2FF;
+$white: #FFF;
+
+@import 'responsive';
+@import 'discussion-overrides';
+@import 'discussion-inline';
+
+html body.view-in-course .window-wrap,
+html body .window-wrap {
+	min-width: 0;
+	background: #333333;
+}
+
+/***** Header ***/
+.wrapper-header .user .user-dropdown-menu .menu-dropdown-show,
+.wrapper-header .user-menu .dropdown-menu .menu-dropdown-show {
+	display: none;
+}
+
+.wrapper-header .course-header {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+
+.window-wrap .header-global.slim .logo {
+	@include margin(0, 10px, 0, 0);
+}
+
+/**** Nav content ****/
+.course-material .navbar-collapse {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 1.7rem;
+	@include padding-left(15px);
+	padding-top: 15px;
+	transition: all 0.2s ease;
+	color: $color-blue;
+
+	&:hover {
+		background: none;
+	}
+
+	&:active,
+	&:focus {
+		box-shadow: none;
+	}
+
+	.fa-bars:before {
+		content: url(../images/Hamburger.svg);
+		display: block;
+		width: 26px;
+		height: 26px;
+	}
+}
+
+.courseware.wrapper-course-material {
+	z-index: 2;
+	margin-bottom: -50px;
+	position: relative;
+
+	.course-material {
+		padding: 0;
+	}
+}
+
+.course-material {
+	background: $white;
+}
+.collapse-open {
+	background: $white;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+	border: 1px solid #c8c8c8;
+}
+
+.window-wrap .course-wrapper .course-content .vert-mod {
+	padding-top: 75px;
+}
+
+.content-wrapper {
+	position: relative;
+
+	.wrapper-course-material.courseware {
+		position: absolute;
+		@include left(0);
+		top: 0;
+		width: 100%;
+	}
+}
+
+/***** Course content *****/
+
+html body.view-in-course .container {
+	padding: 0;
+}
+
+.window-wrap {
+	.course-content .page-header {
+		display: none;
+	}
+
+	.content-wrapper .course-view .page-header {
+		padding-top: 60px;
+	}
+
+	.sequence-list-wrapper {
+		display: none;
+	}
+
+	.course-wrapper {
+		border: none;
+	}
+
+	.unit-title {
+		display: none;
+	}
+
+	#main {
+		padding: 0;
+
+	}
+
+	.course-content .bookmark-button-wrapper {
+		margin:0;
+		z-index: 3;
+		position: relative;
+	}
+
+	.bookmark-button {
+		font-size: 1.7rem;
+		@include float(right);
+		@include padding(23px, 0px, 8px, 20px)
+		font-weight: 100;
+		color: $color-blue;
+
+		&:hover,
+		&:focus {
+			// border-bottom: 3px solid;
+			text-decoration: none !important;
+			color: $color-blue;
+		}
+
+		span {
+			display: none;
+		}
+	}
+
+	.course-content .bookmark-button.bookmarked:before {
+		content: url(../images/icon_bookmark_activ.svg);
+		display: block;
+		width: 33px;
+		height: 33px;
+	}
+
+	.course-content .bookmark-button:before {
+		content: url(../images/icon_bookmark.svg);
+		display: block;
+		width: 33px;
+		height: 33px;
+	}
+
+	.sequence-bottom {
+		border-top: 2px solid #333333;
+		padding: 10px 0;
+		box-sizing: content-box;
+
+		.bookmark-button {
+			padding: 0;
+		}
+
+	}
+
+	.xmodule_display.xmodule_SequenceModule .sequence-nav {
+		@include float(right);
+		z-index: 3;
+		height: 60px;
+	}
+
+	.sequence-nav,
+	.sequence-bottom {
+
+		span:not(.fa) {
+			display: none;
+		}
+
+		.fa-chevron-prev:before {
+			content: url(../images/Icon-backward-activ.svg);
+			width: 55px;
+			height: 55px;
+			display: block;
+		}
+
+		.fa-chevron-next:before {
+			content: url(../images/Icon-forward-activ.svg);
+			width: 55px;
+			height: 55px;
+			display: block;
+		}
+	}
+
+	.xmodule_display.xmodule_SequenceModule nav.sequence-bottom {
+		justify-content: flex-end;
+	}
+
+	.xmodule_display.xmodule_SequenceModule .sequence-nav,
+	.xmodule_display.xmodule_SequenceModule .sequence-bottom {
+		margin: 0;
+		margin-top: 10px;
+		height: 60px;
+
+		.sequence-nav-button {
+			border: none;
+			font-size: 1.5rem;
+			min-width: 60px;
+
+			&:hover {
+				// border-bottom: 3px solid #0075b4;
+				padding-top: 0px;
+			}
+
+			&.button-previous {
+				@include padding-right(0);
+			}
+
+			&.button-next {
+				@include padding-left(0);
+				@include padding-right(15px);
+			}
+		}
+	}
+
+	.course-wrapper .course-content .vert-mod .vert>.xblock-student_view {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.studio-view a {
+		position: relative;
+		z-index: 3;
+	}
+
+	.xmodule_display.xmodule_VideoModule .video {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/***Footer ***/
+body .wrapper-footer {
+	.social-feed{
+		display: none;
+	}
+
+	.wrapper-logo {
+		display: none;
+	}
+
+	.nav-legal {
+		display: none;
+	}
+
+	footer#footer-openedx {
+
+		.colophon {
+			width: 100%;
+			margin: 0;
+		}
+
+		.nav-colophon {
+			@include float(left);
+			margin-top: 20px;
+		}
+
+		.footer-about-openedx {
+			@include float(right);
+			margin: 0;
+		}
+
+		.footer-about-openedx p {
+			margin: 0;
+		}
+
+		.nav-colophon ol {
+			margin: 0;
+		}
+	}
+}
+
+.container.tos,
+.container.privacy {
+
+	padding: 40px 50px;
+
+	h4 {
+		margin: 10px 0;
+		font-size: 1.4em;
+	}
+
+	h5 {
+		margin: 10px;
+	}
+
+	p,
+	li {
+		line-height: 1.1;
+	}
+}

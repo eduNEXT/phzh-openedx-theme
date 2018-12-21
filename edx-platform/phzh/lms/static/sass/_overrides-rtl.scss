@@ -1,0 +1,15 @@
+.window-wrap .sequence-nav .fa-chevron-prev:before,
+.window-wrap .sequence-bottom .fa-chevron-prev:before {
+	content: url(../images/Icon-forward-activ.svg);
+	width: 55px;
+	height: 55px;
+	display: block;
+}
+
+.window-wrap .sequence-nav .fa-chevron-next:before,
+.window-wrap .sequence-bottom .fa-chevron-next:before {
+	content: url(../images/Icon-backward-activ.svg);
+	width: 55px;
+	height: 55px;
+	display: block;
+}

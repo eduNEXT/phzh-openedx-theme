@@ -1,159 +1,453 @@
 ## mako
 <%page expression_filter="h"/>
 <%!
-  from django.core.urlresolvers import reverse
-  from django.conf import settings
-  from django.utils.translation import ugettext as _
-  from branding.api import get_footer
-  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+from django.core.urlresolvers import reverse
+from django.conf import settings
+from django.utils.translation import ugettext as _
+from branding.api import get_footer
+from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
 
 
-  facebook_org_link = settings.PLATFORM_FACEBOOK_ACCOUNT
-  twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
+facebook_org_link = settings.PLATFORM_FACEBOOK_ACCOUNT
+twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 %>
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
 
 % if uses_bootstrap:
-  <div class="container-fluid wrapper-footer">
-    <footer>
-      <div class="row">
-        <div class="col-md-9">
-          <nav class="navbar site-nav navbar-toggleable-sm navbar-light" aria-label="${_('About')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-            </ul>
-          </nav>
-
-          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">© 1993-2018 SureSkills Limited </p>
-
-          <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['legal_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-              <li class="nav-item">
-                <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          ## Please leave this link and use one of the logos provided
-          ## The OpenEdX link may be hidden when this view is served
-          ## through an API to partner sites (such as marketing sites or blogs),
-          ## which are not technically powered by Open edX.
-          % if not hide_openedx_link:
-            <div class="footer-about-openedx">
-              <p>
-                <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
-                </a>
-              </p>
-            </div>
-          % endif
-        </div>
-      </div>
-    </footer>
-  </div>
-% else:
-  <div class="wrapper wrapper-footer">
-    <footer id="footer-openedx" class="grid-container"
-      ## When rendering the footer through the branding API,
-      ## the direction may not be set on the parent element,
-      ## so we set it here.
-      % if bidi:
-        dir=${bidi}
-      % endif
-    >
-      <div class="colophon">
-        <nav class="nav-colophon" aria-label="${_('About')}">
-          <ol>
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-              <li class="nav-colophon-0${item_num}">
-                <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-              </li>
-              % endfor
-          </ol>
+<div class="container-fluid wrapper-footer">
+  <footer>
+    <div class="row">
+      <div class="col-md-9">
+        <nav class="navbar site-nav navbar-toggleable-sm navbar-light" aria-label="${_('About')}">
+          <ul class="navbar-nav">
+            % for item_num, link in enumerate(footer['navigation_links'], start=1):
+            <li class="nav-item">
+              <a class="nav-link" href="${link['url']}">${link['title']}</a>
+            </li>
+            % endfor
+          </ul>
         </nav>
 
-        % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-            <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-        % endif
-
-        <div class="wrapper-logo">
-          <p>
-            <a href="/">
-              ## The default logo is a placeholder.
-              ## You can either replace this link entirely or update
-              ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
-              ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
-              ## can be included in the footer on other sites
-              ## (e.g. a blog or marketing front-end) to provide a consistent
-              ## user experience.  See the branding app for details.
-              <img alt="organization logo" src="${static.url('images/logo.png')}">
-            </a>
-          </p>
-        </div>
-
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">© 1993-2018 SureSkills Limited</p>
+        <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
 
-        <nav class="nav-legal" aria-label="${_('Legal')}">
-          <ul>
-              <li class="nav-legal-01">
-                <a href="/honor">Honour Code</a>
-              </li>
-              <li class="nav-legal-02">
-                <a href="/tos">Terms of Service</a>
-              </li>
+        <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
+          <ul class="navbar-nav">
+            % for item_num, link in enumerate(footer['legal_links'], start=1):
+            <li class="nav-item">
+              <a class="nav-link" href="${link['url']}">${link['title']}</a>
+            </li>
+            % endfor
+            <li class="nav-item">
+              <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
+            </li>
           </ul>
         </nav>
       </div>
+      <div class="col-md-3">
+        ## Please leave this link and use one of the logos provided
+        ## The OpenEdX link may be hidden when this view is served
+        ## through an API to partner sites (such as marketing sites or blogs),
+        ## which are not technically powered by Open edX.
+        % if not hide_openedx_link:
+        <div class="footer-about-openedx">
+          <p>
+            <a href="${footer['openedx_link']['url']}">
+              <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+            </a>
+          </p>
+        </div>
+        % endif
+      </div>
+    </div>
+  </footer>
+</div>
+% else:
+<div class="wrapper wrapper-footer">
+  <footer id="footer-openedx" class="grid-container"
+  ## When rendering the footer through the branding API,
+  ## the direction may not be set on the parent element,
+  ## so we set it here.
+  % if bidi:
+  dir=${bidi}
+  % endif
+  >
+  <div class="colophon">
 
-      ## Please leave this link and use one of the logos provided
-      ## The OpenEdX link may be hidden when this view is served
-      ## through an API to partner sites (such as marketing sites or blogs),
-      ## which are not technically powered by OpenEdX.
-      % if not hide_openedx_link:
-      <div class="footer-about-openedx">
-        <section class="social-feed">
-        <a href="https://www.linkedin.com/company/sureskills/" target="_blank">
+    % if context.get('include_language_selector', footer_language_selector_is_enabled()):
+    <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+    % endif
+
+    <div class="wrapper-logo">
+      <p>
+        <a href="/">
+          ## The default logo is a placeholder.
+          ## You can either replace this link entirely or update
+          ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
+          ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
+          ## can be included in the footer on other sites
+          ## (e.g. a blog or marketing front-end) to provide a consistent
+          ## user experience.  See the branding app for details.
+          <img alt="organization logo" src="${static.url('images/logo.png')}">
+        </a>
+      </p>
+    </div>
+
+    ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+    <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
+
+    <nav class="nav-colophon" aria-label="${_('About')}">
+      <ol>
+        <li class="nav-colophon-01">
+          <a id="about" href="/about">${_('About')}</a>
+        </li>
+        <li class="nav-colophon-02">
+          <a id="privacy" href="/privacy">${_('Privacy Policy')}</a>
+        </li>
+        <li class="nav-colophon-03">
+          <a id="tos" href="/tos">${_("Terms of Service")}</a>
+        </li>
+        <li class="nav-colophon-04">
+          <a id="faq" href="/faq">${_('FAQ')}</a>
+        </li>
+      </ol>
+    </nav>
+
+    <nav class="nav-legal" aria-label="${_('Legal')}">
+      <ul>
+        <li class="nav-legal-01">
+          <a href="/honor">Honour Code</a>
+        </li>
+        <li class="nav-legal-02">
+          <a href="/tos">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+
+    ## Please leave this link and use one of the logos provided
+    ## The OpenEdX link may be hidden when this view is served
+    ## through an API to partner sites (such as marketing sites or blogs),
+    ## which are not technically powered by OpenEdX.
+    % if not hide_openedx_link:
+    <div class="footer-about-openedx">
+      <section class="social-feed">
+        <a href="/" target="_blank">
           <span class="icon fa fa-linkedin" aria-hidden="true"></span>
         </a>
-        <a href="https://twitter.com/sureskills" target="_blank">
+        <a href="/" target="_blank">
           <span class="icon fa fa-twitter" aria-hidden="true"></span>
         </a>
-        <a href="https://www.facebook.com/SureSkills/" target="_blank">
+        <a href="/" target="_blank">
           <span class="icon fa fa-facebook" aria-hidden="true"></span>
         </a>
-        <a href="https://www.youtube.com/user/SureSkills/" target="_blank">
+        <a href="/" target="_blank">
           <span class="icon fa fa-youtube" aria-hidden="true"></span>
         </a>
       </section>
+      <div class="footer-logo-edx">
+        <p>
+          <a href="${footer['openedx_link']['url']}">
+            <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+          </a>
+        </p>
       </div>
-      % endif
-    </footer>
+    </div>
+    % endif
+
+
   </div>
+
+
+</footer>
+</div>
 % endif
 % if include_dependencies:
-  <%static:js group='base_vendor'/>
-  <%static:css group='style-vendor'/>
-  <%include file="widgets/segment-io.html" />
-  <%include file="widgets/segment-io-footer.html" />
+<%static:js group='base_vendor'/>
+<%static:css group='style-vendor'/>
+<%include file="widgets/segment-io.html" />
+<%include file="widgets/segment-io-footer.html" />
 % endif
 % if footer_css_urls:
-  % for url in footer_css_urls:
-    <link rel="stylesheet" type="text/css" href="${url}"></link>
-  % endfor
+% for url in footer_css_urls:
+<link rel="stylesheet" type="text/css" href="${url}"></link>
+% endfor
 % endif
 % if settings.FEATURES.get('ENABLE_COOKIE_CONSENT', False):
-  <%include file="widgets/cookie-consent.html" />
+<%include file="widgets/cookie-consent.html" />
 % endif
+
+<script type="text/javascript">
+
+ "use strict";
+ var bookmark_top = '.bookmark-button-wrapper .bookmark-button';
+ var bookmark_bottom = '.sequence-bottom .bookmark-button';
+ var target, config, callback, observer, target2, config2, callback2, observer2;
+
+ function collapseMenu(){
+   var collapse_element = '<button class="navbar-collapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>';
+   var list_element = $('.course-material ol');
+   $('.course-material').prepend(collapse_element);
+
+        // click event collapse menu    
+        $('.navbar-collapse').click(function(){
+          if( list_element.hasClass('collapse-open')){
+            list_element.removeClass('collapse-open');
+          }else{
+            list_element.addClass('collapse-open');
+          }
+        })
+      }
+
+      function classBookmark(){
+        $(bookmark_top).on('click', function(){
+          if( $(bookmark_top).hasClass('bookmarked')){
+            $(bookmark_bottom).removeClass('bookmarked');
+          }else{            
+            $(bookmark_bottom).addClass('bookmarked');
+          }
+        });
+      }
+
+      function cloneBookmark(){
+        $('.bookmark-button').clone().prependTo('.sequence-bottom');
+        $(bookmark_bottom).click(function(){
+          $(bookmark_top).trigger('click');
+        })
+      }
+
+      function studioButton(){
+        $('.studio-view').prependTo('.vert-mod');
+      }
+
+      function multipleChoiceProblem(){
+        var frigg_container = $('.frigg-feedback');
+
+        $('.frigg-problem-multiplechoice').closest(".vert").addClass('frigg-problem-1');
+        $('.frigg-multiplechoice-images').closest(".vert").addClass('frigg-problem-2');
+
+        frigg_container.each(function(){
+          if( $(this).hasClass('frigg-multiple-dark')){
+            $(this).closest('.vert').addClass('frigg-dark');
+          }else{
+            if( $(this).hasClass('frigg-multiple-light')){
+              $(this).closest('.vert').addClass('frigg-light');
+            }
+          }
+        })
+
+      }
+
+      function positionLegendProblem(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+        containerProblems.each(function(){
+          $(this).find('.question-description').appendTo($(this).find('.problem legend'));
+          $(this).find('.problem-progress').appendTo($(this).find('.problem legend'));
+          $(this).find('.frigg-problem-header').prependTo($(this).find('.problem legend'));
+          $(this).find('.frigg-description').prependTo($(this).find('fieldset'));
+        })
+
+      }
+
+      function checkedInput(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+        containerProblems.each(function(){
+          $(this).find('input:checked').closest('label').addClass('frigg-checked');
+          $(this).find('input').change(function(event){
+            $(event.target).closest('label').addClass('frigg-checked');
+            findImage();
+          })
+        })
+
+      }
+
+      function checkedOptions(){
+        var containerProblems = $('.frigg-problem-multiplechoice').closest('.vert');
+
+        containerProblems.each(function(){
+          $(this).find('input:checked').closest('label').addClass('frigg-checked');
+          $(this).find('input').change(function(event){
+            $(event.target).closest('label').siblings().removeClass('frigg-checked')
+            $(event.target).closest('label').addClass('frigg-checked');
+
+          })
+        })
+
+      }
+
+      function messages(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+        containerProblems.each(function(){
+          $(this).find('.message').appendTo($(this).find('.submit-attempt-container'));
+          $(this).find('.notification-show-answer').appendTo($(this).find('.submit-attempt-container'));
+          $(this).find('.notification.problem-hint').appendTo($(this).find('.submit-attempt-container'));
+          $(this).find('.notification.warning').appendTo($(this).find('.submit-attempt-container'));
+          $(this).find('.notification.success').appendTo($(this).find('.submit-attempt-container'));
+          $(this).find('.notification.error').appendTo($(this).find('.submit-attempt-container'));
+
+        })
+      }
+
+      function iconsAction(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+        var buttonReset = $('.frigg-problem-2 .problem-action-buttons-wrapper button.reset'),
+        buttonSave = $('.frigg-problem-2 .problem-action-buttons-wrapper button.save'),
+        buttonHint = $('.frigg-problem-2 .problem-action-buttons-wrapper button.hint-button'),
+        buttonShow = $('.frigg-problem-2 .problem-action-buttons-wrapper button.show');
+
+
+        buttonReset.html('<span class="icon fa fa-refresh" aria-hidden="true"></span>');    
+        buttonSave.html('<span class="icon fa fa-floppy-o" aria-hidden="true"></span>');
+        buttonHint.html('<span class="icon fa fa-question" aria-hidden="true"></span>');
+        buttonShow.html('<span class="icon fa fa-info-circle" aria-hidden="true"></span>');
+
+        containerProblems.each(function(){
+          $(this).find('button.reset').prependTo($(this).find('.problem-action-buttons-wrapper'));
+          $(this).find('button.save').prependTo($(this).find('.problem-action-buttons-wrapper'));
+        })
+      }
+
+      function activeIcon(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+        containerProblems.each(function(){
+          $(this).find('button.show').click(function(){
+            $(this).addClass('frigg-button-active');
+          })
+        })
+      }
+
+      function findImage(){
+        var containerProblems = $('.frigg-multiplechoice-images').closest('.vert');
+
+        containerProblems.each(function(){
+          $(this).find('.field label').has('img').addClass('label-with-images');
+        })
+      }
+
+      $(window).load(function(){  
+        collapseMenu();  
+        cloneBookmark();
+        classBookmark();
+        studioButton(); 
+        multipleChoiceProblem();   
+        positionLegendProblem();  
+        checkedInput();
+        checkedOptions();
+        messages();
+        iconsAction();
+        activeIcon();
+        observer2();
+        observer3();
+        findImage();
+        addClassDiscussion();
+       // accordionComponent();
+
+      })
+
+      target = $('#seq_content');
+      config = { childList: true };
+      observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if(mutation.addedNodes.length != 0){
+            classBookmark();
+            studioButton(); 
+            multipleChoiceProblem(); 
+            positionLegendProblem();
+            checkedOptions();
+            messages();
+            iconsAction();
+            checkedInput();
+            observer2();
+            observer3();
+            findImage();
+            addClassDiscussion();
+            accordionComponent();
+          }
+        });
+      });
+      observer.observe(target[0], config);
+
+      function observer2(){
+        var containerProblem1 = $('.frigg-problem-1 .problems-wrapper')
+        config2 = {childList: true};
+
+        containerProblem1.each(function () {
+          var target2 = this;
+          var observer2 = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              checkedOptions();
+            });
+          });
+
+          observer2.observe(target2, config2);
+        });
+      }
+
+      function observer3(){
+        var containerProblem2 = $('.frigg-problem-2 .problems-wrapper')
+        var config3 = {childList: true};
+
+        containerProblem2.each(function () {
+          var target3 = this;
+          var observer3 = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              positionLegendProblem();
+              messages();
+              iconsAction();
+              checkedInput()
+              findImage();
+            });
+          });
+
+          observer3.observe(target3, config3);
+        });
+      }
+
+  // Discussion
+  function addClassDiscussion(){
+    var containerDiscussion = $('.discussion-module').closest('.vert');
+
+    containerDiscussion.each(function(){
+      $(this).addClass('discussion-container')
+    });
+  }
+
+  function accordionComponent(){
+    var containerAccordion = $('.frigg-accordion').closest('.vert');
+    var panelElements, height, body;
+
+    containerAccordion.each(function(){
+      panelElements= $(this).find('.frigg-panel');
+      panelElements.each(function(){
+        $(this).find('.frigg-accordion-title').click(function(event){
+          body = $(this).next();
+          body[0].style.maxHeight = 0;  
+          height = getHeight(body);
+
+          if($(this).parent().hasClass('active-acc')){
+            $(this).parent().removeClass('active-acc');
+            body[0].style.maxHeight = 0;    
+          }else{
+            $(this).parent().addClass('active-acc');
+            body[0].style.maxHeight = height;    
+          }
+          $(this).parent().siblings().removeClass('active-acc');
+              
+        })
+      })
+    });
+  } 
+
+  function getHeight(elem){
+   var height, elem;
+   elem = elem[0];
+   elem.style.display = 'block';
+   height = elem.scrollHeight + 'px';
+   elem.style.display = 'none';
+   return height;
+ }
+
+</script>

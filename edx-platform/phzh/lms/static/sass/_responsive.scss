@@ -1,0 +1,283 @@
+
+/****** Responsive - general****/
+
+@media only screen and (max-width: 576px) {
+	.window-wrap {
+		div.info-wrapper section.handouts {
+			padding: 0;
+		}
+
+		.course-header,
+		.header-global.slim .course-header {
+			width: 40%;
+		}
+
+		.dashboard .my-courses .course .details{
+			.course-title a {
+				font-size: 25px;
+				line-height: 25px;
+			}
+			.wrapper-course-image {
+				width: 100%;
+			}
+
+			.wrapper-course-image .cover {
+				margin: 20px;
+			}
+
+			.wrapper-course-image .cover .course-image {
+				height: 120px;
+				width: 180px;
+			}
+
+			.wrapper-course-details {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.course-info .course-sidebar header .social-sharing {
+			height: 70px;
+		}
+
+		.course-info {
+
+			.container {
+				padding: 25px;
+			}
+
+			.details {
+				width: 100%;
+			}
+
+			.course-sidebar {
+				width: 100%;
+				padding: 10px;
+			} 
+
+			header.course-profile {
+				padding-top: 70px;
+				height: 500px;
+			}
+
+			header.course-profile .intro-inner-wrapper {
+				margin: 25px;
+			}
+
+			header.course-profile .intro-inner-wrapper .intro {
+				display: block;
+				width: 100%;
+			}
+
+			header.course-profile .intro-inner-wrapper .media {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+
+			header.course-profile .intro-inner-wrapper .hero {
+				width: 70%;
+			}
+		}
+
+		.wrapper-account-settings .account-settings-container {
+			padding: 20px;
+		}
+
+		.account-settings-sections .section .account-settings-section-body .u-field {
+			width: 100%;
+
+			.field {
+				width: 100%;
+			}
+
+			.u-field-message {
+				width: 100%;
+				padding: 10px 0;
+			}
+		}
+
+		 /*** Discusion ***/
+		 .discussion-body .home-helpgrid .helpgrid-row {
+		 	display: flex;
+		 	flex-flow: column;
+
+		 	.row-item,
+		 	.row-item-full {
+		 		width: 100%;
+		 		padding: 10px;
+		 	}
+		 }
+
+		/**** Content search ***/
+		.page-header-search {
+			width: 100%;
+
+			.search-form {
+				width: 100%;
+			}
+
+			.search-input {
+				width: 65%;
+			}
+
+			.search-button {
+				width: 25%;
+			}
+		}
+
+		.view-discussion-home .helpgrid-row .row-item-full .row-description {
+			width: 60%;
+		}
+
+		.course-view .page-header.has-secondary .page-header-secondary .form-actions {
+			margin: 0;
+			width: 100%;
+
+			.action-resume-course {
+				width: 95%;
+				text-align: center;
+				margin-top: 15px;
+			}
+		}
+	}	
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1180px) {
+	.window-wrap .container.dashboard {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.window-wrap {
+		.container {
+			min-width: 0;
+
+			.search-responsive {
+				width: 90%;
+				float: none;
+			}
+
+			.my-courses {
+				width: 90%;	
+				@include margin-left(5%);
+			}
+		}
+	}
+
+	.view-in-course.view-course-info .window-wrap {
+		min-width: 70px;
+	}
+
+}
+
+/*** Responsive Discussion tab ***/
+
+@media only screen and (max-width: 768px){
+	.window-wrap .discussion-body .forum-nav-browse-menu,
+	.window-wrap .discussion-body .forum-nav-thread-list {
+		height: 362px !important;
+	}
+
+	.window-wrap .discussion-body .forum-nav {
+		height: 400px !important;
+	}
+
+	.window-wrap .discussion-body .discussion-column {
+		margin-top: 60px;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.window-wrap .discussion-board .page-header-secondary {
+		width: 100%;
+	}
+
+	.window-wrap.discussion-board .page-header-secondary{
+		width: 100%;
+	}
+}
+
+/****** Responsive - PHZH ****/
+
+@media only screen and (max-width: 860px){
+	.window-wrap {
+		.course-material {
+			.course-tabs {
+				display: none;
+			}
+
+			.navbar-collapse {
+				display: block;
+			}
+
+			.collapse-open {
+				display: grid;
+				transition: all 0.2s ease;
+				margin-top: 10px;
+			}
+		} 
+	} 
+} 
+
+@media only screen and (max-width: 768px) {
+	.window-wrap {
+		.wrapper-header {
+			.user .user-dropdown-menu .menu-dropdown-show,
+			.user-menu .dropdown-menu .menu-dropdown-show {
+				display: block
+			}
+			
+			.menu-nav-hidden {
+				display: none;
+			}
+		}
+
+		.course-material {
+			padding: 10px 0 0 0;
+		}
+
+		.xmodule_display.xmodule_SequenceModule nav.sequence-bottom  .bookmark-button {
+			margin: 0;
+		} 
+	}
+}
+
+@media only screen and (max-width: 576px){
+	body .wrapper-footer footer#footer-openedx .colophon {
+		
+		.footer-about-openedx {
+			width: 30%;
+		}
+
+		.nav-colophon {
+			margin-top: 8px;
+
+			li a {
+				font-size: .7rem;
+			}
+		}
+		
+	} 
+
+}
+
+/*** Responsive inline Discussion ***/
+
+@media only screen and (max-width: 768px){
+	.window-wrap {
+		.discussion-container .discussion-module .forum-new-post-form .js-post-title.field-input {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: 576px){
+	.window-wrap {
+		.discussion-container .discussion-module .discussion-module-header .inline-discussion-topic {
+			font-size: 1rem !important;
+		}
+	}
+}

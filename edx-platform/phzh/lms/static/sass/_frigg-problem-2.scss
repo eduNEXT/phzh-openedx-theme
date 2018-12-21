@@ -1,0 +1,399 @@
+/**** Multiple choice with images ****/
+$white-color: #FFF;
+
+.frigg-problem-2 {
+
+	.problem-header {
+		display: none;
+	}
+
+	.frigg-multiplechoice-images fieldset {		
+		width: 100%;
+
+		legend {
+			background: #323355;
+			width: 100%;
+			color: $white-color;
+			box-sizing: border-box;
+			padding: 20px 30px;
+			font-weight: 600;
+			font-size: 1.5rem;
+
+			.problem-header {
+				color: $white-color;
+			}
+
+			.problem-progress {
+				color: #3da9f7;
+				font-size: 0.7em;
+			}
+
+			.frigg-problem-header {
+				color: $white-color;
+			}
+		}	
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .question-description {
+		color: $white-color;
+		margin: 10px 0;
+		font-size: 1.2rem;
+		font-weight: normal;
+	}
+
+	.frigg-description {
+		padding: 0px 30px;
+		font-size: 1.2rem;
+	}
+
+	.field {
+		img {
+			width: 200px;
+			max-height: 140px;
+			@include margin-right(30px);
+		}
+
+		label:before {
+			content: "";
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			vertical-align: middle;
+			position: absolute;
+			@include left(22px);
+			top: 0;
+		}
+
+		label.label-with-images:before {
+			content: "";
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			position: absolute;
+			top: auto;
+			@include left(36px);
+			z-index: 2;
+		}
+
+
+		label.frigg-checked:before {
+			content: url(../images/inputbullet.png);
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			vertical-align: middle;
+			position: absolute;
+			@include left(22px);
+			top: 0;
+		}
+
+		label.frigg-checked.label-with-images:before {
+			content: url(../images/inputbullet.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #f2f2f2;
+			border-radius: 50%;
+			position: absolute;
+			@include left(36px);
+			top: auto;
+			z-index: 2;
+		}
+
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label,
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label:hover {
+		border: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label {
+		@include padding-left(67px);
+		font-size: 1.2rem;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup label.label-with-images {
+		height: 150px;
+		@include padding-left(265px);
+
+		img {
+			position: absolute;
+			@include left(36px);
+		}
+
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup input {
+		display: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .submit-attempt-container .submit {
+		float: none;
+		font-size: 1.1rem;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .submission-feedback {
+		color: #3c3c3c;
+		font-size: 1.2rem;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .message,
+	.xmodule_display.xmodule_CapaModule div.problem .notification {
+		font-size: 1.2rem;
+	}
+
+	.problem-action-buttons-wrapper button:hover {
+		border-color: #b2b2b2;
+	}
+
+	.problem-action-buttons-wrapper button:disabled {
+		border: none;
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .problem-action-button-wrapper {
+		border: none;
+	}
+
+
+	.problem {
+
+		.submit-attempt-container {
+			text-align: center;
+			width: 100%;
+
+			.submit.btn-brand {
+				border-radius: 50%;
+				height: 85px;
+				width: 90px;
+				padding: 0;
+				background: #007cb8;
+				color: $white-color;
+			}
+
+			.submission-feedback {
+				width: 100%;
+			}
+		}
+
+		.capa_alert {
+			display: none;
+		}
+
+		.message {
+			padding: 20px 66px;
+			background: #999;
+			color: $white-color;
+			margin-top: 10px;
+
+			.explanation-title,
+			.hint-label {
+				display: none;
+			}
+		}
+
+		.problem-action-buttons-wrapper {
+			width: 100%;
+			text-align: center;
+
+			.hint-button .fa-question:before {
+				content: url(../images/hint-inactiv.svg);
+				width: 30px;
+				display: block;
+			}
+
+			.save .fa-save:before,
+			.save .fa-floppy-o:before {
+				content: url(../images/save.svg);
+				width: 36px;
+				display: block;
+			}
+
+			.reset {
+				@include margin(0, 20%, 0, 25%);
+				.fa-refresh:before {
+					content: url(../images/reset.svg);
+					width: 37px;
+					display: block;
+				}
+			} 
+
+			.show .fa-info-circle:before {
+				content: url(../images/show-answer-inactiv.svg);
+				width: 50px;
+				display: block;
+			}
+			// .show.frigg-button-active .fa-info-circle:before{
+			// 	content: url("../images/showAnswerActiv.png");
+			// }
+
+		} 
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn.reset {
+		@include margin-right(20%);
+	} 
+
+	.xmodule_display.xmodule_CapaModule div.problem .notification.general.notification-show-answer {
+		border-top: none;
+		background: #999999;
+		color: $white-color;
+
+		span.fa {
+			display: none;
+		}
+	}
+
+	.xmodule_display.xmodule_CapaModule div.problem .choicegroup {
+
+		label.choicegroup_correct {
+			border: none;
+
+			.status.correct {
+				display: none;
+			}
+		}
+
+		label.choicegroup_incorrect {
+			border: none;
+
+			.status.incorrect {
+				display: none;
+			}
+		}
+
+		label.choicegroup_partially-correct {
+			border: none;
+
+			.status.partially-correct {
+				display: none;
+			}
+		}
+
+		label.choicegroup_correct:before {
+			content: url(../images/inputAnswer.png);
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #7ac842;
+			border-radius: 50%;
+			vertical-align: middle;
+			position: absolute;
+			@include left(22px);
+			top: 0;
+		}
+
+		label.choicegroup_correct.label-with-images:before {
+			content: url(../images/inputAnswer.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #7ac842;
+			border-radius: 50%;
+			position: absolute;
+			@include left(36px);
+			top: auto;
+			z-index: 2;
+		}
+
+
+		label.choicegroup_incorrect:before {
+			content: url(../images/inputAnswer.png);
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #ff1a27;
+			border-radius: 50%;
+			vertical-align: middle;
+			position: absolute;
+			@include left(22px);
+			top: 0;
+		}
+
+		label.choicegroup_incorrect.label-with-images:before {
+			content: url(../images/inputAnswer.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #ff1a27;
+			border-radius: 50%;
+			position: absolute;
+			@include left(36px);
+			top: auto;
+			z-index: 2;
+		}
+
+		label.choicegroup_partially-correct:before {
+			content: url(../images/inputAnswer.png);
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #fcee20;
+			border-radius: 50%;
+			vertical-align: middle;
+			position: absolute;
+			@include left(22px);
+			top: 0;
+		}
+
+		label.choicegroup_partially-correct.label-with-images:before {
+			content: url(../images/inputAnswer.png);
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 5px;
+			background: #fcee20;
+			border-radius: 50%;
+			position: absolute;
+			@include left(36px);
+			top: auto;
+			z-index: 2;
+		}
+
+	} 
+
+	.xmodule_display.xmodule_CapaModule .problem .notification.success,
+	.xmodule_display.xmodule_CapaModule .problem .notification.error,
+	.xmodule_display.xmodule_CapaModule .problem .notification.warning {
+		background: #e2e2e2;
+		border: none;
+		margin: 0;
+		padding: 25px;
+
+		span.icon {
+			display: none;
+		}
+	} 
+
+	.xmodule_display.xmodule_CapaModule .problem .notification.problem-hint {
+		margin: 0;
+		border: 0;
+		background: #999999;
+		padding: 25px;
+
+		span.icon {
+			display: none;
+		}
+
+		ol li {
+			color: $white-color;
+			strong {
+				color: $white-color;
+			}
+		}
+	}
+}

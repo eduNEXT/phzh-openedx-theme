@@ -1,0 +1,260 @@
+
+@import 'frigg-problem-2';
+@import 'frigg-problem-1';
+
+$white-color: #FFF;
+.frigg-back-image {
+	position: relative;
+
+	.back-image {
+		height: 500px;
+		width: 100%;
+	}
+
+	.frigg-text-container {
+		font-size: 20px;
+		top: 10%;
+		position: absolute;
+	}
+
+	.frigg-text-center {
+		width: 40%;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+}
+
+.frigg-text-container {
+	position: relative;
+	width: 70%;
+	left: 0;
+	margin: 0 auto;
+
+	.frigg-paragraph {
+		padding: 20px 0;
+	}
+
+}
+
+.frigg-vertical-spacer {
+	height: 15px;
+}
+
+.frigg-paragraph {
+	padding: 20px 15%;
+	line-height: 1.6em !important;
+	font-size: 1.2rem;
+}
+
+
+.frigg-title {
+	font-weight: 800;
+	font-size: 1.6rem;
+}
+
+.frigg-center {
+	text-align: center;
+
+}
+
+.frigg-right {
+	@include text-align(right);
+}
+
+.frigg-left {
+	@include text-align(left);
+}
+
+img.frigg-center {
+	margin: 0 auto;
+	display: block;
+}
+
+.frigg-icon {
+	padding: 20px 0;
+}
+
+.frigg-two-icons .frigg-icon {
+	padding: 10px 0;
+}
+
+.course-wrapper .course-content .vert-mod .frigg-list ul {
+	list-style-type: none;
+
+	li {
+		display: flex;
+		align-items: baseline;
+
+		img {
+			@include margin-right(10px);
+			display: inline-flex;
+			height: 100%;
+		}
+
+		span {
+			display: inline-block;
+			line-height: 1.5
+		}
+	}
+}
+
+.back-image {
+	object-fit: cover;
+}
+
+.frigg-back-image .frigg-title-top.frigg-text-container {
+	width: 90%;
+	top: 5%;
+	@include left(5%);
+}
+
+.frigg-back-image .frigg-title-bottom.frigg-text-container {
+	top: 85%;
+	width: 90%;
+	@include left(5%);
+}
+
+.frigg-back-image .frigg-title-center.frigg-text-container {
+	width: 90%;
+	top: 45%;
+	@include left(5%);
+}
+
+.frigg-image-border {
+	padding: 30px;
+}
+
+.frigg-back-image .frigg-text-container.frigg-two-icons {
+	width: 400px;
+}
+
+.frigg-back-image .frigg-text-container {
+	width: 330px;
+}
+
+@media only screen and (max-width: 768px) {
+	.frigg-back-image .frigg-text-container.frigg-title-top {
+		right: 5%;
+		left: 5%;
+		top: 10%;
+		width: 90%;
+	}
+
+	.frigg-back-image .frigg-text-container.frigg-title-bottom {
+		right: 5%;
+		left: 5%;
+		top: 70%;
+		width: 90%;
+	}
+
+	.frigg-back-image .frigg-text-container.frigg-title-center {
+		right: 5%;
+		left: 5%;
+		top: 40%;
+		width: 90%;
+	}
+
+	.frigg-paragraph {
+		padding: 20px 5%;
+	}
+
+	.frigg-text-container{
+		// left: 5%;
+		left: 0;
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	.frigg-left,
+	.frigg-right {
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.frigg-back-image .frigg-text-container.frigg-title-top,
+	.frigg-back-image .frigg-text-container.frigg-title-bottom,
+	.frigg-back-image .frigg-text-container.frigg-title-bottom {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.frigg-back-image .frigg-text-container.frigg-two-icons,
+	.frigg-back-image .frigg-text-container {
+		width: 100%;
+	}
+
+	.frigg-icon {
+		width: 132px;
+	}
+}
+
+/**** Accordion component ****/
+
+.frigg-accordion .frigg-accordion-body {
+	display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.frigg-accordion .active-acc .frigg-accordion-body {
+	display: block !important;
+	height: auto;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.frigg-accordion {
+	.frigg-accordion-title {
+		width: 100%;
+		background: none;
+		box-shadow: none;
+		font-size: 1.3rem;
+		@include text-align(left);
+		// text-align: left;
+		font-family: 'Poppins';
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: none;
+			box-shadow: none;
+			color: #222266;
+		}
+
+		&:before {
+			content: "\f105";
+			font-family: "FontAwesome"!important;
+			margin: 0 15px;
+		}
+	}
+
+	.frigg-panel.active-acc .frigg-accordion-title {
+		&:before {
+			content: "\f107";
+			font-family: "FontAwesome"!important;
+			margin: 0 12px;
+		}
+	}
+
+	.frigg-accordion-body {
+		padding: 15px 25px;
+		line-height: 1.5rem;
+		letter-spacing: .02rem;
+
+		p {
+			font-family: 'Poppins';
+		}
+
+	}
+}
+
+.xblock.xblock-student_view-drag-and-drop-v2 .xblock--drag-and-drop {
+	margin: 0 auto;
+
+	.keyboard-help-button {
+		display: none;
+	}
+}
