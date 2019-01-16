@@ -9,7 +9,7 @@ $white: #FFF;
 html body.view-in-course .window-wrap,
 html body .window-wrap {
 	min-width: 0;
-	background: #333333;
+	// background: #333333;
 }
 
 /***** Header ***/
@@ -26,6 +26,69 @@ html body .window-wrap {
 
 .window-wrap .header-global.slim .logo {
 	@include margin(0, 10px, 0, 0);
+}
+
+.global-header .hamburger-menu {
+	display: none;
+}
+
+.window-wrap .global-header {
+	position: inherit;
+}
+
+.global-header .nav-links .nav-item a {
+	text-decoration: none;
+}
+
+.global-header .nav-links .secondary .nav-item {
+	font-size: 1rem;
+	display: inline-block;
+	padding: 10px 0 0;
+	margin: 0 10px;
+
+	a {
+		color: #313131;
+		font-weight: 400;
+	}
+
+	.user-image-frame {
+		border: 1px solid #e7e7e7;
+		margin: -10px 5px;
+		border-radius: 5px;
+		width: 40px;
+	}
+
+	&.nav-item-dropdown {
+		padding: 0;
+		margin: 0;
+	}
+
+	.dropdown-user-menu {
+		border: 1px solid #313131;
+		position: absolute;
+		background-color: #fff;
+		color: #313131;
+		@include right(30px);
+		top: 55px;
+		z-index: 10;
+
+		.dropdown-item {
+			cursor: pointer;
+			overflow: hidden;
+			padding: 0;
+
+			a {
+				font-weight: 400;
+				padding: 10px 15px;
+				display: inline-block;
+				width: 100%;
+			}
+		}
+
+		.dropdown-item:not(:last-child) {
+			border-bottom: 1px solid #e7e7e7;
+		}
+	}
 }
 
 /**** Nav content ****/
@@ -56,13 +119,30 @@ html body .window-wrap {
 	}
 }
 
-.courseware.wrapper-course-material {
+.content-wrapper .course-tabs {
+	overflow: hidden;
+}
+
+.window-wrap .wrapper-course-material {
 	z-index: 2;
 	margin-bottom: -50px;
 	position: relative;
 
 	.course-material {
 		padding: 0;
+		overflow: hidden;
+	}
+
+	.course-tabs .tab a {
+		border-bottom: 4px solid transparent;
+
+		&.active {
+			border-bottom-color: $blue-d;
+		}
+
+		&:hover {
+			border-bottom-color: $blue-d;
+		}
 	}
 }
 
@@ -89,6 +169,10 @@ html body .window-wrap {
 		top: 0;
 		width: 100%;
 	}
+}
+
+#content {
+	padding: 0;
 }
 
 /***** Course content *****/
@@ -215,6 +299,7 @@ html body.view-in-course .container {
 			border: none;
 			font-size: 1.5rem;
 			min-width: 60px;
+			overflow: hidden;
 
 			&:hover {
 				// border-bottom: 3px solid #0075b4;
@@ -223,11 +308,16 @@ html body.view-in-course .container {
 
 			&.button-previous {
 				@include padding-right(0);
+				order: inherit;
 			}
 
 			&.button-next {
 				@include padding-left(0);
 				@include padding-right(15px);
+			}
+
+			.sequence-nav-button-label {
+				display: none;
 			}
 		}
 	}
