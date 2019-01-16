@@ -62,9 +62,27 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         </a>
       </div>
     % endif
-    <div class="mobile-nav-item hidden-mobile nav-item">
+    <div class="mobile-nav-item menu-nav-hidden nav-item">
       <a class="help-link" href="${help_link}" target="_blank">${_("Help")}</a>
     </div>
     <%include file="./user_dropdown.html"/>
   </div>
 </div>
+
+<!-- Script to add help link and nav-global in dropdown menu -->
+
+<script type="text/javascript">
+  function menuMobile(){
+    var help_link= '<a class="help-link" href="${help_link}" target="_blank">${_("Help")}</a>';
+    var links_header = $('.main div a');
+    var container_link = '<div class="mobile-nav-item dropdown-item dropdown-nav-item menu-dropdown-show"></div>';
+    
+    $('.dropdown-user-menu').prepend( $('<div class="mobile-nav-item dropdown-item dropdown-nav-item menu-dropdown-show">'+help_link+'</div>')); 
+    links_header.each(function (index) {
+      var clone_element = $(this).clone();
+
+      $('.dropdown-user-menu').prepend($(container_link).html(clone_element[0]));
+    });
+  }
+  $(document).ready(menuMobile);
+</script>
