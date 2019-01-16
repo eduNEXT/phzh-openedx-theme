@@ -176,18 +176,28 @@
 }
 
 @media only screen and (max-width: 992px) {
-	.window-wrap .global-header .main-header {
-		display: flex;
-		justify-content: space-between;
-		height: 60px;
-		align-items: center;
+	.window-wrap .global-header {
+		.main-header {
+			display: flex;
+			justify-content: space-between;
+			height: 60px;
+			align-items: center;
 
-		.header-logo,
-		.secondary {
-			margin-bottom: 0;
-			padding: 0 20px;
+			.header-logo,
+			.secondary {
+				margin-bottom: 0;
+				padding: 0 20px;
+			}
 		}
-	}
+
+		.dropdown-user-menu .menu-dropdown-show {
+			display: block
+		}
+		
+		.menu-nav-hidden {
+			display: none !important;
+		}
+	} 
 }
 
 /*** Responsive Discussion tab ***/
@@ -241,17 +251,6 @@
 
 @media only screen and (max-width: 768px) {
 	.window-wrap {
-		.global-header  {
-			.user .user-dropdown-menu .menu-dropdown-show,
-			.user-menu .dropdown-menu .menu-dropdown-show {
-				display: block
-			}
-			
-			.menu-nav-hidden {
-				display: none !important;
-			}
-		}
-
 		.course-material {
 			padding: 10px 0 0 0;
 		}

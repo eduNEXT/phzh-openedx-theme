@@ -13,8 +13,7 @@ html body .window-wrap {
 }
 
 /***** Header ***/
-.wrapper-header .user .user-dropdown-menu .menu-dropdown-show,
-.wrapper-header .user-menu .dropdown-menu .menu-dropdown-show {
+.global-header .dropdown-user-menu .menu-dropdown-show {
 	display: none;
 }
 
@@ -119,7 +118,7 @@ html body .window-wrap {
 	}
 }
 
-.content-wrapper .course-tabs {
+.window-wrap .content-wrapper .course-tabs {
 	overflow: hidden;
 }
 
@@ -131,6 +130,7 @@ html body .window-wrap {
 	.course-material {
 		padding: 0;
 		overflow: hidden;
+		max-width: 1080px;
 	}
 
 	.course-tabs .tab a {
@@ -204,7 +204,11 @@ html body.view-in-course .container {
 
 	#main {
 		padding: 0;
+	}
 
+	.course-content #main {
+		max-width: 1080px;
+		margin: 0 auto;
 	}
 
 	.course-content .bookmark-button-wrapper {
@@ -301,9 +305,11 @@ html body.view-in-course .container {
 			min-width: 60px;
 			overflow: hidden;
 
-			&:hover {
+			&:hover,
+			&:active {
 				// border-bottom: 3px solid #0075b4;
 				padding-top: 0px;
+				background: none;
 			}
 
 			&.button-previous {
@@ -328,6 +334,12 @@ html body.view-in-course .container {
 		padding: 0;
 	}
 
+	.course-wrapper .course-content .vert-mod .vert {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
 	.studio-view a {
 		position: relative;
 		z-index: 3;
@@ -341,6 +353,7 @@ html body.view-in-course .container {
 
 /***Footer ***/
 body .wrapper-footer {
+	box-shadow: none;
 	.social-feed{
 		display: none;
 	}
@@ -362,7 +375,14 @@ body .wrapper-footer {
 
 		.nav-colophon {
 			@include float(left);
-			margin-top: 20px;
+			@include margin(5px, 0, 30px, 0)
+		}
+
+		.copyright {
+			margin: -2px 0 8px 0;
+			font-size: 0.6875em;
+			color: #767676;
+			text-align: left;
 		}
 
 		.footer-about-openedx {
@@ -376,6 +396,13 @@ body .wrapper-footer {
 
 		.nav-colophon ol {
 			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.colophon .nav-colophon li {
+			float: left;
+			margin-right: 15px;
 		}
 	}
 }
