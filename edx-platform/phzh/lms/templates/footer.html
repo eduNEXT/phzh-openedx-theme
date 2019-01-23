@@ -136,8 +136,15 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 
  function collapseMenu(){
    var collapse_element = '<button class="navbar-collapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>';
-   var list_element = $('.course-material ol');
-   $('.course-material').prepend(collapse_element);
+
+       if ($('.course-material').length >0) {
+        var list_element = $('.course-material ol');
+        $('.course-material').prepend(collapse_element);
+       }else{
+        var list_element = $('.navbar.course-tabs ul');
+        $('.navbar.course-tabs').prepend(collapse_element);
+       }
+   
 
         // click event collapse menu    
         $('.navbar-collapse').click(function(){
