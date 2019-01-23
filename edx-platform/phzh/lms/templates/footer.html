@@ -14,6 +14,56 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
 
+% if uses_bootstrap:
+<div class="container-fluid wrapper-footer">
+  <footer>
+    <div class="row">
+      <div class="col-md-9">
+        <nav class="navbar site-nav navbar-toggleable-sm navbar-light" aria-label="${_('About')}">
+          <ul class="navbar-nav">
+            % for item_num, link in enumerate(footer['navigation_links'], start=1):
+            <li class="nav-item">
+              <a class="nav-link" href="${link['url']}">${link['title']}</a>
+            </li>
+            % endfor
+          </ul>
+        </nav>
+
+        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+        <p class="copyright">© Zurich University of Teacher Education - PH Zurich. All rights reserved except where noted. EdX, Open edX and their respective logos are trademarks or registered trademarks of edX Inc.</p>
+
+        <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
+          <ul class="navbar-nav">
+            % for item_num, link in enumerate(footer['legal_links'], start=1):
+            <li class="nav-item">
+              <a class="nav-link" href="${link['url']}">${link['title']}</a>
+            </li>
+            % endfor
+            <li class="nav-item">
+              <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-3">
+        ## Please leave this link and use one of the logos provided
+        ## The OpenEdX link may be hidden when this view is served
+        ## through an API to partner sites (such as marketing sites or blogs),
+        ## which are not technically powered by Open edX.
+        % if not hide_openedx_link:
+        <div class="footer-about-openedx">
+          <p>
+            <a href="${footer['openedx_link']['url']}">
+              <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+            </a>
+          </p>
+        </div>
+        % endif
+      </div>
+    </div>
+  </footer>
+</div>
+% else:
 <div class="wrapper wrapper-footer">
   <footer id="footer-openedx" class="grid-container"
   ## When rendering the footer through the branding API,
@@ -111,7 +161,7 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 
 </footer>
 </div>
-
+% endif
 % if include_dependencies:
 <%static:js group='base_vendor'/>
 <%static:css group='style-vendor'/>
@@ -136,8 +186,15 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 
  function collapseMenu(){
    var collapse_element = '<button class="navbar-collapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>';
-   var list_element = $('.course-material ol');
-   $('.course-material').prepend(collapse_element);
+
+       if ($('.course-material').length >0) {
+        var list_element = $('.course-material ol');
+        $('.course-material').prepend(collapse_element);
+       }else{
+        var list_element = $('.navbar.course-tabs ul');
+        $('.navbar.course-tabs').prepend(collapse_element);
+       }
+   
 
         // click event collapse menu    
         $('.navbar-collapse').click(function(){
