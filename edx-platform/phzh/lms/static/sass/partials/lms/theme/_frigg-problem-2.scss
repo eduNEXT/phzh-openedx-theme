@@ -83,7 +83,7 @@ $white-color: #FFF;
 
 
 		label.frigg-checked:before {
-			content: url(../images/inputbullet.png);
+			content: url('#{$static-path}/images/inputbullet.png');
 			display: inline-block;
 			width: 32px;
 			height: 32px;
@@ -97,7 +97,7 @@ $white-color: #FFF;
 		}
 
 		label.frigg-checked.label-with-images:before {
-			content: url(../images/inputbullet.png);
+			content: url('#{$static-path}/images/inputbullet.png');
 			display: block;
 			width: 32px;
 			height: 32px;
@@ -206,14 +206,14 @@ $white-color: #FFF;
 			text-align: center;
 
 			.hint-button .fa-question:before {
-				content: url(../images/hint-inactiv.svg);
+				content: url('#{$static-path}/images/hint-inactiv.svg');
 				width: 30px;
 				display: block;
 			}
 
 			.save .fa-save:before,
 			.save .fa-floppy-o:before {
-				content: url(../images/save.svg);
+				content: url('#{$static-path}/images/save.svg');
 				width: 36px;
 				display: block;
 			}
@@ -221,21 +221,17 @@ $white-color: #FFF;
 			.reset {
 				@include margin(0, 20%, 0, 25%);
 				.fa-refresh:before {
-					content: url(../images/reset.svg);
+					content: url('#{$static-path}/images/reset.svg');
 					width: 37px;
 					display: block;
 				}
 			} 
 
 			.show .fa-info-circle:before {
-				content: url(../images/show-answer-inactiv.svg);
+				content: url('#{$static-path}/images/show-answer-inactiv.svg');
 				width: 50px;
 				display: block;
 			}
-			// .show.frigg-button-active .fa-info-circle:before{
-			// 	content: url("../images/showAnswerActiv.png");
-			// }
-
 		} 
 	}
 
@@ -280,7 +276,7 @@ $white-color: #FFF;
 		}
 
 		label.choicegroup_correct:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: inline-block;
 			width: 32px;
 			height: 32px;
@@ -294,7 +290,7 @@ $white-color: #FFF;
 		}
 
 		label.choicegroup_correct.label-with-images:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: block;
 			width: 32px;
 			height: 32px;
@@ -309,7 +305,7 @@ $white-color: #FFF;
 
 
 		label.choicegroup_incorrect:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: inline-block;
 			width: 32px;
 			height: 32px;
@@ -323,7 +319,7 @@ $white-color: #FFF;
 		}
 
 		label.choicegroup_incorrect.label-with-images:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: block;
 			width: 32px;
 			height: 32px;
@@ -337,7 +333,7 @@ $white-color: #FFF;
 		}
 
 		label.choicegroup_partially-correct:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: inline-block;
 			width: 32px;
 			height: 32px;
@@ -351,7 +347,7 @@ $white-color: #FFF;
 		}
 
 		label.choicegroup_partially-correct.label-with-images:before {
-			content: url(../images/inputAnswer.png);
+			content: url('#{$static-path}/images/inputAnswer.png');
 			display: block;
 			width: 32px;
 			height: 32px;

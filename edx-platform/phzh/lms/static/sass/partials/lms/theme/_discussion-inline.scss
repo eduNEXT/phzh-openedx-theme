@@ -37,7 +37,7 @@
 		}
 
 		.discussion-module-header:before {
-			content: url(../images/discussion-inline.svg);
+			content: url('#{$static-path}/images/discussion-inline.svg');
 			display: block;
 			margin: 22px auto;
 			width: 130px;
@@ -85,19 +85,19 @@
 			}
 
 			.fa-comments:before {
-				content: url(../images/discussion-inactiv.svg);
+				content: url('#{$static-path}/images/discussion-inactiv.svg');
 				width: 18px;
 				display: block;
 			}
 
 			.fa-question:before {
-				content: url(../images/question-inactiv.svg);
+				content: url('#{$static-path}/images/question-inactiv.svg');
 				width: 18px;
 				display: block;
 			}
 
 			.fa-check-square-o:before {
-				content: url(../images/answer-active.svg);
+				content: url('#{$static-path}/images/answer-active.svg');
 				width: 18px;
 				display: block;
 			}
@@ -299,7 +299,7 @@
 			}
 
 			.field-label .post-type-label .field-input:checked+.field-input-label:before {
-				content: url(../images/inputbullet.png);
+				content: url('#{$static-path}/images/inputbullet.png');
 				display: inline-block;
 				width: 32px;
 				height: 32px;
