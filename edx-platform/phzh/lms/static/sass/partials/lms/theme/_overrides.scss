@@ -17,6 +17,12 @@ html body .window-wrap {
   display: none;
 }
 
+.global-header .main-header,
+.wrapper-preview-menu .preview-menu {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 .wrapper-header .course-header {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -115,13 +121,13 @@ html body .window-wrap {
 /**** Nav content ****/
 .course-material .navbar-collapse,
 .navbar.course-tabs .navbar-collapse {
-  @include padding-left(15px);
+  @include padding-left(28px);
   background: none;
   border: 0;
   color: $color-blue;
   display: none !important;
   font-size: 1.7rem;
-  padding-top: 15px;
+  padding-top: 13px;
   transition: all 0.2s ease;
 
   &:hover {
@@ -324,6 +330,7 @@ html body.view-in-course .container {
     @include float(right);
     height: 60px;
     z-index: 3;
+    width: 135px;
   }
 
   .sequence-nav,
@@ -379,6 +386,7 @@ html body.view-in-course .container {
       &.button-next {
         @include padding-left(0);
         @include padding-right(15px);
+        box-sizing: content-box;
       }
 
       .sequence-nav-button-label {
@@ -411,11 +419,22 @@ html body.view-in-course .container {
 }
 
 /***Footer ***/
-body .wrapper-footer {
+body .wrapper-footer.wrapper,
+body.view-in-course .wrapper-footer.wrapper {
   box-shadow: none;
+  margin: 0;
+  background: #333;
+  border: 0;
+  padding: 0;
+  padding-top: 40px;
 
   .social-feed{
     display: none;
+  }
+
+  .container-footer-openedx {
+    padding: 20px;
+    background: #fff;
   }
 
   .wrapper-logo {
@@ -427,6 +446,8 @@ body .wrapper-footer {
   }
 
   footer#footer-openedx {
+    max-width: 1090px;
+    margin: 0 auto;
 
     .colophon {
       margin: 0;
