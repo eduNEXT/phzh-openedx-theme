@@ -15,7 +15,8 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 <%namespace name='static' file='static_content.html'/>
 
 <div class="wrapper wrapper-footer">
-  <footer id="footer-openedx" class="grid-container"
+  <div class="container-footer-openedx">
+    <footer id="footer-openedx" class="grid-container"
   ## When rendering the footer through the branding API,
   ## the direction may not be set on the parent element,
   ## so we set it here.
@@ -110,6 +111,8 @@ twitter_org_link = settings.PLATFORM_TWITTER_ACCOUNT
 
 
 </footer>
+  </div>
+  
 </div>
 
 % if include_dependencies:
