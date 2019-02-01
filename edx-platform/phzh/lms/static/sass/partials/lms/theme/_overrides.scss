@@ -17,10 +17,18 @@ html body .window-wrap {
   display: none;
 }
 
+.window-wrap .global-header {
+  min-height: 82px;
+  overflow: inherit;
+  position: relative;
+  z-index: 1100;
+}
+
 .global-header .main-header,
 .wrapper-preview-menu .preview-menu {
   max-width: 1170px;
   margin: 0 auto;
+  position: relative;
 }
 
 .wrapper-header .course-header {
@@ -91,12 +99,12 @@ html body .window-wrap {
   }
 
   .dropdown-user-menu {
-    @include right(30px);
+    @include right(48px);
     background-color: #fff;
     border: 1px solid #313131;
     color: #313131;
     position: absolute; 
-    top: 55px;
+    top: 60px;
     z-index: 10;
 
     .dropdown-item {
@@ -330,7 +338,7 @@ html body.view-in-course .container {
     @include float(right);
     height: 60px;
     z-index: 3;
-    width: 135px;
+    width: 137px;
   }
 
   .sequence-nav,

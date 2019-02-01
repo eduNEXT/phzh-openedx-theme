@@ -300,3 +300,18 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .xblock--drag-and-drop .drag-container {
+    .target-img {
+      display: table-cell;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .item-bank {
+      flex-flow: row wrap;
+    }
+  } 
+}
