@@ -13,3 +13,13 @@
 	height: 55px;
 	display: block;
 }
+
+@media (max-width: 991px) {
+	.global-header .main-header .header-logo a {
+		margin: 15px 50% 0 0;
+	}
+}
+
+.course-wrapper .course-content .vert-mod > div.frigg-list ul {
+	padding: 0;
+}
